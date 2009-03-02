@@ -13,7 +13,7 @@
   <div class="ButtonBar">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="http://github.com/EnigmaCurry/blogofile">Github page</a></li>
+      <li><a href="http://github.com/EnigmaCurry/blogofile">Github Page</a></li>
       <li><a href="/page/1">Blog</a></li>
     </ul>
   </div>
