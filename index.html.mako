@@ -5,7 +5,7 @@
     <h1>Welcome to Blogofile.</h1>
     
     <ul>
-      <li><b>Definition: <em>Blogophile</em> --<b><br/>
+      <li><b>Definition: <em>Blogophile</em> --</b><br/>
         A person who is fond of or obsessed with blogs or blogging.</li>
       <li><b>Definition: <em>Blogofile</em>  --</b><br/>
         A static file blog engine/compiler, inspired by Jekyll.</li>
