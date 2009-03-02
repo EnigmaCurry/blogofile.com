@@ -102,5 +102,7 @@ This is the text of the post.</pre>
       <li><b>pretty_html</b></li>
       <ul><li>With this enabled, you can make your site's source code really pretty using <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>, but it's slow, and it also messes up &lt;pre&gt; tags, so it's turned off by default.</li></ul>
     </ul>
+    <h3>Autodeployment with Git</h3>
+    Git can do <a href="/using_blogofile_with_git.html">automatic deployment</a> to your webserver.
   </span>
 </div>
