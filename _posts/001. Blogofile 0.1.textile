@@ -9,4 +9,4 @@ title: Introducing Blogofile
 <h3>First post!</h3>
 This is <a href="http://www.blogofile.com">Blogofile</a>, a new blog engine designed for simplicity and efficiency. With blogofile you can run an entire blog on any server using plain HTML files.
 <br/><br/>
-The first release, <a href="http://github.com/EnigmaCurry/blogofile/tarball/0.1">version 0.1 is available now</a>.
+The first release, <a href="http://github.com/EnigmaCurry/blogofile/tarball/0.2">version 0.2 is available now</a>.
