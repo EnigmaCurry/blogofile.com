@@ -38,7 +38,7 @@
     <pre>git clone git://github.com/EnigmaCurry/blogofile.git</pre>
     
     <h3>Using Blogofile</h3>
-    coming soon...
+    coming soon.
   </span>
 </div>
 
