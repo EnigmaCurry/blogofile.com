@@ -12,6 +12,7 @@
 <div id="top_bar">
   <div class="ButtonBar">
     <ul>
+      <li><a href="/">Home</a></li>
       <li><a href="/page/1">Blog</a></li>
     </ul>
   </div>
