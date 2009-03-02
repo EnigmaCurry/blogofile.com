@@ -42,7 +42,7 @@
     <ul>
       <li>Any file or directory starting with an underscore ("_") is considered special by blogofile and is not copied to "_site".</li>
       <li>Any file ending in ".mako" is processed by mako before being copied to "_site". The file in "_site" is stripped of the ".mako" extension.</li>
-      <li>Special folders used by revision control systems, such as ".git", ".svn", ".hg", ".bzr", and ".CVS" are ignored.</li>
+      <li>Special folders used by revision control systems, such as ".git", ".svn", ".hg", ".bzr", and "CVS" are ignored.</li>
       <li>Any other file or directory is considered to be part of the regular website, and is copied over to "_site" directly.</li>
     </ul>
 
@@ -77,7 +77,7 @@ This is the text of the post.</pre>
       <li><b>updated</b></li>
       <ul><li>The date the post was last updated</li></ul>
       <li><b>format</b></li>
-      <ul><li>the format of the post, 'html' or 'textile'.</li></ul>
+      <ul><li>the format of the post, 'html' or 'textile'. Yes, textile can include html, but if you're not using textile, specifying html is faster.</li></ul>
       <li><b>permalink</b></li>
       <ul><li>The full permalink to the post</li></ul>
       <li><b>guid</b></li>
