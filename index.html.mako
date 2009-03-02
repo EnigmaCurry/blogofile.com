@@ -27,7 +27,7 @@
     </ul>
     <h3>Get Blogofile</h3>
     
-    Assuming you already have <a href="http://www.python.org">Python</a> and Setuptools already installed, just run:
+    Assuming you already have <a href="http://www.python.org">Python</a> and Setuptools installed (on ubuntu "sudo apt-get install python-setuptools"), just run:
     
     <pre>easy_install Blogofile</pre>
     
