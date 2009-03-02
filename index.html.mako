@@ -23,6 +23,7 @@
           <li>Comments and Trackbacks (with an external host like <a href="http://www.disqus.com">Disqus</a> or <a href="http://www.intensedebate.com">IntenseDebate</a>)</li>
           <li>RSS and Atom feeds, one for all your posts, as well one per category.</li>
         </ul>
+      <li><a href="/using_blogofile_with_git.html">Automatic deployment with git</a></li>
     </ul>
     <h3>Get Blogofile</h3>
     
