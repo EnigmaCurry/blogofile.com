@@ -9,19 +9,27 @@
       <li>You can look at the history of your blog, enabling you to see your edits of your posts</li>
       <li>Automatic deployment</li>
     </ul>   
-    <br/>
     Automatic wha?
     <br/><br/>
     Yes, you can have git run "blogofile -b" automatically when you 'git push' your site. This only works if the site hosting your website is also the same site that you 'git push' to. Here's how to make it work:
     <br/>
     <ul>
       <li>Check out your project on the same server where your git repository is located
-        <pre>git clone /path/to/repo /path/to/website</pre>
+        <pre>git clone /path/to/your_repo.git /path/to/website</pre>
+      </li>
+      <li>Create a new "post-receive" hook in your git repo, create the file /path/to/your_repo.git/hooks/post-receive to look like the following:
+<pre>#!/bin/sh
+
+#Rebuild the blog
+unset GIT_DIR
+cd /path/to/your/website
+git pull
+blogofile -b</pre>
       </li>
     </ul>
     <br/>
     
-
+    Now whenever you "git push" to your webhost, your website gets automatically rebuilt.
     
   </span>
 </div>
