@@ -77,7 +77,7 @@ This is the text of the post.</pre>
       <li><b>updated</b></li>
       <ul><li>The date the post was last updated</li></ul>
       <li><b>format</b></li>
-      <ul><li>the format of the post, 'html' or 'textile'. Yes, textile can include html, but if you're not using textile, specifying html is faster.</li></ul>
+      <ul><li>the format of the post, 'html' or 'textile'. Yes, textile can include html, but if you're not using textile, specifying html make rendering faster.</li></ul>
       <li><b>permalink</b></li>
       <ul><li>The full permalink to the post</li></ul>
       <li><b>guid</b></li>
@@ -87,7 +87,7 @@ This is the text of the post.</pre>
     <h3>_config.cfg</h3>
     The _config.cfg file is the main configuartion file for your blogofile based site. It has a number of options you'll want to specify:
     <ul>
-      <li>blog_name</li>
+      <li><b>blog_name</b></li>
       <ul>
         <li>This is the name of your blog, by default it appears in the title as well as the top of your website</li>
       </ul>
