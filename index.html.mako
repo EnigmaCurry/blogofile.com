@@ -36,7 +36,9 @@
     </ul>
     You can get the latest source from git:
     <pre>git clone git://github.com/EnigmaCurry/blogofile.git</pre>
-    </pre>
+    
+    <h3>Using Blogofile</h3>
+    coming soon.
   </span>
 </div>
 
