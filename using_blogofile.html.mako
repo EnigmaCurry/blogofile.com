@@ -50,7 +50,7 @@
     When in the blogofile.com directory build the site:
     <pre>blogofile -b</pre>
     
-    You'll see in _site the completely built website. If you copied the _site  directory to a webserver, you'd be hosting an exact copy of the site you're reading now.
+    You'll see in "_site" the completely built website. If you copied the "_site"  directory to a webserver, you'd be hosting an exact copy of the site you're reading now.
 
     <h3>_posts</h3>
     By convention, the _posts directory is where all your posts go, one post per file. Posts can currently be written in plain HTML or <a href="http://textile.thresholdstate.com/">Textile</a>. Each post also has some metadata that blogofile uses when it renders your posts. This Metadata is placed at the top of the file in YAML syntax, for example:
@@ -66,21 +66,21 @@ This is the text of the post.</pre>
 
     You can use any of the following metadata values:
     <ul>
-      <li>title</li>
+      <li><b>title</b></li>
       <ul><li>This is the title of the post</li></ul>
-      <li>categories</li>
+      <li><b>categories</b></li>
       <ul><li>This is a list of the categories the post is a part of, seperated by commas</li></ul>
-      <li>tags</li>
+      <li><b>tags</b></li>
       <ul><li>This is a list of the tags for the post, seperated by commas</li></ul>
-      <li>date</li>
+      <li><b>date</b></li>
       <ul><li>The date of the post</li></ul>
-      <li>updated</li>
+      <li><b>updated</b></li>
       <ul><li>The date the post was last updated</li></ul>
-      <li>format</li>
+      <li><b>format</b></li>
       <ul><li>the format of the post, 'html' or 'textile'.</li></ul>
-      <li>permalink</li>
+      <li><b>permalink</b></li>
       <ul><li>The full permalink to the post</li></ul>
-      <li>guid</li>
+      <li><b>guid</b></li>
       <ul><li>An optional guid to use in RSS/Atom feeds. The permalink is used by default.</li></ul>
     </ul>
 
@@ -91,15 +91,15 @@ This is the text of the post.</pre>
       <ul>
         <li>This is the name of your blog, by default it appears in the title as well as the top of your website</li>
       </ul>
-      <li>blog_url</li>
+      <li><b>blog_url</b></li>
       <ul><li>The full URL of your website</li></ul>
-      <li>blog_description</li>
+      <li><b>blog_description</b></li>
       <ul><li>A short one line description of your site, this goes into RSS feeds</li></ul>
-      <li>timezone</li>
+      <li><b>timezone</b></li>
       <ul><li>Specify the timezone you wish your posts to appear as, this makes it so you don't have to type it in your posts everytime</li></ul>
-      <li>disqus_name</li>
+      <li><b>disqus_name</b></li>
       <ul><li>If you have setup a <a href="http://www.disqus.com">Disqus</a> account for comments on your site, this is the name of the account</li></ul>
-      <li>pretty_html</li>
+      <li><b>pretty_html</b></li>
       <ul><li>With this enabled, you can make your site's source code really pretty using <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>, but it's slow, and it also messes up &lt;pre&gt; tags, so it's turned off by default.</li></ul>
     </ul>
   </span>
