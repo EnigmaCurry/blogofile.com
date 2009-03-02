@@ -27,11 +27,9 @@
     </ul>
     <h3>Get Blogofile</h3>
     
-    Make sure you have <a href="http://www.python.org">Python</a> and Setuptools installed:
-
-    On ubuntu that's just 
+    Make sure you have <a href="http://www.python.org">Python</a> and Setuptools installed. On Ubuntu you just need to run:
     
-    <pre>"sudo apt-get install python-setuptools"</pre> 
+    <pre>sudo apt-get install python-setuptools</pre> 
 
     And install Blogofile with:
     
