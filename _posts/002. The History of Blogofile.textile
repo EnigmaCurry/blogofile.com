@@ -6,7 +6,7 @@ permalink: http://www.blogofile.com/2009/03/02/the-history-of-blogofile
 tags: 
 title: The History of Blogofile
 ---
-<p>I've been blogging for a while now, over at <a href="http://www.enigmacurry.com">EnigmaCurry.com</a>, first having used TikiWiki, and then Wordpress. I've been mostly happy with Wordpress, it's got a very active community surrounding it and for the most part, it just works. </p>
+<p>I've been blogging for a while now, over at <a href="http://www.enigmacurry.com">EnigmaCurry.com</a>, early on having used TikiWiki, and most recently Wordpress. I've been mostly happy with Wordpress, it's got a very active community surrounding it and for the most part, it just works. </p>
 
 <p>One thing I really hate about wordpress though, is writing blog posts in their stupid in browser editor. It's not really Wordpress' fault, no one has ever built a decent in browser editor (although <a href="http://bespin.mozilla.com/">that may change</a>), so I use Emacs to write all my blog posts</p>
 
