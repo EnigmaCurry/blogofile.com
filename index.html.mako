@@ -43,7 +43,7 @@
 
     And install Blogofile with:
     
-    <pre>easy_install Blogofile</pre>
+    <pre>sudo easy_install Blogofile</pre>
     
     Here's the latest "stable" tarballed release:
     <ul>
