@@ -7,7 +7,7 @@
 
     <pre>git clone git://github.com/EnigmaCurry/blogofile.com.git</pre>
 
-    The blogofile.com directory is our "source" directory. This directory contains all of the files that will make up our website in addition to some special files that help blogofile along the way. A point of clarification is in order though, the source directory is <b><em>not</em></b> the website, we generate the website <b><em>from</em></b> the source directory to create a new directory called "_site"
+    The blogofile.com directory is our "source" directory. This directory contains all of the files that will make up our website, as well as some special files that will help blogofile along the way. A point of clarification is in order though, the source directory is <b><em>not</em></b> the website, we generate the website <b><em>from</em></b> the source directory to create a new directory called "_site".
 
     <h3>Directory structure</h3>
     <p>
