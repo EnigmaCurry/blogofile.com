@@ -2,9 +2,9 @@
 <div class="blog_post">
   <span class="post_prose">
     <h1>Blogofile License</h1>   
-<pre>################################################################################
-### Jython Shell Server is written by Ryan McGuire (EnigmaCurry.com)
-################################################################################
+<pre>||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||| Jython Shell Server is written by Ryan McGuire (EnigmaCurry.com)
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 I believe in free software. For me, this also means that I do not believe in
 copyrights, trademarks, patents, nor any other government enforced monopoly
@@ -28,9 +28,9 @@ master -- It is wrong for me to force you to do anything. I can only ask.
 
 -- Ryan McGuire, aka "EnigmaCurry"
 
-################################################################################
-###  To say the same thing in legalese:
-################################################################################
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||  To say the same thing in legalese:
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
