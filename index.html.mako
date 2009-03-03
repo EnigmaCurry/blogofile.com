@@ -59,7 +59,9 @@
 </div>
 
 <%def name="sidebar()">
-<h3>Latest blog posts:</h3>
+<div id="sidebar">
+  <h3>Latest blog posts:</h3>
+</div>
 <ul>
 % for post in posts[:5]:
   <li><a href="${post.permalink}">${post.title}</a></li>
