@@ -40,8 +40,8 @@
     </p>
     Blogofile uses a few simple rules in determining what ends up on the website:
     <ul>
-      <li>Any file or directory starting with an underscore ("_") is considered special by blogofile and is not copied to "_site".</li>
-      <li>Any file ending in ".mako" is processed by mako before being copied to "_site". The file in "_site" is stripped of the ".mako" extension.</li>
+      <li>Any file or directory starting with an underscore ("_") is considered special by blogofile and is not copied to "_site". By convention, this includes _templates and _posts.</li>
+      <li>Any file ending in ".mako" outside of an underscored directory, is processed by mako before being copied to "_site". The file in "_site" is then stripped of the ".mako" extension.</li>
       <li>Special folders used by revision control systems, such as ".git", ".svn", ".hg", ".bzr", and "CVS" are ignored.</li>
       <li>Any other file or directory is considered to be part of the regular website, and is copied over to "_site" directly.</li>
     </ul>
