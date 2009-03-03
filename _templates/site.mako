@@ -8,9 +8,9 @@
 <%def name="footer()">
   <%include file="footer.mako" />
 </%def>
-<%def name="sidebar()" args="posts=posts">
+<%def name="sidebar()">
   <div class="right_sidebar">
-    <%include file="sidebar.mako" />
+    <%include file="sidebar.mako"  args="posts=posts" />
   </div>
 </%def>
 
