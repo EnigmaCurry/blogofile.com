@@ -19,7 +19,7 @@
     <h3>Features</h3>
 
     <ul>
-      <li>Blogofile is <b><i>free software</i></b>, read the <a href="http://github.com/EnigmaCurry/blogofile/blob/master/LICENSE.txt">public domain license</a>.
+      <li>Blogofile is <b><i>free software</i></b>, read the <a href="/LICENSE.html">public domain license</a>.
       <li>
         Blogofile is <b><i>fast</i></b>, the server doesn't need to do any database lookups or any template rendering.
       </li>
