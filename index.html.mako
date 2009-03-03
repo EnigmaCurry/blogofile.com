@@ -59,7 +59,7 @@
 </div>
 
 <%def name="sidebar()">
-<div id="sidebar">
+<div id="right_sidebar">
   <h3>Latest blog posts:</h3>
 </div>
 <ul>
