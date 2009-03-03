@@ -47,7 +47,7 @@
     
     Here's the latest "stable" tarballed release:
     <ul>
-      <li><a href="http://github.com/EnigmaCurry/blogofile/tarball/0.2">Blogofile 0.2.tar.gz</a></li>
+      <li><a href="http://github.com/EnigmaCurry/blogofile/tarball/0.3">Blogofile 0.3.tar.gz</a></li>
     </ul>
     You can get the latest source from github:
     <pre>git clone git://github.com/EnigmaCurry/blogofile.git</pre>

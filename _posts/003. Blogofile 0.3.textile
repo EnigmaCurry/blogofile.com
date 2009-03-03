@@ -1,0 +1,11 @@
+---
+categories: Releases
+date: 2009/03/02 13:09:00
+format: html
+permalink: http://www.blogofile.com/2009/03/02/blogofile-version-0.3
+tags: 
+title: Blogofile 0.3
+---
+<p>I've been making a lot of changes to blogofile today. Consider blogofile to still be alpha-quality, although I think it's quite useable right now.</p>
+
+<p>I just released <a href="http://github.com/EnigmaCurry/blogofile/tarball/0.3">version 0.3</a> on github as well as on <a href="http://pypi.python.org/pypi/Blogofile">PyPI</a>.</p>
