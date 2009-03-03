@@ -102,6 +102,24 @@ This is the text of the post.</pre>
       <li><b>pretty_html</b></li>
       <ul><li>With this enabled, you can make your site's source code really pretty using <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>, but it's slow, and it also messes up &lt;pre&gt; tags, so it's turned off by default.</li></ul>
     </ul>
+
+    <h3>_templates</h3>
+    The "_templates" directory contains many of the templates used for the site, although unlike templates outside of this directroy, none of these templates correspond to a specific page. These are "helper" templates to render many pages. Here's a description of each:
+
+    <ul>
+      <li>base.mako - the base template that establishes the general look of the entire site.</li>
+      <li>site.mako - an optional template that further extends base.mako</li>
+      <li>head.mako - the &lt;head&gt; tag area of the site.</li>
+      <li>header.mako - the top portion of the site, that's on every page.</li>
+      <li>footer.mako - the bottom portion of the site, that's on every page.</li>
+      <li>post.mako - defines what a single blog post looks like</li>
+      <li>permapage.mako - defines the permalink page for a post, including comments section</li>
+      <li>chronological.mako - the template that renders a chronological rendering of blog entries</li>
+      <li>sidebar.mako - defines the sidebar on the site</li>
+      <li>atom.mako - Atom feed</li>
+      <li>rss.mako - RSS feed</li>
+      
+
     <h3>Autodeployment with Git</h3>
     Git can do <a href="/using_blogofile_with_git.html">automatic deployment</a> to your webserver.
   </span>
