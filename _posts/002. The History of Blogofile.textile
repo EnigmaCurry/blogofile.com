@@ -12,14 +12,14 @@ title: The History of Blogofile
 
 <p>At first I used the <a href="https://addons.mozilla.org/en-US/firefox/addon/4125">It's all text</a> firefox extension to be able to edit browser text fields inside of Emacs. This is a nice solution, and I use it all the time. However, when I'm writing blog entries, I'm kind of a perfectionist, often editing a post a couple dozen times before feeling done with it. It got rather tedious to keep switching between emacs and firefox each time I would save my changes. I wanted a way that I could publish to my blog directly in Emacs.</p>
 
-<p>As it turns out, there are several packages for Emacs that will publish to blog engines using xml-rpc:
+<p>As it turns out, there are several packages for Emacs that will publish to blog engines using xml-rpc:</p>
   <ul>
     <li><a href="http://www.tolchz.net/2008/01/06/posting-to-wordpress-with-emacs-webloggerel/">weblogger.el (Tolchz.net version)</a></li>
     <li><a href="http://www.emacswiki.org/cgi-bin/emacs/weblogger.el">weblogger.el</a> (The original?)</li>
     <li><a href="http://lists.gnu.org/archive/html/gnu-emacs-sources/2008-11/msg00006.html">blog.el</a></li>
     <li><a href="http://code.google.com/p/wp-emacs/">wp-emacs</a></li>
   </ul>
-  I've tried them all. They all either didn't work, or didn't work how I wanted them to, so I started to write my own, but got frustrated and realized that I probably couldn't improve on what had already been done.</p>
+<p>I've tried them all. They all either didn't work, or didn't work how I wanted them to, so I started to write my own, but got frustrated and realized that I probably couldn't improve on what had already been done.</p>
 
 <p>I briefly played with the idea of creating a <a href="http://fuse.sourceforge.net/">FUSE</a> based filesystem interface to wordpress, where when I wrote a file to a specific directory it would automatically post or update a blog entry on my blog. I wrote the original interface, but then I found <a href="http://www.google.com/url?sa=t&source=web&ct=res&cd=1&url=http%3A%2F%2Fgithub.com%2Fmojombo%2Fjekyll%2Ftree%2Fmaster&ei=_ImsSYbdM4yRngfbzeW_Bg&usg=AFQjCNGNQYkR3_N9TZzboMUafsn_6JUj-A&sig2=Z43F6QH8c3Pmjs9ykWHQkg">Jekyll</a></p>
 
