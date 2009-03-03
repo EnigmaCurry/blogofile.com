@@ -118,7 +118,7 @@ This is the text of the post.</pre>
       <li>sidebar.mako - defines the sidebar on the site</li>
       <li>atom.mako - Atom feed</li>
       <li>rss.mako - RSS feed</li>
-      
+    </ul>
 
     <h3>Autodeployment with Git</h3>
     Git can do <a href="/using_blogofile_with_git.html">automatic deployment</a> to your webserver.
