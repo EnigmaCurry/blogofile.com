@@ -3,7 +3,7 @@
   <span class="post_prose">
     <h1>Blogofile License</h1>   
 <pre>********************************************************************************
-*** Jython Shell Server is written by Ryan McGuire (EnigmaCurry.com)
+*** Blogofile is written by Ryan McGuire (EnigmaCurry.com)
 ********************************************************************************
 
 I believe in free software. For me, this also means that I do not believe in
