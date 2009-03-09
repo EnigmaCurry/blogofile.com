@@ -6,9 +6,28 @@ permalink: http://www.blogofile.com/sample_posts.html
 tags: ''
 title: Test syntax highlighting
 ---
-This is a syntax highlighted python snippet:
+This tests some syntax highlighting:
 
+Some Python:
 <pre lang='python'>
-for x in "Hello, Python!":
-    print x.upper(),
+def test():
+    for x in "Hello, Python!":
+        print x.upper(),
+    print "done"
+</pre>
+
+Some Haskell:
+<pre lang='haskell'>
+hamming = 1 : map (2*) hamming `merge` map (3*) hamming `merge` map (5*) hamming
+     where merge (x:xs) (y:ys) 
+            | x < y = x : xs `merge` (y:ys)
+            | x > y = y : (x:xs) `merge` ys
+            | otherwise = x : xs `merge` ys
+</pre>
+
+Some javascript:
+<pre lang='javascript'>
+document.write("<h1>This is a header</h1>");
+document.write("<p>This is a paragraph</p>");
+document.write("<p>This is another paragraph</p>");
 </pre>
