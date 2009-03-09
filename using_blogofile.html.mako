@@ -60,7 +60,7 @@ categories: Cool Stuff, Random Stuff
 date: 2009/03/02 13:09:00
 format: html
 permalink: http://www.blogofile.com/2009/03/02/this-is-the-title-of-the-post
-tags: 
+tags: random, cool
 ---
 This is the text of the post.</pre>
 
