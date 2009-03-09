@@ -1,0 +1,13 @@
+---
+categories: Development
+date: 2009/03/09 17:43:00
+format: markdown
+permalink: http://www.blogofile.com/2009/03/09/syntax-highlighting-and-markdown
+title: Syntax Highlighting and Markdown support
+---
+The development version of blogofile now includes the following features:
+
+* Syntax highlighting - thanks to [pygments](http://www.pygments.org)
+* Markdown support - thanks to [markdown in python](http://www.freewisdom.org/projects/python-markdown/)
+
+Check out [some examples here](/sample_posts.html)
