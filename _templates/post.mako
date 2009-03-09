@@ -5,7 +5,11 @@
 <% 
    category_links = []
    for category in post.categories:
-       category_links.append("<a href='/category/%s'>%s</a>" % (category_link_names[category], category))
+       if post.draft:
+           #For drafts, we don't write to the category dirs, so just write the categories as text
+           category_links.append(category)
+       else:
+           category_links.append("<a href='/category/%s'>%s</a>" % (category_link_names[category], category))
 %>
 ${", ".join(category_links)} | <a href="${post.permalink}#disqus_thread">View Comments</a>
 </small><p/>
