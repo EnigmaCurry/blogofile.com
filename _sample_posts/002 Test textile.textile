@@ -1,0 +1,17 @@
+---
+categories: Test
+date: 2009/03/09 13:09:01
+format: textile
+permalink: http://www.blogofile.com/sample_posts.html
+title: Testing Textile
+---
+
+h3. This post is a textile example.
+
+bq. Stop trying to control.
+Let go of fixed plans and concepts,
+and the world will govern itself.
+
+|_. Header |_. Header |_. Header |
+| Cell 1 | Cell 2 | Cell 3 |
+| Cell 1 | Cell 2 | Cell 3 |
