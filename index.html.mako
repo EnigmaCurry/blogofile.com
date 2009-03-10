@@ -27,7 +27,7 @@
         <ul>
           <li>Categories</li>
           <li>Tags</li>
-          <li>Comments and Trackbacks. This is accomplished with an external host like <a href="http://www.disqus.com">Disqus</a> or <a href="http://www.intensedebate.com">IntenseDebate</a>, although notably, neither of these services support <a href="http://en.wikipedia.org/wiki/Pingback">pingbacks</a>.. yet.</li>
+          <li>Comments and Trackbacks with effective spam filtering using <a href="http://www.disqus.com">Disqus</a>. (Sorry no pingback support.. yet)</li>
           <li>RSS and Atom feeds, one for all your posts, as well as one per category.</li>
           <li><a href="/sample_posts.html#Test%20syntax%20highlighting">Syntax highlighting</a> for source code listings</li>
         </ul>
