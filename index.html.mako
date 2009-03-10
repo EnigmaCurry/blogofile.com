@@ -30,11 +30,11 @@
           <li>Tags</li>
           <li>Comments and Trackbacks. This is accomplished with an external host like <a href="http://www.disqus.com">Disqus</a> or <a href="http://www.intensedebate.com">IntenseDebate</a>, although notably, neither of these services support <a href="http://en.wikipedia.org/wiki/Pingback">pingbacks</a>.. yet.</li>
           <li>RSS and Atom feeds, one for all your posts, as well as one per category.</li>
+          <li><a href="/sample_posts.html#Test%20syntax%20highlighting">Syntax highlighting</a> for source code listings</li>
         </ul>
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
       <li>You can blog on an airplane or the beach, as well as see your entire blog <em>while offline</em></li>
       <li><a href="/using_blogofile_with_git.html">Automatic deployment with git</a></li>
-      <li><a href="/sample_posts.html#Test%20syntax%20highlighting">Syntax highlighting for source code listings</a></li>
     </ul>
     <h3>Get Blogofile</h3>
     
