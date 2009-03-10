@@ -33,6 +33,7 @@
         </ul>
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
       <li>Blogofile works <b><i>offline</i></b>, especially when managed with <a href="http://git-scm.org">git</a>, your entire blog can go with you anywhere.</li>
+      <li>Blogofile is <b><i>file based</i></b>, so you can edit it with your favorite text editor, not some crappy web interface.</li>
       <li><a href="/using_blogofile_with_git.html">Automatic deployment with git.</a></li>
     </ul>
     <h3>Get Blogofile</h3>
