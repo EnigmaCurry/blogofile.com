@@ -38,7 +38,7 @@
     </ul>
     <h3>Get Blogofile</h3>
     <p>
-      Blogofile is still under development, but should be usable even before the 1.0 release.
+      Blogofile is still under development, and should be considered beta software at the moment, but should be usable even before the 1.0 release.
     </p>
     <p>
       Make sure you have <a href="http://www.python.org">Python</a> and Setuptools installed. On Ubuntu you just need to run:
