@@ -37,9 +37,12 @@
       <li><a href="/using_blogofile_with_git.html">Automatic deployment with git.</a> Publish to your blog with a simple "git push".</li>
     </ul>
     <h3>Get Blogofile</h3>
-    
-    Make sure you have <a href="http://www.python.org">Python</a> and Setuptools installed. On Ubuntu you just need to run:
-    
+    <p>
+      Blogofile is still under development, but should be usable even before the 1.0 release.
+    </p>
+    <p>
+      Make sure you have <a href="http://www.python.org">Python</a> and Setuptools installed. On Ubuntu you just need to run:
+    </p>
     <pre>sudo apt-get install python-setuptools</pre> 
 
     And install Blogofile with:
