@@ -28,7 +28,7 @@
         <ul>
           <li>Categories</li>
           <li>Tags</li>
-          <li>Comments and Trackbacks (with an external host like <a href="http://www.disqus.com">Disqus</a> or <a href="http://www.intensedebate.com">IntenseDebate</a>)</li>
+          <li>Comments and Trackbacks (with an external host like <a href="http://www.disqus.com">Disqus</a> or <a href="http://www.intensedebate.com">IntenseDebate</a>, although notably, neither of those services support pingbacks.. yet.)</li>
           <li>RSS and Atom feeds, one for all your posts, as well one per category.</li>
         </ul>
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
