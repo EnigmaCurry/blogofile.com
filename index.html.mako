@@ -45,7 +45,7 @@
     </p>
     <pre>sudo apt-get install python-setuptools</pre> 
 
-    And download and install Blogofile with:
+    Download and install Blogofile with:
     
     <pre>sudo easy_install Blogofile</pre>
     
