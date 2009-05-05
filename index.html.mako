@@ -45,11 +45,11 @@
     </p>
     <pre>sudo apt-get install python-setuptools</pre> 
 
-    And install Blogofile with:
+    And download and install Blogofile with:
     
     <pre>sudo easy_install Blogofile</pre>
     
-    Here's the latest "stable" tarballed release:
+    Alternatively, here's the latest "stable" tarballed release:
     <ul>
       <li><a href="http://github.com/EnigmaCurry/blogofile/tarball/0.3">Blogofile 0.3.tar.gz</a></li>
     </ul>
