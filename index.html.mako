@@ -58,6 +58,7 @@
     
     <h3>Using Blogofile</h3>
     See <a href="/using_blogofile.html">instructions here</a>.
+
   </span>
 </div>
 
