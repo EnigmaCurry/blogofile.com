@@ -1,7 +1,7 @@
 <%inherit file="_templates/site.mako" />
 <div class="blog_post">
   <span class="post_prose">
-    <h1>Blogofile License</h1>   
+    <h1>Blogofile (Non)License</h1>   
 <pre>********************************************************************************
 *** Blogofile is written by Ryan McGuire (EnigmaCurry.com)
 ********************************************************************************
