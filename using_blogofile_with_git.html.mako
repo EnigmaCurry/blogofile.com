@@ -11,7 +11,7 @@
     </ul>   
     Automatic wha?
     <br/><br/>
-    Yes, you can have git run "blogofile -b" automatically when you 'git push' your site. This only works if the site hosting your website is also the same site that you 'git push' to. Here's how to make it work:
+    Yes, you can have git run "blogofile -b" automatically when you 'git push' your site. This only works if the site hosting your website is also the same site that you 'git push' to<sup><b>*</b></sup>. Here's how to make it work:
     <br/>
     <ul>
       <li>Check out your project on the same server where your git repository is located
@@ -31,5 +31,6 @@ blogofile -b</pre>
     
     Now whenever you "git push" to your webhost, your website gets automatically rebuilt.
     
+    <small><b>* - if you deploy to a different server than your git repo, you could just craft your own scp/FTP command and put it at the bottom of the post-receive hook to deploy somewhere else. But that's beyond the scope of this page</b></small>
   </span>
 </div>
