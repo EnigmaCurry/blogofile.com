@@ -31,6 +31,6 @@ blogofile -b</pre>
     
     Now whenever you "git push" to your webhost, your website gets automatically rebuilt.<br/><br/>
     
-    <small><b>* - if you deploy to a different server than your git repo, you could just craft your own scp/FTP command and put it at the bottom of the post-receive hook to deploy somewhere else. But that's beyond the scope of this page</b></small>
+    <small><b>* - if you deploy to a different server than your git repo, you could just craft your own scp/FTP command and put it at the bottom of the post-receive hook to deploy somewhere else. But that's beyond the scope of this article</b></small>
   </span>
 </div>
