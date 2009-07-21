@@ -1,0 +1,14 @@
+---
+categories: Releases
+date: 2009/07/20 22:53:00
+format: markdown
+permalink: http://www.blogofile.com/2009/07/20/blogofile-0.4-released
+title: Blogofile 0.4 released
+---
+I've just released Blogofile 0.4. 
+
+Nothing terribly major, but it does represent a maturing product:
+
+ * Less buggy syntax highlighting now with a home-grown &lt;pre&gt; tag parser
+ * [EnigmaCurry.com](http://www.enigmacurry.com), my personal blog, is now powered by Blogofile. This shows that real blogs can and do run Blogofile.
+ 
