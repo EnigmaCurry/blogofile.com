@@ -32,7 +32,7 @@
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
       <li>Blogofile works <b><i>offline</i></b>, especially when managed with <a href="http://git-scm.org">git</a>, your entire blog can go with you anywhere. This also makes <b><i>backups</i></b> dirt simple.</li> 
       <li>Blogofile is <b><i>file based</i></b>, so you can edit it with your favorite text editor, not some crappy web interface.</li>
-      <li><a href="/using_blogofile_with_git.html">Automatic deployment with git.</a> Publish to your blog with a simple "git push".</li>
+      <li><a href="/documentation/usage_with_git.html">Automatic deployment with git.</a> Publish to your blog with a simple "git push".</li>
     </ul>
     <h3>Get Blogofile</h3>
     <p>
@@ -54,9 +54,6 @@
     You can also get the latest development source from github:
     <pre>git clone git://github.com/EnigmaCurry/blogofile.git</pre>
     
-    <h3>Using Blogofile</h3>
-    See <a href="/using_blogofile.html">instructions here</a>.
-
   </span>
 </div>
 

@@ -121,6 +121,6 @@ This is the text of the post.</pre>
     </ul>
 
     <h3>Autodeployment with Git</h3>
-    Git can do <a href="/using_blogofile_with_git.html">automatic deployment</a> to your webserver.
+    Git can do <a href="/documentation/usage_with_git.html">automatic deployment</a> to your webserver.
   </span>
 </div>

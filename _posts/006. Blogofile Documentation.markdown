@@ -1,0 +1,10 @@
+---
+categories: Blogofile.com
+date: 2009/07/23 15:22:00
+format: markdown
+permalink: http://www.blogofile.com/2009/07/23/blogofile-documentation
+title: Blogofile Documentation
+---
+I've started to compile all the Blogofile documentation I've written [into one place](/documentation).
+
+I've also started a <a href="http://groups.google.com/group/blogofile-discuss">mailing list</a> for all thing Blogofile related. Please feel free to give feedback, ask questions, or suggest new features there.
