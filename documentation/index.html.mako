@@ -6,7 +6,7 @@
     <ul>
       <li><a href="/documentation/basic_usage.html">Basic Blogofile Usage</a></li>
       <li><a href="/documentation/usage_with_git.html">Using Blogofile with Git</a></li>
-      <li><a href="/documentation/templates.html">Advanced Templating</a></li>
+      <li><a href="/documentation/templates.html">Custom Templates</a></li>
     </ul>
   </span>
 </div>
