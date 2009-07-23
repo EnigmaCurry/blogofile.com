@@ -15,6 +15,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="http://github.com/EnigmaCurry/blogofile">Github Page</a></li>
       <li><a href="/page/1">Blog</a></li>
+      <li><a href="http://groups.google.com/group/blogofile-discuss">Mailing List</a></li>
     </ul>
   </div>
   
