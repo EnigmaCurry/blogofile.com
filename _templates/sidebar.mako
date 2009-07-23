@@ -4,7 +4,7 @@
   Blogofile is written by<br/>
   <a href="http://www.enigmacurry.com" rel="external" target="_blank">Ryan McGuire</a>
   <br/><br/> 
-  Please send questions to the <a href="http://groups.google.com/group/blogofile-discuss">mailing list</a>
+  Please send technical questions to the <a href="http://groups.google.com/group/blogofile-discuss">mailing list</a>
   <br/><br/>
   </div>
   <div id="blog_post_list">
