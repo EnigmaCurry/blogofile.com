@@ -6,6 +6,7 @@
   <br/><br/> 
   Please send technical questions to the <a href="http://groups.google.com/group/blogofile-discuss">mailing list</a>
   <br/><br/>
+  Or if you need to contact me privately, you can <a href="http://mailhide.recaptcha.net/d?k=01VHGYFI7WE9jB_dHebD-0JQ==&c=3qCKNvkRgZtCa5B5PJcptJVgaDI5-xiMjUjHgQi3vIw=">send email</a>
   </div>
   <div id="blog_post_list">
   <h3>Latest blog posts</h3>
