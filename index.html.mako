@@ -53,7 +53,7 @@
     </ul>
     You can also get the latest development source from github:
     <pre>git clone git://github.com/EnigmaCurry/blogofile.git</pre>
-    
+    <br/>
   </span>
 </div>
 

@@ -23,14 +23,14 @@
       </ul>
     <h2>Example 1: Post Lists</h2>
     <p>A typical thing you might want on a blog is a simple list of posts, if you only wanted this on one page, you could simply write a function inline on a regular page template:</p>
-    <pre lang="HTML">
+    <pre lang="html+mako">
       ${"""<h4>Welcome to my homepage</h4>
       Here's my latest 5 blog posts:
       <ul>
         % for p in posts[0:5]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
-      </ul>""" | h}
+      </ul>"""}
     </pre>
     <p>This gets rendered as something like the following:</p>
     <div style="background-color:#ffffff; border:1px solid;">
@@ -43,7 +43,7 @@
       </ul>
     </div>
     <p>To refine that to show posts on a per category basis you might try the following:</p>
-    <pre lang="HTML">
+    <pre lang="html+mako">
       ${"""<h4>Welcome to my homepage</h4>
       Here's the last 5 posts in each category:
       % for category in all_categories:
@@ -54,7 +54,7 @@
          % endfor
        </ul>
       % endfor
-      """ | h}
+      """}
     </pre>
     <p>This gets rendered as something like the following:</p>
     <div style="background-color:#ffffff; border:1px solid;">
@@ -70,7 +70,7 @@
       % endfor
     </div>
     <p>If this is a feature you want to be able to reuse, you can put this in it's own reusable template, eg: <mono>/_template/category_list.mako</mono></p>
-    <pre>
+    <pre lang="html+mako">
       ${"""
       <%page args="posts, category"/>
       <h2>Posts in category : ${category}</h2>
@@ -79,14 +79,14 @@
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>
-      """ | h}
+      """}
     </pre>
     <p>The above template declares two input arguments: posts and category. You can include this template in other templates, making sure to include those arguments:</p>
-    <pre>
+    <pre lang="html+mako">
       ${"""
       % for category in all_categories:
       <%include file="_templates/category_list.mako" args="category=category[0]" />
-      % endfor""" | h }
+      % endfor"""}
     </pre>
     <p>Note that the posts object, even though not explicitly passed in the include arguments, is passed automatically because all templates receive the posts object by default. If you wanted to limit the posts to the first 5 posts, you could put "posts=posts[0:5]" in the include args and it would supercede the regular posts object.</p>
     <h2>More Examples</h2>
