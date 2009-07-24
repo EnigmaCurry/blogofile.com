@@ -35,9 +35,9 @@
 |-- index.html.mako
 |-- js
 `-- site_img
-|-- bg.gif
-|-- blockquote.png
-`-- dot.gif</pre>
+    |-- bg.gif
+    |-- blockquote.png
+    `-- dot.gif</pre>
     </p>
     Blogofile uses a few simple rules in determining what ends up on the website:
     <ul>
