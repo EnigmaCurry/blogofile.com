@@ -2,7 +2,7 @@
 <div class="blog_post">
   <span class="post_prose">
     <h1>Templating in Blogofile</h1>
-    <p>Templates are at the very heart of Blogofile; they control every aspect of how the blog looks. Blogofile uses the <a href="http://www.makotemplates.org/">Mako templating engine</a> which has a very active community and <a href="http://www.makotemplates.org/docs/">great documentation</a>. Blogofile doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it. This page will not attempt rewrite the Mako documentation, but will instead try to document some typical use cases for templates in Blogofile.</p>
+    <p>Templates are at the very heart of Blogofile; they control every aspect of how the blog looks. Blogofile uses the <a href="http://www.makotemplates.org/">Mako templating engine</a> which has a very active community and <a href="http://www.makotemplates.org/docs/">great documentation</a>. Blogofile doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it. This page will not attempt to rewrite the Mako documentation, but will instead try to document some typical use cases for templates in Blogofile.</p>
     <h2>A word on Blogofile templates</h2>
     <p>Blogofile makes a distinction between two different types of templates:</p>
     <ul>
