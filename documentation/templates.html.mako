@@ -88,7 +88,7 @@
       <%include file="_templates/category_list.mako" args="category=category[0]" />
       % endfor"""}
     </pre>
-    <p>Note that the posts object, even though not explicitly passed in the include arguments, is passed automatically because all templates receive the posts object by default. If you wanted to limit the posts to the first 5 posts, you could put "posts=posts[0:5]" in the include args and it would supercede the regular posts object.</p>
+    <p>Note that the posts object, even though not explicitly passed in the include arguments, is passed automatically because all templates receive the posts object by default. If you wanted to limit the posts to the first 5 posts, you could put "posts=posts[0:5]" in the include args and it would supercede the regular posts object (which includes all posts).</p>
     <h2>More Examples</h2>
     I can provide more examples here if you request them on <a href="http://groups.google.com/group/blogofile-discuss">the mailing list</a>
   </span>
