@@ -3,7 +3,7 @@
   <span class="post_prose">
     <h1>Using Blogofile</h1>
     <h3>Getting a sample site</h3>
-    <p>The easiest way to start using Blogofile is to checkout an existing blogofile based blog. This website, in fact, is entirely generated via Blogofile, so let's checkout the source for this website using git:</p>
+    <p>The easiest way to start using Blogofile is to checkout an existing blogofile based blog, compile it to see how it works, create your own posts, and then eventually start customizing it for yourself. This website, in fact, is entirely generated via Blogofile, so let's checkout the source for this website using git:</p>
 
     <pre>git clone git://github.com/EnigmaCurry/blogofile.com.git</pre>
     <small>(alternatively, here's <a href="http://github.com/EnigmaCurry/blogofile.com/zipball/master">the latest zipped version</a>)</small>
