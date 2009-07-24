@@ -69,7 +69,7 @@
       </ul>
       % endfor
     </div>
-    <p>If this is a feature you want to be able to reuse, you can put this in it's own reusable template, eg: <mono>/_template/category_list.mako</mono></p>
+    <p>If this is a feature you want to be able to reuse, you can put this in it's own reusable template, eg: <mono>/_templates/category_list.mako</mono></p>
     <pre lang="html+mako">
       ${"""
       <%page args="posts, category"/>
