@@ -3,11 +3,12 @@
   <span class="post_prose">
     <h1>Using Blogofile</h1>
     <h3>Getting a sample site</h3>
-    The easiest way to start using Blogofile is to checkout an existing blogofile based blog. This website, in fact, is entirely generated via Blogofile, so let's checkout the source for this website using git:
+    <p>The easiest way to start using Blogofile is to checkout an existing blogofile based blog. This website, in fact, is entirely generated via Blogofile, so let's checkout the source for this website using git:</p>
 
     <pre>git clone git://github.com/EnigmaCurry/blogofile.com.git</pre>
+    <small>(alternatively, here's <a href="http://github.com/EnigmaCurry/blogofile.com/zipball/master">the latest zipped version</a>)</small>
 
-    The blogofile.com directory is our "source" directory. This directory contains all of the files that will make up our website, as well as some special files that will help blogofile along the way. A point of clarification is in order though, the source directory is <b><em>not</em></b> the website, we generate the website <b><em>from</em></b> the source directory to create a new directory called "_site".
+    <p>The blogofile.com directory is our "source" directory. This directory contains all of the files that will make up our website, as well as some special files that will help blogofile along the way. A point of clarification is in order though, the source directory is <b><em>not</em></b> the website, we will generate the website <b><em>from</em></b> the source directory to create a new directory called "_site" which will then contain the raw HTML source for the website.</p>
 
     <h3>Directory structure</h3>
     <p>
@@ -47,13 +48,13 @@
     </ul>
 
     <h3>Building the site</h3>
-    When in the blogofile.com directory build the site:
+    Go to the root of the blogofile.com directory and build the site:
     <pre>blogofile -b</pre>
     
-    You'll see in "_site" the completely built website. If you copied the "_site"  directory to a webserver, you'd be hosting an exact copy of the site you're reading now.
+    If everything went well, you won't see any output on the screen, but you'll see that the "_site" directory contains the completely built website. If you now copy the "_site"  directory to a webserver, you'll be hosting an exact copy of the site you're reading now.
 
     <h3>_posts</h3>
-    By convention, the _posts directory is where all your posts go, one post per file. Posts can currently be written in plain HTML or <a href="http://textile.thresholdstate.com/">Textile</a>. Each post also has some metadata that blogofile uses when it renders your posts. This Metadata is placed at the top of the file in YAML syntax, for example:
+    By convention, the _posts directory is where all your posts go, one post per file. Posts can currently be written in plain HTML, <a href="http://daringfireball.net/projects/markdown/">Markdown</a> or <a href="http://textile.thresholdstate.com/">Textile</a>. Each post also has some metadata that blogofile uses when it renders your posts. This Metadata is placed at the top of the file in YAML syntax, for example:
 <pre>---
 title: This is the title of the post
 categories: Cool Stuff, Random Stuff
@@ -77,7 +78,7 @@ This is the text of the post.</pre>
       <li><b>updated</b></li>
       <ul><li>The date the post was last updated</li></ul>
       <li><b>format</b></li>
-      <ul><li>the format of the post, 'html' or 'textile'. Yes, textile can include html, but if you're not using textile, specifying html make rendering faster.</li></ul>
+      <ul><li>the format of the post, 'html', 'markdown', or 'textile'. </li></ul>
       <li><b>permalink</b></li>
       <ul><li>The full permalink to the post</li></ul>
       <li><b>guid</b></li>
@@ -92,7 +93,7 @@ This is the text of the post.</pre>
         <li>This is the name of your blog, by default it appears in the title as well as the top of your website</li>
       </ul>
       <li><b>blog_url</b></li>
-      <ul><li>The full URL of your website</li></ul>
+      <ul><li>The full URL of your website homepage</li></ul>
       <li><b>blog_description</b></li>
       <ul><li>A short one line description of your site, this goes into RSS feeds</li></ul>
       <li><b>timezone</b></li>
@@ -104,7 +105,7 @@ This is the text of the post.</pre>
     </ul>
 
     <h3>_templates</h3>
-    The "_templates" directory contains many of the templates used for the site, although unlike templates outside of this directroy, none of these templates correspond to a specific page. These are "helper" templates to render many pages. Here's a description of each:
+    The "_templates" directory contains many of the templates used for the site, although unlike templates outside of this directroy, none of these templates correspond to a specific page. These are reusable templates to render many pages. Here's a description of each:
 
     <ul>
       <li>base.mako - the base template that establishes the general look of the entire site.</li>
@@ -119,7 +120,7 @@ This is the text of the post.</pre>
       <li>atom.mako - Atom feed</li>
       <li>rss.mako - RSS feed</li>
     </ul>
-
+    <p>You can read more about <a href="/documentation/templates.html">creating your own templates here</a>.</p>
     <h3>Autodeployment with Git</h3>
     Git can do <a href="/documentation/usage_with_git.html">automatic deployment</a> to your webserver.
   </span>
