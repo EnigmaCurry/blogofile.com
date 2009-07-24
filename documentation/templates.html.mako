@@ -49,7 +49,7 @@
       % for category in all_categories:
        Posts in category : ${category[0]}
        <ul>
-         % for p in [p for p in posts if category[0] in p.categories]:
+         % for p in [p for p in posts if category[0] in p.categories][0:5]:
          <li><a href="${p.permalink}">${p.title}</a></li>
          % endfor
        </ul>
@@ -63,7 +63,7 @@
       % for category in all_categories:
       Posts in category : ${category[0]}
       <ul>
-        % for p in [p for p in posts if category[0] in p.categories]:
+        % for p in [p for p in posts if category[0] in p.categories][0:5]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>
