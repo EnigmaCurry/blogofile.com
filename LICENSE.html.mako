@@ -2,7 +2,7 @@
 <div class="blog_post">
   <span class="post_prose">
     <h1>Blogofile License</h1>   
-<pre>
+${"""<pre>
 ################################################################################
 ### Blogofile is written by Ryan McGuire (EnigmaCurry.com)
 ################################################################################
@@ -65,6 +65,6 @@ mentioned in your product's documentation or website. But again, I am not your
 master -- It is wrong for me to force you to do anything. I can only ask.
 
 -- Ryan McGuire, aka "EnigmaCurry"
-</pre>
+</pre>"""}
 </span>
 </div>
