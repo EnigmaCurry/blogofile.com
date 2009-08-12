@@ -7,9 +7,9 @@
      xmlns:wfw="http://wellformedweb.org/CommentAPI/"
      >
   <channel>
-    <title>${config.get("blogofile","blog_name")}</title>
-    <link>${config.get("blogofile","blog_url")}</link>
-    <description>${config.get("blogofile","blog_description")}</description>
+    <title>${config.blog_name}</title>
+    <link>${config.blog_url}</link>
+    <description>${config.blog_description}</description>
     <pubDate>${datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S GMT")}</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>

@@ -1,4 +1,4 @@
-<title>${config.get("blogofile","blog_name")}</title>
+<title>${config.blog_name}</title>
 <link rel='stylesheet' href='/css/site.css' type='text/css' />
 <link rel='stylesheet' href='/css/pygments.css' type='text/css' />
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed" />

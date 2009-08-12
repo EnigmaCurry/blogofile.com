@@ -7,7 +7,7 @@
 from blogofile import post 
 from blogofile import util 
 %>
-% for p in post.parse_posts("_sample_posts", config):
+% for p in post.parse_posts("_sample_posts"):
   <% p.draft = True %>
   <%include file="post.mako" args="post=p" />
     <h3>Source:</h3>
