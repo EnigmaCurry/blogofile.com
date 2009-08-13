@@ -36,6 +36,15 @@ syntax_highlight_enabled = True
 # or, make your own: http://pygments.org/docs/styles
 syntax_highlight_style   = "murphy"
 
+#Post excerpts
+#If you want to generate excerpts of your posts in addition to the
+#full post content turn this feature on
+post_excerpt_enabled     = True
+post_excerpt_word_length = 25
+#Also, if you don't like the way the post excerpt is generated
+#You can define a new function
+#below called post_excerpt(content, num_words)
+
 ######################################################################
 # Advanced Settings
 ######################################################################
@@ -61,3 +70,4 @@ def pre_build():
 def post_build():
     #Do whatever you want after the _site is built
     pass
+
