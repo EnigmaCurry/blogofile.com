@@ -1,8 +1,8 @@
 <% import urlparse %>
-<div id="header" onclick="location.href='${config.blog_url}';" style="cursor: pointer;">
+<div id="header" onclick="location.href='/';" style="cursor: pointer;">
   <div id="plugbanner"></div>
   <div id="blog_logo"></div>
-  <h1><a href="${config.blog_url}">
+  <h1><a href="/">
       <span id="blog_name">
         ${config.blog_name}
       </span>
@@ -16,7 +16,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="/documentation">Documentation</a></li>
       <li><a href="http://groups.google.com/group/blogofile-discuss">Community</a></li>
-      <li><a href="/page/1">Blog</a></li>
+      <li><a href="${config.blog_path}">Blog</a></li>
     </ul>
   </div>
   

@@ -12,7 +12,7 @@
   <h3>Latest blog posts</h3>
   <ul>
 % for post in posts[:5]:
-    <li><a href="${post.permalink}">${post.title}</a></li>
+    <li><a href="${post.path}">${post.title}</a></li>
 % endfor
   </ul>
   </div>
@@ -20,7 +20,7 @@
     <h3>Categories</h3>    
     <ul>
 % for category, num_posts in all_categories:
-     <li><a href="/category/${category_link_names[category]}">${category}</a> (<a href="/category/${category_link_names[category]}/feed">rss</a>) (${num_posts})</li>
+     <li><a href="${config.blog_path}/category/${category_link_names[category]}">${category}</a> (<a href="${config.blog_path}/category/${category_link_names[category]}/feed">rss</a>) (${num_posts})</li>
 % endfor
     </ul>
   </div> 
