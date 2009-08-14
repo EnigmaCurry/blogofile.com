@@ -15,7 +15,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/documentation">Documentation</a></li>
-      <li><a href="http://groups.google.com/group/blogofile-discuss">Community</a></li>
+      <li><a href="/community">Community</a></li>
       <li><a href="${config.blog_path}">Blog</a></li>
     </ul>
   </div>
