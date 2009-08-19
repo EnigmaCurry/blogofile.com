@@ -19,7 +19,6 @@
       <li><a href="${config.blog_path}">Blog</a></li>
     </ul>
   </div>
-  
   <div id="search">    
     <form id="searchform" method="get" action="http://www.google.com/search">
       <input type="hidden" name="ie" value="UTF-8">

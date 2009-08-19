@@ -7,15 +7,16 @@ a {
     text-decoration: none;
 }
 /********** Body **********/
+html {overflow-y: scroll;}
 body {
     background-color:#666666;
     color:#333333;
     font-family: "Bitstream Vera Sans", "helvetica", "arial", sans-serif;
     margin:0;
-    padding:5px 0;
+    padding: 0px;
 }
 div#content {
-    width: 795px;
+    width: 1000px;
     margin: 0 auto;
     padding: 0px;
     background: #ffffff;
@@ -65,14 +66,13 @@ div#header a{
 #top_bar li {
     display:inline;
     list-style-type:none;
-}
-#top_bar a {
     background:#FFFFFF none repeat scroll 0 0;
     color:#1E4C62;
     font-weight:bold;
     margin:0 3px 0 0;
     padding:6px 10px;
     text-decoration: none;
+    cursor: pointer;
 }
 #top_bar {
     background:#303030 none repeat scroll 0 0;
@@ -100,7 +100,7 @@ div#prose_block {
     float: left;
     margin:0;
     padding:0 0 20px 20px;
-    width:580px;
+    width:780px;
 }
 div#prose_block h2 {
     font-size:18px;

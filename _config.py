@@ -9,11 +9,18 @@
 #
 #  You really only _need_ to change the Basic Settings.
 ######################################################################
-
+import os
+import subprocess
+import shutil
+import shlex
+import tempfile
+import subprocess
 ######################################################################
 # Basic Settings
 #  (almost all sites will want to configure these settings)
 ######################################################################
+#Blog enabled. (You don't _have_ to use blogofile to build blogs)
+blog_enabled = True
 #Your Blog's name. This is used repeatedly in default blog templates
 blog_name        = "Blogofile"
 #Your Blog's full URL
@@ -22,6 +29,8 @@ blog_url         = "http://www.blogofile.com/blog"
 blog_description = "A static blog engine/compiler"
 #The timezone that you normally write your blog posts from
 blog_timezone    = "US/Eastern"
+#Blog posts per page
+blog_posts_per_page = 5
 
 ######################################################################
 # Intermediate Settings
@@ -83,5 +92,49 @@ def pre_build():
     pass
 def post_build():
     #Do whatever you want after the _site is built
-    pass
+    build_docs()
+    
+def build_docs():
+    """Build the Blogofile sphinx based documentation"""
+    #Abort if sphinx isn't installed
+    try:
+        import sphinx
+    except ImportError:
+        return
+    print "Building the docs..."
+    #Configure the theme
+    #Insert the rendered head, headers, and footers into the theme
+    from blogofile import config
+    from mako.template import Template
+    head_t = Template(open(os.path.join("_templates","head.mako")).read())
+    head = head_t.render(**{'config':config})
+    header_t = Template(open(os.path.join("_templates","header.mako")).read())
+    header = header_t.render(**{'config':config})
+    footer_t = Template(open(os.path.join("_templates","footer.mako")).read())
+    footer = footer_t.render(**{'config':config})
 
+    #Create the new layout.html from preparse_layout.html
+    #Insert the rendered templates appropriately
+    layout = open(os.path.join("_documentation","themes","blogofile",
+                               "preparse_layout.html")).read()
+    layout = layout.replace("blogofile_head_goes_here",head)
+    layout = layout.replace("blogofile_header_goes_here",header)
+    layout = layout.replace("blogofile_footer_goes_here",footer)
+    layout_f = open(os.path.join("_documentation","themes","blogofile",
+                               "layout.html"),"w")
+    layout_f.write(layout)
+    layout_f.close()
+    
+    sphinx.main(shlex.split("sphinx-build -b html _documentation "+
+                            os.path.join("_site","documentation")))
+    #Do PDF generation if TeX is installed
+    if os.path.isfile("/usr/bin/tex"):
+        latex_dir = tempfile.mkdtemp()
+        sphinx.main(shlex.split("sphinx-build -b latex _documentation "+
+                                latex_dir))
+        subprocess.Popen(shlex.split(
+                "make -C %s all-pdf" % latex_dir),
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE).communicate()
+        shutil.copyfile(os.path.join(latex_dir,"Blogofile.pdf"),
+                        os.path.join("_site","documentation","Blogofile.pdf"))
