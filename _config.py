@@ -104,7 +104,7 @@ def build_docs():
     print "Building the docs..."
     #Configure the theme
     #Insert the rendered head, headers, and footers into the theme
-    config = sys.modules['config']
+    config = sys.modules[globals()['__name__']]
     from mako.template import Template
     head_t = Template(open(os.path.join("_templates","head.mako")).read())
     head = head_t.render(**{'config':config})
