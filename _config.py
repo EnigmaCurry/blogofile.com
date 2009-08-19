@@ -9,7 +9,7 @@
 #
 #  You really only _need_ to change the Basic Settings.
 ######################################################################
-import os
+import sys, os
 import subprocess
 import shutil
 import shlex
@@ -104,7 +104,7 @@ def build_docs():
     print "Building the docs..."
     #Configure the theme
     #Insert the rendered head, headers, and footers into the theme
-    from blogofile import config
+    config = sys.modules['config']
     from mako.template import Template
     head_t = Template(open(os.path.join("_templates","head.mako")).read())
     head = head_t.render(**{'config':config})

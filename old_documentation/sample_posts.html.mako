@@ -4,8 +4,8 @@
     <h1>Sample Posts</h1>
     This page shows many of the features that blogofile supports on the post level. For each example, the HTML rendering is shown first and secondly the source used to render it.
 <% 
-from blogofile import post 
-from blogofile import util 
+import post 
+import util 
 %>
 % for p in post.parse_posts("_sample_posts"):
   <% p.draft = True %>
