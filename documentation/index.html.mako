@@ -6,6 +6,8 @@
     <p>Running</p>
       <pre>easy_install sphinx</pre>
     <p>should fix that.</p>
+    <p>If you want the PDF to get built, you also need TeX installed, on Ubuntu you would run:</p>
+      <pre>sudo apt-get install texlive-full</pre>
     <p>Alternatively, you can just <a href="http://www.blogofile.com/documentation">read the docs online</a></p>
     
   </span>
