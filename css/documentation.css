@@ -1,3 +1,7 @@
 div.documentwrapper li {
     margin-top: 10px;
 }
+
+div.ButtonBar a:hover {
+    text-decoration: none;
+}
