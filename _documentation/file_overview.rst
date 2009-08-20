@@ -2,9 +2,9 @@ The Makeup of a Blogofile Site
 ******************************
 An Example
 ==========
-Blogofile is a website **compiler**. Just like when writing a regular computer program, you start writing a blogofile based website with source code.
+Blogofile is a website `compiler <http://en.wikipedia.org/wiki/Compiler>`_, but instead of translating something like C++ source code into an executable program, Blogofile takes `Mako <http://www.makotemplates.org>`_ templates and other Blogofile features and compiles HTML for viewing in a web browser. This chapter describes the general makeup of a Blogofile directory containing such source code.
 
-The best way to understand how Blogofile works is to look at an example. You can checkout the source code for the main Blogofile.com website with git::
+The best way to understand how Blogofile works is to look at an example. You can checkout the source code for the main Blogofile.com website with `git <http://www.git-scm.org>`_::
 
   git clone git://github.com/EnigmaCurry/blogofile.com.git
 
@@ -41,9 +41,13 @@ Build Process
 Blogofile looks for certain special files at runtime and follows a few simple rules when compiling your site:
 
 * A _config.py file is loaded with custom settings (which can modify the following steps)
+
 * Files are recursivley processed and copied over to the _site directory which is the compiled HTML version of the site.
+
 * If the filename ends in ".mako", it is considered a page template, and is processed via Mako first then copied to the _site directory, stripped of the .mako extension.
+
 * If the filename or directory starts with a "_" it is ignored and not copied to the _site directory. (other ignore patterns may be setup in _config.py)
+
 * If the blog feature is enabled (it is by default) the _posts directory is processed and blog features are copied to the _site directory.
 
 .. _config-file:
@@ -53,24 +57,45 @@ Configuration File
 
 Blogofile looks for a file called _config.py in the root of your source directory before it does anything else. This is your site's main configuration file. All sites have to have a _config.py file, but for the most bare bones site, the file doesn't actually have to have anything in it.
 
-The _config.py file is just regular Python source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to start out with.
+The _config.py file is just regular `Python <http://en.wikipedia.org/wiki/Python_(programming_language)>`_ source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to start out with.
 
 At the top of the file you'll see the Basic Settings section. This section contains the settings you'll most likely want to change when creating your own site:
 
-* **blog_enabled** 
-   This setting enables the blog feature of Blogofile. You can, if you want, use Blogofile for things other than blogs. Most people will leave this setting set to **True**.
-* **blog_name** 
-   This setting is the name of your blog.
-* **blog_url** 
-   This is the full URL of your blog, starting with ``http://``
-* **blog_description** 
-   A longer description of your blog. Most RSS readers support a description.
-* **blog_timezone** 
-   This is the `timezone <http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones>`_ that you normally post to your blog from. 
-* **blog_posts_per_page**
-   The default number of blog posts you want per page.
+* **blog_enabled** - Boolean
+  
+  This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. If this is set to True, Blogofile requires several blog specific templates to exist in the **_templates** directory as described in :ref:`required-templates`
 
-That's all you need to configure for a basic site with a blog. The rest of the file changes the default behaviour of blogofile and should only need to be modified for :ref:`advanced-config`
+  Defaults to True
+
+* **blog_name** - String
+  
+  This is the name of your blog.
+
+  example: ``xkcd - The blag of the webcomic``
+
+* **blog_url** - String
+  
+  This is the full URL of the blog portion of your site. This may or may not be the homepage of your site.
+
+  example: ``http://www.xkcd.com/blag``
+
+* **blog_description** - String
+
+  This is a (short) description of your blog. Many RSS readers support/expect a description for feeds.
+
+  example: ``A Webcomic of Romance, Sarcasm, Math, and Language``
+
+* **blog_timezone** - String
+
+  This is the `timezone <http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones>`_ that you normally post to your blog from. 
+
+  Defaults to ``US/Eastern``
+
+* **blog_posts_per_page** - Integer
+
+  This is the number of blog posts you want to display per page.
+
+That's all you need to configure for a basic site with a blog. The rest of the file changes the default behaviour of blogofile and should only need to be modified for :ref:`advanced-config`.
 
 .. _posts:
 
@@ -102,7 +127,7 @@ YAML Header
 The `YAML <http://en.wikipedia.org/wiki/YAML>`_ portion is between the two ``---`` lines, and it describes all of the metadata for the post. The options include:
 
 * **categories**
-    A list of categories that this post should appear in, seperated by commas.
+    A list of categories that this post should appear in, seperated by commas. You don't have to configure the categories beforehand, you are defining them right here.
 * **date**
     The date of the post (year/month/day hour:minute:second)
 * **permalink**

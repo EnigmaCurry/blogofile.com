@@ -54,6 +54,27 @@ Basic Settings
 
   This is the number of blog posts you want to display per page.
 
+.. _config-blog-auto-permalink-enabled:
+  
+* **blog_auto_permalink_enabled** - Boolean
+
+  This turns on automatic permalink generation. If your post does not include a permalink field, then this allows for the automatic generation of the permalink.
+
+.. _config-blog-auto-permalink:
+
+* **blog_auto_permalink** - String
+
+  This is the format that automatic permalinks should take on, starting with the path after the blog domain name. eg: ``/blag/:year/:month/:day/:title`` creates a permalink like ``http://www.xkcd.com/blag/2009/08/18/post-one``.
+
+  Available replaceable items in the string:
+  
+   * :year - The post year
+   * :title - The post title
+   * :uuid - sha hash based on title
+   * :filename - the filename of the post (minux extension)
+
+  Defaults to ``/blog/:year/:month/:day/:title``
+
 Intermediate Settings
 ---------------------
 
