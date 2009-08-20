@@ -31,7 +31,7 @@ Why you should be using Blogofile
 * Blogofile is **secure**, there's nothing executable on the server.
 * Blogofile works **offline**, especially when managed with git, your entire blog can go with you anywhere. This also makes backups dirt simple.
 * Blogofile is **file based**, so you can edit it with your favorite text editor, not some crappy web interface.
-* Automatic deployment with git. Publish to your blog with a simple "git push".
+* Seamless :ref:`git-integration`. Publish to your blog with a simple "git push".
 
 .. _install-blogofile:
 
