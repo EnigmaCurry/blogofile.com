@@ -3,7 +3,9 @@
 Advanced Configuration
 ======================
 
-Here's a description of all the configuration values allowed inside of _config.py, the blogofile :ref:`config-file`.
+Here's a description of all the predefined configuration values inside of _config.py, the Blogofile :ref:`config-file`.
+
+The config file is just regular Python code, so you can define any additional values you want. All attributes are accessible inside your templates via ``${config.your_attribute}``. 
 
 Basic Settings
 --------------
