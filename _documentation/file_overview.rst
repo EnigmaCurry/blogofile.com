@@ -1,5 +1,5 @@
-Blogofile Site Overview
-***********************
+The Makeup of a Blogofile Site
+******************************
 An Example
 ==========
 Blogofile is a website **compiler**. Just like when writing a regular computer program, you start writing a blogofile based website with source code.
@@ -43,13 +43,15 @@ Blogofile looks for certain special files at runtime and follows a few simple ru
 * A _config.py file is loaded with custom settings (which can modify the following steps)
 * Files are recursivley processed and copied over to the _site directory which is the compiled HTML version of the site.
 * If the filename ends in ".mako", it is considered a page template, and is processed via Mako first then copied to the _site directory, stripped of the .mako extension.
-* If the filename or directory starts with a "_" it is ignored and not copid to the _site directory. (other ignore patterns may be setup in _config.py)
+* If the filename or directory starts with a "_" it is ignored and not copied to the _site directory. (other ignore patterns may be setup in _config.py)
 * If the blog feature is enabled (it is by default) the _posts directory is processed and blog features are copied to the _site directory.
+
+.. _config-file:
 
 Configuration File
 ==================
 
-Blogofile looks for a file called _config.py in the root of your source directory before it does anything else. This is your site's main configuration file.
+Blogofile looks for a file called _config.py in the root of your source directory before it does anything else. This is your site's main configuration file. All sites have to have a _config.py file, but for the most bare bones site, the file doesn't actually have to have anything in it.
 
 The _config.py file is just regular Python source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to start out with.
 
@@ -68,23 +70,20 @@ At the top of the file you'll see the Basic Settings section. This section conta
 * **blog_posts_per_page**
    The default number of blog posts you want per page.
 
-That's all you need to configure for a basic site with a blog. The rest of the file changes the default behaviour of blogofile and should only be touched for intermediate or advanced use cases.
+That's all you need to configure for a basic site with a blog. The rest of the file changes the default behaviour of blogofile and should only need to be modified for :ref:`advanced-config`
 
 .. _posts:
 
 Posts
 =====
 
-Blog posts go inside the **_posts** directory. Each post is a seperate file and you can name the files whatever you want, but it's suggested to prefix your posts with a number like 0001, 0002 etc so that when you look at the files in a directory they will be naturally ordered sequentially.
+Blog posts go inside the **_posts** directory. 
 
-Posts are written using a markup language, currently Blogofile supports several to choose from:
+Each post is a seperate file and you can name the files whatever you want, but it's suggested to prefix your posts with a number like ``0001``, ``0002`` etc. so that when you look at the files in a directory they will be naturally ordered sequentially.
 
-* `Markdown <http://en.wikipedia.org/wiki/Markdown>`_ (files end in .markdown)
-* `Textile <http://en.wikipedia.org/wiki/Textile_(markup_language)>`_ (files end in .textile)
-* `Org Mode <http://orgmode.org/>`_ (files end in .org)
-* or plain old HTML (files end in .html)
-
-In addtion, these files support a YAML syntax at the top of the file that describes meta data for the post, for example::
+An Example Post
+---------------
+Here's an example post::
 
  ---
  categories: Category One, Category Two
@@ -94,20 +93,35 @@ In addtion, these files support a YAML syntax at the top of the file that descri
  ---
  This is the first post 
 
-The YAML portion is between the two ``---`` lines, the options include:
+The post is divided into two parts, the YAML header and the post content.
+
+.. _post-yaml:
+
+YAML Header
+-----------
+The `YAML <http://en.wikipedia.org/wiki/YAML>`_ portion is between the two ``---`` lines, and it describes all of the metadata for the post. The options include:
 
 * **categories**
     A list of categories that this post should appear in, seperated by commas.
 * **date**
     The date of the post (year/month/day hour:minute:second)
 * **permalink**
-    The full permananent URL for this post. This is optional, one will be generated automatically if left blank.
+    The full permananent URL for this post. This is optional, one will be generated automatically if left blank. (see :ref:`config-blog-auto-permalink`)
 * **title**
     The title for the post
 
+.. _post-content:
+
+Post Content
+------------
+The post content is written using a markup language, currently Blogofile supports several to choose from:
+
+* `Markdown <http://en.wikipedia.org/wiki/Markdown>`_ (files end in .markdown)
+* `Textile <http://en.wikipedia.org/wiki/Textile_(markup_language)>`_ (files end in .textile)
+* `Org Mode <http://orgmode.org/>`_ (files end in .org)
+* or plain old HTML (files end in .html)
+
 The content of the post goes directly after the YAML portion and uses whatever markup language is indicated by the file extension of the post file.
-
-
 
 Templates
 =========
@@ -121,8 +135,10 @@ Page templates represent a single page (or URL) on your site. These are rendered
 Reusable templates are contained (by convention) in the _templates directory. These are features that you want to include on many pages, eg. headers, footers, sidebars etc. They do not represent any particular page (or URL) but are rather `inherrited <http://www.makotemplates.org/docs/inheritance.html>`_ or `included <http://www.makotemplates.org/docs/syntax.html#syntax_tags_include>`_ inside other templates.
 
 
-Required Templates
-------------------
+.. _required-templates:
+
+Blog Required Templates
+-----------------------
 The most bare bones site does not require any templates. However, to use the blog feature (blog_enabled in _config.py) you need the following reusable templates:
 
 * **site.mako**

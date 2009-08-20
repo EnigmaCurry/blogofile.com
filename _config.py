@@ -78,6 +78,7 @@ blog_pagination_dir = "page"
 ignore_patterns = [
     r".*[\/]_.*",   #All files that start with an underscore
     r".*[\/]#.*",   #Emacs temporary files
+    r".*[\/]\.#.*", #Emacs temporary files
     r".*~$]",       #Emacs temporary files
     r".*[\/]\.git", #Git VCS dir
     r".*[\/]\.hg",  #Mercurial VCS dir

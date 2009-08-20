@@ -11,7 +11,7 @@ Introduction
 Welcome to Blogofile
 ====================
 
-Blogofile is a simple blog engine that requires no database and no special hosting environment. You customize a set of templates with `Mako <http://www.maktotemplates.org>`_, create posts in a markup language of your choice (`Markdown <http://en.wikipedia.org/wiki/Markdown>`_, `Textile <http://en.wikipedia.org/wiki/Textile_(markup_language)>`_, `Org Mode <http://orgmode.org/>`_ and plain HTML are provided) and Blogofile generates your entire blog as plain HTML, CSS, images, and Atom/RSS feeds which you can then upload to any old web server you like. No CGI or scripting environment is needed on the server.
+Blogofile is a simple blog engine that requires no database and no special hosting environment. You customize a set of templates with `Mako <http://www.maktotemplates.org>`_, create posts in a markup language of your choice (see :ref:`supported-markup`) and Blogofile renders your entire blog as plain HTML and Atom/RSS feeds which you can then upload to any old web server you like. No CGI or scripting environment is needed on the server.
 
 Why you should be using Blogofile
 =================================

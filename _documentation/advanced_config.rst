@@ -1,0 +1,129 @@
+.. _advanced-config:
+
+Advanced Configuration
+======================
+
+Here's a description of all the configuration values allowed inside of _config.py, the blogofile :ref:`config-file`.
+
+Basic Settings
+--------------
+
+.. _config-blog-enabled:
+
+* **blog_enabled** - Boolean
+  
+  This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. Note that if set to True blogofile requires several blog specific templates to exist in the **_templates** directory as described in :ref:`required-templates`
+
+  Defaults to True
+
+.. _config-blog-name:
+
+* **blog_name** - String
+  
+  This is the name of your blog.
+
+  example: ``xkcd - The blag of the webcomic``
+
+.. _config-blog-url:
+
+* **blog_url** - String
+  
+  This is the full URL of the blog portion of your site. This may or may not be the homepage of your site.
+
+  example: ``http://www.xkcd.com/blag``
+
+.. _config-blog-description:
+
+* **blog_description** - String
+
+  This is a (short) description of your blog. Many RSS readers support/expect a description for feeds.
+
+  example: ``A Webcomic of Romance, Sarcasm, Math, and Language``
+
+.. _config-blog-timezone:
+
+* **blog_timezone** - String
+
+  This is the `timezone <http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones>`_ that you normally post to your blog from. 
+
+  Defaults to ``US/Eastern``
+
+.. _config-blog-posts-per-page:
+
+* **blog_posts_per_page** - Integer
+
+  This is the number of blog posts you want to display per page.
+
+Intermediate Settings
+---------------------
+
+.. _config-disqus-enabled:
+
+* **disqus_enabled** - Boolean
+
+  Turns on/off `Disqus <http://www.disqus.com>`_ comment system integration.
+
+  Defaults to False
+
+.. _config-disqus-name:
+
+* **disqus_name** - String
+
+  The Disqus website 'short name'
+
+.. _config-syntax-highlight-enabled:
+
+* **syntax_highlight_enabled** - Boolean
+
+  Turns on/off syntax highlighting of pre tags in blog posts.
+
+  Defaults to True
+
+.. _config-syntax-highlight-style:
+
+* **syntax_highlight_style** - String
+
+  The default style to use for highlighting. See `Pygments Styles <http://pygments.org/docs/styles/>`_.
+
+.. _config-custom-index:
+
+* **blog_custom_index** - Boolean
+
+  When you configure :ref:`config-blog-url`, Blogofile by default writes a chronological listing of the latest blog entries at that location. With this option you can turn that behaviour off and your index.html.mako file in that same location will be your own custom template that lists blog entries (or whatever else you want). 
+
+  Defaults to False
+
+* **blog_excerpt_enabled** - Boolean
+  
+  Post objects have a .content attribute that contains the full content of the blog post. Some blogs choose to only show an excerpt of the post except for on the permalink page. If you turn this feature on, post objects will also have a .excerpt attribute that contains the first ``post_excerpt_word_length` words.
+
+  If you don't use post excerpts, you can turn this off to decrease render times.
+
+  Defaults to True
+
+* **config-post-excerpt-word-length** - Integer
+
+  The number of words to have in post excerpts.
+
+* **blog_pagination_dir** - String
+
+  The name of the directory that contains more pages of posts than can be shown on the first page.
+
+  Defaults to ``page``, as in ``http://www.test.com/blog/page/4``
+
+Advanced Settings
+-----------------
+
+* **ignore_patterns** - List
+
+  This is a list of regular expressions that describe paths to ignore when processing blogofile blogs. The most important one (and one you should not remove) is ``.*[\/]_.*`` which ignore all files and directories that start with an underscore (like _config.py and _posts)
+
+* **pre_build** - Function
+  
+  This is a function that gets run before the _site directory is built
+
+* **post_build** - Function
+  
+  This is a function that gets run after the _site directory is built
+
+
