@@ -149,7 +149,7 @@ Intermediate Settings
 ++++++++++++++++++++++++++++++++++
   Boolean
 
-  Post objects have a .content attribute that contains the full content of the blog post. Some blogs choose to only show an excerpt of the post except for on the permalink page. If you turn this feature on, post objects will also have a .excerpt attribute that contains the first ``post_excerpt_word_length` words.
+  Post objects have a .content attribute that contains the full content of the blog post. Some blogs choose to only show an excerpt of the post except for on the permalink page. If you turn this feature on, post objects will also have a .excerpt attribute that contains the first ``post_excerpt_word_length`` words.
 
   If you don't use post excerpts, you can turn this off to decrease render times.
 

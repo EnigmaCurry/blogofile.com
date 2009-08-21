@@ -38,6 +38,7 @@ Edit ``wordpress_schema.py``:
 
  * ``table_prefix`` should be the same as you setup in wordpress, (or blank "" if none)
  * ``db_conn`` point to your database server. The example is for a MySQL hosted database, but see the `SQL Alchemy docs <http://www.sqlalchemy.org/docs/05/dbengine.html#create-engine-url-arguments>`_ if you're using something else.
+
 In a clean directory run the export script::
 
  python wordpress2blogofile.py

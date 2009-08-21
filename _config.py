@@ -102,7 +102,7 @@ def build_docs():
         import sphinx
     except ImportError:
         return
-    print "Building the docs..."
+    #print "Building the docs..."
     #Configure the theme
     #Insert the rendered head, headers, and footers into the theme
     config = sys.modules[globals()['__name__']]
@@ -126,12 +126,12 @@ def build_docs():
     layout_f.write(layout)
     layout_f.close()
     
-    sphinx.main(shlex.split("sphinx-build -b html _documentation "+
+    sphinx.main(shlex.split("sphinx-build -q -b html _documentation "+
                             os.path.join("_site","documentation")))
     #Do PDF generation if TeX is installed
     if os.path.isfile("/usr/bin/tex"):
         latex_dir = tempfile.mkdtemp()
-        sphinx.main(shlex.split("sphinx-build -b latex _documentation "+
+        sphinx.main(shlex.split("sphinx-build -q -b latex _documentation "+
                                 latex_dir))
         subprocess.Popen(shlex.split(
                 "make -C %s all-pdf" % latex_dir),

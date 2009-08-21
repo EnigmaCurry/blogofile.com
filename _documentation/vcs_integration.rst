@@ -40,7 +40,7 @@ Configure your webserver to host your website out of ``/path/to/checkout_place/_
 
 Now whenever you ``git push`` to your webhost, your webserver should get automatically rebuilt. If Blogofile outputs any errors, you'll see them on your screen.
 
-.. _rubric:: Footnotes
+.. _rubric: Footnotes
 
 Other VCS solutions
 -------------------
