@@ -12,31 +12,40 @@ Basic Settings
 
 .. _config-blog-enabled:
 
-* **blog_enabled** - Boolean
-  
+**blog_enabled**
+++++++++++++++++++++++++++
+        
+  Boolean  
+
   This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. Note that if set to True blogofile requires several blog specific templates to exist in the **_templates** directory as described in :ref:`required-templates`
 
   Defaults to True
 
 .. _config-blog-name:
 
-* **blog_name** - String
-  
+**blog_name**
+++++++++++++++++++++++
+  String  
+
   This is the name of your blog.
 
   example: ``xkcd - The blag of the webcomic``
 
 .. _config-blog-url:
 
-* **blog_url** - String
-  
+**blog_url**
++++++++++++++++++++++
+  String
+
   This is the full URL of the blog portion of your site. This may or may not be the homepage of your site.
 
   example: ``http://www.xkcd.com/blag``
 
 .. _config-blog-description:
 
-* **blog_description** - String
+**blog_description**
++++++++++++++++++++++++++++++
+  String
 
   This is a (short) description of your blog. Many RSS readers support/expect a description for feeds.
 
@@ -44,7 +53,9 @@ Basic Settings
 
 .. _config-blog-timezone:
 
-* **blog_timezone** - String
+**blog_timezone**
+++++++++++++++++++++++++++
+  String
 
   This is the `timezone <http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones>`_ that you normally post to your blog from. 
 
@@ -52,19 +63,25 @@ Basic Settings
 
 .. _config-blog-posts-per-page:
 
-* **blog_posts_per_page** - Integer
+**blog_posts_per_page**
++++++++++++++++++++++++++++++++++
+  Integer
 
   This is the number of blog posts you want to display per page.
 
 .. _config-blog-auto-permalink-enabled:
   
-* **blog_auto_permalink_enabled** - Boolean
+**blog_auto_permalink_enabled**
++++++++++++++++++++++++++++++++++++++++++
+  Boolean
 
   This turns on automatic permalink generation. If your post does not include a permalink field, then this allows for the automatic generation of the permalink.
 
 .. _config-blog-auto-permalink:
 
-* **blog_auto_permalink** - String
+**blog_auto_permalink**
+++++++++++++++++++++++++++++++++
+  String
 
   This is the format that automatic permalinks should take on, starting with the path after the blog domain name. eg: ``/blag/:year/:month/:day/:title`` creates a permalink like ``http://www.xkcd.com/blag/2009/08/18/post-one``.
 
@@ -82,7 +99,9 @@ Intermediate Settings
 
 .. _config-disqus-enabled:
 
-* **disqus_enabled** - Boolean
+**disqus_enabled**
+++++++++++++++++++++++++++++
+  Boolean
 
   Turns on/off `Disqus <http://www.disqus.com>`_ comment system integration.
 
@@ -90,13 +109,17 @@ Intermediate Settings
 
 .. _config-disqus-name:
 
-* **disqus_name** - String
+**disqus_name**
+++++++++++++++++++++++++
+  String 
 
   The Disqus website 'short name'
 
 .. _config-syntax-highlight-enabled:
 
-* **syntax_highlight_enabled** - Boolean
+**syntax_highlight_enabled**
+++++++++++++++++++++++++++++
+  Boolean
 
   Turns on/off syntax highlighting of pre tags in blog posts.
 
@@ -104,31 +127,47 @@ Intermediate Settings
 
 .. _config-syntax-highlight-style:
 
-* **syntax_highlight_style** - String
+**syntax_highlight_style**
++++++++++++++++++++++++++++++++++++
+  String
 
   The default style to use for highlighting. See `Pygments Styles <http://pygments.org/docs/styles/>`_.
 
 .. _config-custom-index:
 
-* **blog_custom_index** - Boolean
+**blog_custom_index**
++++++++++++++++++++++++++++++++
+  Boolean
 
   When you configure :ref:`config-blog-url`, Blogofile by default writes a chronological listing of the latest blog entries at that location. With this option you can turn that behaviour off and your index.html.mako file in that same location will be your own custom template that lists blog entries (or whatever else you want). 
 
   Defaults to False
 
-* **blog_excerpt_enabled** - Boolean
-  
+.. _config-post-excerpt-enabled:
+
+**post_excerpt_enabled**
+++++++++++++++++++++++++++++++++++
+  Boolean
+
   Post objects have a .content attribute that contains the full content of the blog post. Some blogs choose to only show an excerpt of the post except for on the permalink page. If you turn this feature on, post objects will also have a .excerpt attribute that contains the first ``post_excerpt_word_length` words.
 
   If you don't use post excerpts, you can turn this off to decrease render times.
 
   Defaults to True
 
-* **config-post-excerpt-word-length** - Integer
+.. _config-post-excerpt-word-length:
+
+**config-post-excerpt-word-length**
++++++++++++++++++++++++++++++++++++++++++++++
+  Integer
 
   The number of words to have in post excerpts.
 
-* **blog_pagination_dir** - String
+.. _config-blog-pagination-dir:
+
+**blog_pagination_dir**
+++++++++++++++++++++++++++++++++
+  String 
 
   The name of the directory that contains more pages of posts than can be shown on the first page.
 
@@ -137,16 +176,28 @@ Intermediate Settings
 Advanced Settings
 -----------------
 
-* **ignore_patterns** - List
+.. _config-ignore-patterns:
+
+**ignore_patterns**
+++++++++++++++++++++++++++
+  List
 
   This is a list of regular expressions that describe paths to ignore when processing blogofile blogs. The most important one (and one you should not remove) is ``.*[\/]_.*`` which ignore all files and directories that start with an underscore (like _config.py and _posts)
 
-* **pre_build** - Function
+.. _config-pre-build:
+
+**pre_build**
+++++++++++++++++++++++++
+  Function
   
   This is a function that gets run before the _site directory is built
 
-* **post_build** - Function
-  
+.. _config-post-build:
+
+**post_build**
++++++++++++++++++++++++++
+  Function
+
   This is a function that gets run after the _site directory is built
 
 

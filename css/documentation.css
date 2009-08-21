@@ -5,3 +5,7 @@ div.documentwrapper li {
 div.ButtonBar a:hover {
     text-decoration: none;
 }
+
+div.sphinxsidebarwrapper {
+    overflow: hidden;
+}
