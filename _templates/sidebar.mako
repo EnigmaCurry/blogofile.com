@@ -20,7 +20,7 @@
     <h3>Categories</h3>    
     <ul>
 % for category, num_posts in all_categories:
-     <li><a href="${config.blog_path}/category/${category_link_names[category]}">${category}</a> (<a href="${config.blog_path}/category/${category_link_names[category]}/feed">rss</a>) (${num_posts})</li>
+     <li><a href="${category.path}">${category}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})</li>
 % endfor
     </ul>
   </div> 
