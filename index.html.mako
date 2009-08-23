@@ -20,7 +20,7 @@
     <ul>
       <li>Blogofile is <b><i>free software</i></b>, released under a non-enforced <a href="/LICENSE.html">MIT license</a>.
       <li>
-        Blogofile is <b><i>fast</i></b>, the server doesn't need to do any database lookups or any template rendering.
+        Blogofile is <b><i>fast</i></b>, the server doesn't need to do any database lookups nor any template rendering.
       </li>
       <li>Blogofile is <b><i>inexpensive</i></b> to host. Any web server can host a blogofile blog.</li>
       <li>Blogofile is <b><i>modern</i></b>, supporting all the common blogging features:
@@ -32,16 +32,16 @@
           <li><a href="/demo/sample_posts.html#Test%20syntax%20highlighting">Syntax highlighting</a> for source code listings.</li>
         </ul>
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
-      <li>Blogofile works <b><i>offline</i></b>, especially when managed with <a href="http://git-scm.org">git</a>, your entire blog can go with you anywhere. This also makes <b><i>backups</i></b> dirt simple.</li> 
+      <li>Blogofile works <b><i>offline</i></b>, with a built-in webserver you can work on your site from anywhere.
       <li>Blogofile is <b><i>file based</i></b>, so you can edit it with your favorite text editor, not some crappy web interface.</li>
-      <li>Seamless <a href="/documentation/vcs_integration.html">Git Integration.</a> Publish to your blog with a simple "git push".</li>
+      <li>Seamless <a href="/documentation/vcs_integration.html">Git Integration.</a> Publish to your blog with a simple "git push". This also makes <b><i>backups</i></b> dirt simple.</li> </li>
     </ul>
     <h3>Get Blogofile</h3>
     <p>
       Blogofile is still under development, and should be considered beta software at the moment, but should be usable even before the 1.0 release.
     </p>
     <p>
-      Make sure you have <a href="http://www.python.org">Python</a> and Setuptools installed. On Ubuntu you just need to run:
+      Make sure you have <a href="http://www.python.org">Python</a> and <a href="http://pypi.python.org/pypi/setuptools">Setuptools</a> installed. On Ubuntu you just need to run:
     </p>
     <pre>sudo apt-get install python-setuptools</pre> 
 

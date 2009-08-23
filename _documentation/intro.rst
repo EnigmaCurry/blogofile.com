@@ -18,33 +18,31 @@ Blogofile is a simple blog engine that requires no database and no special hosti
 Why you should be using Blogofile
 =================================
 * Blogofile is **free software**, released under a non-enforced `MIT license <http://www.blogofile.com/LICENSE.html>`_.
-* Blogofile is **fast**, the server doesn't need to do any database lookups or any template rendering.
-* Blogofile is **inexpensive** to host. Any HTTP web server can host a blogofile blog.
+* Blogofile is **fast**, the server doesn't need to do any database lookups nor any template rendering.
+* Blogofile is **inexpensive** to host. Any web server can host a blogofile blog.
 * Blogofile is **modern**, supporting all the common blogging features:
 
  * Categories.
  * Tags.
- * Comments and Trackbacks with effective spam filtering using Disqus. (Sorry no pingback support.. yet.)
+ * Comments and Trackbacks with effective spam filtering using `Disqus <http://www.disqus.com>`_. (Sorry no pingback support.. yet.)
  * RSS and Atom feeds, one for all your posts, as well as one per category.
  * Syntax highlighting for source code listings.
 
 * Blogofile is **secure**, there's nothing executable on the server.
-* Blogofile works **offline**, especially when managed with git, your entire blog can go with you anywhere. This also makes backups dirt simple.
+* Blogofile works **offline**, with a built-in webserver you can work on your site from anywhere.
 * Blogofile is **file based**, so you can edit it with your favorite text editor, not some crappy web interface.
-* Seamless :ref:`Git Integration <vcs-integration>`. Publish to your blog with a simple "git push".
+* Seamless :ref:`Git Integration <vcs-integration>`. Publish to your blog with a simple ``git push``. This also makes **backups** dirt simple.
 
 .. _install-blogofile:
 
 Installing Blogofile
 ====================
-Blogofile is still under development, and should be considered beta software at the moment, but should be usable even before the 1.0 release.
+Blogofile is still under development, and should be considered beta software at the moment, but should be usable even before the 1.0 release. 
 
 Prerequisites
 -------------
 
-Make sure you have Python and Setuptools installed. 
-
-On Ubuntu you just need to run::
+Make sure you have `Python <http://www.python.org>`_ and `Setuptools <http://pypi.python.org/pypi/setuptools>`_ installed. On Ubuntu you just need to run::
 
  sudo apt-get install python-setuptools
 
