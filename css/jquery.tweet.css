@@ -1,0 +1,20 @@
+#right_sidebar div#blogofile_tweets {
+    font-family: Arial, serif;
+    font-size: 90%;
+    color: #000000;
+    margin: 0px 0;
+}
+#blogofile_tweets .tweet_list {
+    -webkit-border-radius: .5em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#blogofile_tweets .tweet_list li {
+    overflow: auto;
+    padding: .5em; }
+#blogofile_tweets .tweet_list .tweet_avatar {
+    padding-right: .5em;
+    float: left; }
+#blogofile_tweets .tweet_list .tweet_avatar img {
+    vertical-align: middle; }

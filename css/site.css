@@ -100,7 +100,7 @@ div#prose_block {
     float: left;
     margin:0;
     padding:0 0 20px 20px;
-    width:780px;
+    width:680px;
 }
 div#prose_block h2 {
     font-size:18px;
@@ -186,7 +186,7 @@ hr.interblog {
 /********** Sidebar **********/
 div#right_sidebar {
     float: right;
-    width:170px;
+    width:270px;
     font-size: 11px;
     line-height: 1.5em;
     margin: 0;
