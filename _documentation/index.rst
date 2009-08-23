@@ -14,7 +14,7 @@ This is a work in progress and currently only documents the latest development s
    intro
    quick_setup
    file_overview
-   advanced_config
+   config_file
    vcs_integration
    migrating_blogs
    

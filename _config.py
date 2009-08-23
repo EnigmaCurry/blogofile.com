@@ -15,6 +15,10 @@ import shutil
 import shlex
 import tempfile
 import subprocess
+
+import logging
+logger = logging.getLogger("blogofile.config")
+
 ######################################################################
 # Basic Settings
 #  (almost all sites will want to configure these settings)
@@ -172,12 +176,13 @@ def build_docs():
                                "layout.html"),"w")
     layout_f.write(layout)
     layout_f.close()
-    
+    logger.info("Compiling HTML Documentation..")
     sphinx.main(shlex.split("sphinx-build -q -b html _documentation "+
                             os.path.join("_site","documentation")))
     #Do PDF generation if TeX is installed
     if os.path.isfile("/usr/bin/tex"):
         latex_dir = tempfile.mkdtemp()
+        logger.info("Compiling PDF Documentation..")
         sphinx.main(shlex.split("sphinx-build -q -b latex _documentation "+
                                 latex_dir))
         subprocess.Popen(shlex.split(

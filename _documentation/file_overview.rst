@@ -10,7 +10,11 @@ The best way to understand how Blogofile works is to look at an example. You can
 
 or alternatively, just `download the zip file <http://github.com/EnigmaCurry/blogofile.com/zipball/master>`_ which contains the same thing.
 
-The rest of this document will reference this source code extensively and explain it's different parts.
+You can also get a much more bare bones example by just running::
+
+ blogofile init
+
+The rest of this document will reference the blogofile.com source code extensively and explain it's different parts.
 
 Directory Structure
 -------------------
@@ -50,10 +54,10 @@ Blogofile looks for certain special files at runtime and follows a few simple ru
 
 * If the blog feature is enabled (it is by default) the _posts directory is processed and blog features are copied to the _site directory.
 
-.. _config-file:
+.. _basic-configuration:
 
-Configuration File
-==================
+Basic Configuration
+===================
 
 Blogofile looks for a file called _config.py in the root of your source directory before it does anything else. This is your site's main configuration file. All sites have to have a _config.py file, but for the most bare bones site, the file doesn't actually have to have anything in it.
 
@@ -61,23 +65,27 @@ The _config.py file is just regular `Python <http://en.wikipedia.org/wiki/Python
 
 At the top of the file you'll see the Basic Settings section. This section contains the settings you'll most likely want to change when creating your own site:
 
+* **site_url** - String
+
+  This is the root URL for your website. This is the URL that your blogofile site will be hosted at.
+
+  example: ``http://www.xkcd.com``
+
 * **blog_enabled** - Boolean
   
   This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. If this is set to True, Blogofile requires several blog specific templates to exist in the **_templates** directory as described in :ref:`required-templates`
 
   Defaults to True
 
+* **blog_path** - String
+
+  This is the path of the blog off of the site_url. For example, if site_url is ``http://www.xkcd.com`` and blog_path is ``/blag`` your full URL to your blog will be ``http://www.xkcd.com/blag``
+
 * **blog_name** - String
   
   This is the name of your blog.
 
   example: ``xkcd - The blag of the webcomic``
-
-* **blog_url** - String
-  
-  This is the full URL of the blog portion of your site. This may or may not be the homepage of your site.
-
-  example: ``http://www.xkcd.com/blag``
 
 * **blog_description** - String
 
@@ -95,7 +103,7 @@ At the top of the file you'll see the Basic Settings section. This section conta
 
   This is the number of blog posts you want to display per page.
 
-That's all you need to configure for a basic site with a blog. The rest of the file changes the default behaviour of blogofile and should only need to be modified for :ref:`advanced-config`.
+That's all you need to configure for a basic site with a blog. See :ref:`config-file` for the rest of the available settings.
 
 .. _posts:
 

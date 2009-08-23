@@ -2,7 +2,7 @@
 categories: Blogofile.com
 date: 2009/07/23 15:22:00
 format: markdown
-permalink: http://www.blogofile.com/2009/07/23/blogofile-documentation
+permalink: http://www.blogofile.com/blog/2009/07/23/blogofile-documentation
 title: Blogofile Documentation
 ---
 I've started to compile all the Blogofile documentation I've written [into one place](/documentation).

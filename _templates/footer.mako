@@ -3,7 +3,7 @@
 <p id="credits">
 Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
 <br/>
-RSS feeds for <a href="${config.blog_path}/feed/">Entries</a> and <a href="http://${config.disqus_name}.disqus.com/latest.rss">Comments</a>.
+RSS feeds for <a href="${config.util.blog_path_helper('feed')}">Entries</a> and <a href="http://${config.disqus_name}.disqus.com/latest.rss">Comments</a>.
 <br>
 </p>
 

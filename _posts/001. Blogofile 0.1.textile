@@ -2,7 +2,7 @@
 categories: Releases
 date: 2009/03/02 13:09:00
 format: html
-permalink: http://www.blogofile.com/2009/03/02/introducing-blogofile
+permalink: http://www.blogofile.com/blog/2009/03/02/introducing-blogofile
 tags: ''
 title: Introducing Blogofile
 ---
