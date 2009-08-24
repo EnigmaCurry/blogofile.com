@@ -191,6 +191,7 @@ div#right_sidebar {
     line-height: 1.5em;
     margin: 0;
     padding: 0 10px;
+    border-left: 1px solid #eeeeee;
 }
 #right_sidebar div {
     margin: 20px 0;
