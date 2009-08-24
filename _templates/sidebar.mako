@@ -14,7 +14,7 @@
   </ul>
   </div>
   <div id="on_twitter">
-    <h3>On Twitter</h3>
+    <h3>On Twitter <small>the good, the bad, and the ugly</small></h3>
     <div id="blogofile_tweets"></div>
     <a href="http://search.twitter.com/search?q=blogofile" style="float: right">See more tweets</a>
   </div>

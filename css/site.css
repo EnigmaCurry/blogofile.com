@@ -207,6 +207,10 @@ div#right_sidebar {
     padding:0;
     text-transform:uppercase;
 }
+#right_sidebar h3 small {
+    text-transform:none;
+    letter-spacing:0.0em;
+}
 #right_sidebar a {
     color:#0B76AE;
     text-decoration: none;
