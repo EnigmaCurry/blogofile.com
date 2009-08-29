@@ -22,8 +22,8 @@ Posts
 
 Download the converter scripts:
 
- * `wordpress2blogofile.py`_
- * `wordpress_schema.py`_
+* `wordpress2blogofile.py`_
+* `wordpress_schema.py`_
 
 Install SQL Alchemy::
 
@@ -37,8 +37,8 @@ If you're using some other database, install the appropriate `DBAPI`_.
 
 Edit ``wordpress_schema.py``:
 
- * ``table_prefix`` should be the same as you setup in wordpress, (or blank "" if none)
- * ``db_conn`` point to your database server. The example is for a MySQL hosted database, but see the `SQL Alchemy docs`_ if you're using something else.
+* ``table_prefix`` should be the same as you setup in wordpress, (or blank "" if none)
+* ``db_conn`` point to your database server. The example is for a MySQL hosted database, but see the `SQL Alchemy docs`_ if you're using something else.
 
 In a clean directory run the export script::
 
