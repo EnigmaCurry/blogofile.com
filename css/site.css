@@ -229,7 +229,16 @@ div#right_sidebar {
 ul#twitter_update_list li {
     margin-bottom:1em;
 }
-
+div#commits li {
+    margin-bottom:1em;
+}
+div#commits {
+    font-family:Arial,serif;
+    font-size:90%;
+}
+div#commitsRSS span.timeref {
+    font-size: 90%;
+}
 /********** Footer **********/
 div#footer {
     clear: both;

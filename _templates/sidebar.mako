@@ -18,6 +18,13 @@
     <div id="blogofile_tweets"></div>
     <a href="http://search.twitter.com/search?q=blogofile" style="float: right">See more tweets</a>
   </div>
+  <div id="commits">
+    <h3>Latest Commits</h3>
+    <div id="commitsRSS">&nbsp;</div>
+    <script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/08579104000195997276/label/Blogofile Commits?n=5&callback=commitsRSSRender"></script>
+    <a href="http://github.com/EnigmaCurry/blogofile/commits/master" style="float: right">See more commits</a><br/>
+  </div>
   <div id="categories">
     <h3>Categories</h3>
     <ul>
@@ -33,7 +40,6 @@
       <li><a href="${link}" title="${name}">${name}</a>&nbsp;(${num_posts})</li>
 % endfor
     </ul>
-    
   </div>
 
 </div>

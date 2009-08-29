@@ -7,4 +7,5 @@
 <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feed/atom" />
 <script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="/js/jquery.tweet.js"></script>
+<script type="text/javascript" src="/js/googleRSSWidget.js"></script>
 <script type="text/javascript" src="/js/site.js"></script>
