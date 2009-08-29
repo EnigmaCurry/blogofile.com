@@ -19,10 +19,3 @@ This is a work in progress and currently only documents the latest development s
    migrating_blogs
    
 
-Indices and Tables
-##################
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
