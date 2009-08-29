@@ -1,18 +1,18 @@
 The Makeup of a Blogofile Site
 ******************************
+Blogofile is a website `compiler`_, but instead of translating something like C++ source code into an executable program, Blogofile takes `Mako`_ templates and other Blogofile features and compiles HTML for viewing in a web browser. This chapter describes the general makeup of a Blogofile directory containing such source code.
+
 An Example
 ==========
-Blogofile is a website `compiler <http://en.wikipedia.org/wiki/Compiler>`_, but instead of translating something like C++ source code into an executable program, Blogofile takes `Mako <http://www.makotemplates.org>`_ templates and other Blogofile features and compiles HTML for viewing in a web browser. This chapter describes the general makeup of a Blogofile directory containing such source code.
+The best way to understand how Blogofile works is to look at an example. You can checkout the source code for the main Blogofile.com website::
 
-The best way to understand how Blogofile works is to look at an example. You can checkout the source code for the main Blogofile.com website with `git <http://www.git-scm.org>`_::
+  blogofile init blogofile.com
 
-  git clone git://github.com/EnigmaCurry/blogofile.com.git
+The above command downloads the very latest blogofile.com website source code, which requires that you have `git`_ installed on your system. If you don't have it, you can just download the `zip file`_ instead.
 
-or alternatively, just `download the zip file <http://github.com/EnigmaCurry/blogofile.com/zipball/master>`_ which contains the same thing.
+If you want to create a new site layout from scratch, you probably want to start with something a bit more basic. You can initialize a non-themed, bare bones site by running::
 
-You can also get a much more bare bones example by just running::
-
- blogofile init
+ blogofile init simple_blog
 
 The rest of this document will reference the blogofile.com source code extensively and explain it's different parts.
 
@@ -61,7 +61,7 @@ Basic Configuration
 
 Blogofile looks for a file called _config.py in the root of your source directory before it does anything else. This is your site's main configuration file. All sites have to have a _config.py file, but for the most bare bones site, the file doesn't actually have to have anything in it.
 
-The _config.py file is just regular `Python <http://en.wikipedia.org/wiki/Python_(programming_language)>`_ source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to start out with.
+The _config.py file is just regular `Python`_ source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to start out with.
 
 At the top of the file you'll see the Basic Settings section. This section contains the settings you'll most likely want to change when creating your own site:
 
@@ -95,7 +95,7 @@ At the top of the file you'll see the Basic Settings section. This section conta
 
 * **blog_timezone** - String
 
-  This is the `timezone <http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones>`_ that you normally post to your blog from. 
+  This is the `timezone`_ that you normally post to your blog from. 
 
   Defaults to ``US/Eastern``
 
@@ -132,7 +132,7 @@ The post is divided into two parts, the YAML header and the post content.
 
 YAML Header
 -----------
-The `YAML <http://en.wikipedia.org/wiki/YAML>`_ portion is between the two ``---`` lines, and it describes all of the metadata for the post. The options include:
+The `YAML`_ portion is between the two ``---`` lines, and it describes all of the metadata for the post. The options include:
 
 * **categories**
     A list of categories that this post should appear in, seperated by commas. You don't have to configure the categories beforehand, you are defining them right here.
@@ -149,9 +149,9 @@ Post Content
 ------------
 The post content is written using a markup language, currently Blogofile supports several to choose from:
 
-* `Markdown <http://en.wikipedia.org/wiki/Markdown>`_ (files end in .markdown)
-* `Textile <http://en.wikipedia.org/wiki/Textile_(markup_language)>`_ (files end in .textile)
-* `Org Mode <http://orgmode.org/>`_ (files end in .org)
+* `Markdown`_ (files end in .markdown)
+* `Textile`_ (files end in .textile)
+* `Org Mode`_ (files end in .org)
 * or plain old HTML (files end in .html)
 
 The content of the post goes directly after the YAML portion and uses whatever markup language is indicated by the file extension of the post file.
@@ -159,20 +159,20 @@ The content of the post goes directly after the YAML portion and uses whatever m
 Templates
 =========
 
-Templates are at the very heart of Blogofile; they control every aspect of how the site is structured. Blogofile uses the `Mako <http://www.makotemplates.org>`_ templating engine which has a very active community and `great documentation <http://www.makotemplates.org/docs/>`_. Blogofile doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it.
+Templates are at the very heart of Blogofile; they control every aspect of how the site is structured. Blogofile uses the `Mako`_ templating engine which has a very active community and `great documentation`_. Blogofile doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it.
 
 Blogofile does makesa distinction between two basic kinds of templates, **Page** templates and **Reusable** templates.
 
 Page templates represent a single page (or URL) on your site. These are rendered to HTML and copied to the _site directory in the same location where they reside in the source directory.
 
-Reusable templates are contained (by convention) in the _templates directory. These are features that you want to include on many pages, eg. headers, footers, sidebars etc. They do not represent any particular page (or URL) but are rather `inherrited <http://www.makotemplates.org/docs/inheritance.html>`_ or `included <http://www.makotemplates.org/docs/syntax.html#syntax_tags_include>`_ inside other templates.
+Reusable templates are contained (by convention) in the _templates directory. These are features that you want to include on many pages, eg. headers, footers, sidebars etc. They do not represent any particular page (or URL) but are rather `inherrited`_ or `included`_ inside other templates.
 
 
 .. _required-templates:
 
 Blog Required Templates
 -----------------------
-The most bare bones site does not require any templates. However, to use the blog feature (blog_enabled in _config.py) you need the following reusable templates:
+The most bare bones site does not require any templates. However, to use the blog feature (see :ref:`config-blog-enabled`) you need the following reusable templates:
 
 * **site.mako**
    A base template that establishes the general look of the entire site.
@@ -213,5 +213,37 @@ When Blogofile renders a template, it has an environment created for it that con
 * **category_link_names**
     A mapping of Category names to their URL friendly equivalents
 
-These can all be accessed within your templates using `Mako syntax <http://www.makotemplates.org/docs/syntax.html#syntax_expression>`_.
+These can all be accessed within your templates using `Mako syntax`_.
 
+.. only:: latex
+
+   .. target-notes::
+      :class: hidden
+
+.. _zip file: http://github.com/EnigmaCurry/blogofile.com/zipball/master
+
+.. _compiler: http://en.wikipedia.org/wiki/Compiler
+
+.. _git: http://www.git-scm.org
+
+.. _Mako: http://www.makotemplates.org
+
+.. _Python: http://www.python.org
+
+.. _timezone: http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones
+
+.. _YAML: http://en.wikipedia.org/wiki/YAML
+
+.. _Markdown: http://en.wikipedia.org/wiki/Markdown
+
+.. _Textile: http://en.wikipedia.org/wiki/Textile_(markup_language)
+
+.. _Org Mode: http://orgmode.org/
+
+.. _great documentation: http://www.makotemplates.org/docs/
+
+.. _inherrited: http://www.makotemplates.org/docs/inheritance.html
+
+.. _included: http://www.makotemplates.org/docs/syntax.html#syntax_tags_include
+
+.. _Mako syntax: http://www.makotemplates.org/docs/syntax.html#syntax_expression

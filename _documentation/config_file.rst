@@ -75,7 +75,7 @@ blog_timezone
 +++++++++++++
 String
 
-This is the `timezone <http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones>`_ that you normally post to your blog from. 
+This is the `timezone`_ that you normally post to your blog from. 
 
 Defaults to ``US/Eastern``
 
@@ -121,7 +121,7 @@ disqus_enabled
 ++++++++++++++
 Boolean
 
-Turns on/off `Disqus <http://www.disqus.com>`_ comment system integration.
+Turns on/off `Disqus`_ comment system integration.
 
 Defaults to False
 
@@ -149,7 +149,7 @@ syntax_highlight_style
 ++++++++++++++++++++++
 String
 
-The default style to use for highlighting. See `Pygments Styles <http://pygments.org/docs/styles/>`_.
+The default style to use for highlighting. See `Pygments Styles`_.
 
 .. _config-custom-index:
 
@@ -197,7 +197,7 @@ emacs_orgmode_enabled
 +++++++++++++++++++++
 Boolean
 
-Turns on/off org-mode templates for posts. You must have `Emacs <http://www.gnu.org/software/emacs/>`_ installed.
+Turns on/off org-mode templates for posts. You must have `Emacs`_ installed.
 
 .. _config-emacs-binary:
 
@@ -256,4 +256,15 @@ Function
 
 This is a function that gets run after the _site directory is built
 
+.. only:: latex
 
+   .. target-notes::
+      :class: hidden
+
+.. _timezone: http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones
+
+.. _Disqus: http://www.disqus.com
+
+.. _Pygments Styles: http://pygments.org/docs/styles
+
+.. _Emacs: http://www.gnu.org/software/emacs

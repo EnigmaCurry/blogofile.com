@@ -9,3 +9,27 @@ div.ButtonBar a:hover {
 div.sphinxsidebarwrapper {
     overflow: hidden;
 }
+
+p.rubric {
+    background-color:#F2F2F2;
+    border-bottom:1px solid #CCCCCC;
+    color:#20435C;
+    font-family:'Trebuchet MS',sans-serif;
+    font-weight:normal;
+    margin:20px -20px 10px;
+    padding:3px 0 3px 10px;
+}
+
+table.docutils {
+    font-size: 0.7em;
+}
+
+a.footnote-reference {
+    vertical-align: super;
+    font-size: 0.6em;
+}
+a.hidden {
+    visibility: hidden;
+    font-size: 0px;
+    height: 0px;
+}

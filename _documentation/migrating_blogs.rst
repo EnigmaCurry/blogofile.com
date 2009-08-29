@@ -13,7 +13,7 @@ Wordpress
 Comments
 ++++++++
 
-Before you bring your Wordpress blog offline, install the `Disqus wordpress plugin <http://wordpress.org/extend/plugins/disqus-comment-system/>`_. With this plugin, you can export all your comments from your wordpress database offsite into your Disqus account.
+Before you bring your Wordpress blog offline, install the `Disqus wordpress plugin`_. With this plugin, you can export all your comments from your wordpress database offsite into your Disqus account.
 
 In your blogofile config file, set the :ref:`config-disqus-enabled` and :ref:`config-disqus-name` settings appropriately.
 
@@ -21,23 +21,24 @@ Posts
 +++++
 
 Download the converter scripts:
- * `wordpress2blogofile.py <http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress2blogofile.py>`_
- * `wordpress_schema.py <http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress_schema.py>`_
+
+ * `wordpress2blogofile.py`_
+ * `wordpress_schema.py`_
 
 Install SQL Alchemy::
 
  easy_install sqlalchemy
 
-If your database is MySQL based, you'll also need to download `MySQLdb <http://sourceforge.net/projects/mysql-python/>`_, which you can apt-get on Ubuntu::
+If your database is MySQL based, you'll also need to download `MySQLdb`_, which you can apt-get on Ubuntu::
 
  sudo apt-get install python-mysqldb
 
-If you're using some other database, install the appropriate `DBAPI <http://www.sqlalchemy.org/docs/05/dbengine.html#supported-dbapis>`_.
+If you're using some other database, install the appropriate `DBAPI`_.
 
 Edit ``wordpress_schema.py``:
 
  * ``table_prefix`` should be the same as you setup in wordpress, (or blank "" if none)
- * ``db_conn`` point to your database server. The example is for a MySQL hosted database, but see the `SQL Alchemy docs <http://www.sqlalchemy.org/docs/05/dbengine.html#create-engine-url-arguments>`_ if you're using something else.
+ * ``db_conn`` point to your database server. The example is for a MySQL hosted database, but see the `SQL Alchemy docs`_ if you're using something else.
 
 In a clean directory run the export script::
 
@@ -56,3 +57,15 @@ Moveable Type
 -------------
 
 to be written.
+
+.. only:: latex
+
+   .. target-notes::
+      :class: hidden
+
+.. _Disqus wordpress plugin: http://wordpress.org/extend/plugins/disqus-comment-system
+.. _wordpress2blogofile.py: http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress2blogofile.py
+.. _wordpress_schema.py: http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress_schema.py
+.. _MySQLdb: http://sourceforge.net/projects/mysql-python/
+.. _DBAPI: http://www.sqlalchemy.org/docs/05/dbengine.html#supported-dbapis
+.. _SQL Alchemy docs: http://www.sqlalchemy.org/docs/05/dbengine.html#create-engine-url-arguments

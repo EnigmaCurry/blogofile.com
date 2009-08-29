@@ -17,7 +17,7 @@ Blogofile is a simple blog engine that requires no database and no special hosti
 
 Why you should be using Blogofile
 =================================
-* Blogofile is **free software**, released under a non-enforced `MIT license <http://www.blogofile.com/LICENSE.html>`_.
+* Blogofile is **free software**, released under a non-enforced `MIT License`_.
 * Blogofile is **fast**, the server doesn't need to do any database lookups nor any template rendering.
 * Blogofile is **inexpensive** to host. Any web server can host a blogofile blog.
 * Blogofile is **modern**, supporting all the common blogging features:
@@ -42,7 +42,7 @@ Blogofile is still under development, and should be considered beta software at 
 Prerequisites
 -------------
 
-Make sure you have `Python <http://www.python.org>`_ and `Setuptools <http://pypi.python.org/pypi/setuptools>`_ installed. On Ubuntu you just need to run::
+Make sure you have `Python`_ and `Setuptools`_ installed. On Ubuntu you just need to run::
 
  sudo apt-get install python-setuptools
 
@@ -56,3 +56,13 @@ You can also get the latest development source code from github::
 
  git clone git://github.com/EnigmaCurry/blogofile.git
 
+.. only:: latex
+
+   .. target-notes::
+      :class: hidden
+
+.. _MIT License: http://www.blogofile.com/LICENSE.html
+
+.. _Python: http://www.python.org
+
+.. _Setuptools: http://pypi.python.org/pypi/setuptools

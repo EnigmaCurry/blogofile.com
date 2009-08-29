@@ -15,7 +15,7 @@ You might not know it yet, but you want your blog under a `Version Control Syste
 
 Automatic what? Even if you're a veteran to VCS, you may not realize that a VCS can do a lot more for you than just provide a place for you to dump your files. You can have your favorite VCS build and deploy your Blogofile based site for you everytime you commit new changes.
 
-So why are you procrastinating? Get `git <http://www.git-scm.com>`_.
+So why are you procrastinating? Get `git`_.
 
 Automatic Deployment in Git
 ---------------------------
@@ -40,14 +40,18 @@ Configure your webserver to host your website out of ``/path/to/checkout_place/_
 
 Now whenever you ``git push`` to your webhost, your webserver should get automatically rebuilt. If Blogofile outputs any errors, you'll see them on your screen.
 
-.. _rubric: Footnotes
-
 Other VCS solutions
 -------------------
 
 Most VCS should have support for a post recieve hook. If you create something cool in your own VCS of choice, let the `blogofile discussion group <http://groups.google.com/group/blogofile-discuss>`_ know and we'll add it to this document
 
+.. rubric:: Footnotes
 
-Footnotes
-+++++++++
 .. [#f1] If you deploy to a different server than the one hosting your git repository, you could just craft your own rsync or FTP command and put it at the bottom of the post-receive hook to deploy somewhere else. But that's beyond the scope of this document.
+
+.. only:: latex
+
+   .. target-notes::
+      :class: hidden
+
+.. _git: http://www.git-scm.com
