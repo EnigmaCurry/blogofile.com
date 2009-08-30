@@ -1,0 +1,27 @@
+---
+categories: Releases
+date: 2009/08/30 11:54:00
+format: markdown
+permalink: http://www.blogofile.com/blog/2009/08/30/blogofile-0.5-released
+title: Blogofile 0.5 released
+---
+As far as the [commit history](http://github.com/EnigmaCurry/blogofile/commits/master) goes, it's been way too long since a realeased version of Blogofile. There has been a flurry of things happening with Blogofile over the last month, numerous people having started testing Blogofile out, suggesting new features, and even sending patches. 
+
+I really like the current Blogofile. It's running both blogofile.com and [enigmacurry.com](http://www.enigmacurry.com) (my personal blog) quite well. But we're not done yet. Blogofile started out as a personal project so that I could build my own sites the way I wanted to, and although that has been greatly expanded so that other's could start using the app too, there's still a bit left in Blogofile that is a bit, shall we say, hard coded for the way I like to build sites. Blogofile is soon going to get an overhaul that will allow it create a much more diverse range of types of Blogs, as well as other types of sites, while still trying to keep the simple sites simple. A fine, delicate, line to walk to be sure, but I think it'll make for a better Blogofile. I'm excited to get working on these enhancements, but before we get ahead of ourselves, and seeing as the master branch is looking pretty good the way it is, it's time for a new release of Blogofile.
+
+New, for Blogofile 0.5 (roughly in commit order):
+
+ * Syntax highlighting of page templates.
+ * New Python _config.py file replaces config.conf. This change really appeals to me, we have something that resembles Emacs style configuration rather than a Windows INI file.
+ * init command that spits out a skeleton of a Blogofile site in the current directory, with multiple templates to choose from.
+ * Blogofile is now [MIT licensed](/LICENSE.html).
+ * Lots of new unit tests.
+ * Org-mode mark up for posts
+ * Automatic permalink generation if you don't explicitly set it in the post.
+ * Replaced OptParse with ArgParse for better command line UI.
+ * New [documentation](/documentation).
+
+You can install the new version with a simple:
+ 
+ sudo easy_install -U blogofile
+

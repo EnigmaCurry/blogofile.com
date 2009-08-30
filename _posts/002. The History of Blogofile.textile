@@ -1,6 +1,6 @@
 ---
 categories: Blogofile.com
-date: 2009/03/02 13:09:00
+date: 2009/03/02 13:10:00
 format: html
 permalink: http://www.blogofile.com/blog/2009/03/02/the-history-of-blogofile
 tags: 
