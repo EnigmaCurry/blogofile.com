@@ -145,6 +145,15 @@ def pre_build():
 def post_build():
     #Do whatever you want after the _site is built
     build_docs()
+
+##############################################
+### Blogofile release variables
+### (These are custom vars for blogofile.com)
+##############################################
+release_version = "0.5"
+release_download_link = "http://pypi.python.org/packages/source/B/Blogofile/"\
+    "Blogofile-0.5.tar.gz#md5=841b0015719502881b550ece588fc718"
+
     
 def build_docs():
     """Build the Blogofile sphinx based documentation"""

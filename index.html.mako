@@ -51,7 +51,7 @@
     
     Alternatively, here's the latest "stable" zipped release:
     <ul>
-      <li><a href="http://github.com/EnigmaCurry/blogofile/zipball/0.4">Blogofile 0.4.zip</a></li>
+      <li><a href="${config.release_download_link}">Blogofile 0.5.zip</a></li>
     </ul>
     You can also get the latest development source from github:
     <pre>git clone git://github.com/EnigmaCurry/blogofile.git</pre>

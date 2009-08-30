@@ -1,4 +1,10 @@
 <div id="right_sidebar">
+  <div id="download">
+    <h3>Download</h3>
+    <p>Latest stable Blogofile release is <b>${config.release_version}</b></p>
+    <pre>easy_install -U blogofile</pre> 
+    <p>or <a href="${config.release_download_link}">download a tarball</a></p>
+  </div>
   <div id="contact">
   <h3>Contact</h3>
   Blogofile is written by <a href="http://www.enigmacurry.com" rel="external" target="_blank">Ryan McGuire</a>
