@@ -3,7 +3,7 @@
 <p id="credits">
 Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
 <br/>
-RSS feeds for <a href="${config.util.blog_path_helper('feed')}">Entries</a> and <a href="http://${config.disqus_name}.disqus.com/latest.rss">Comments</a>.
+RSS feeds for <a href="${bf.config.util.blog_path_helper('feed')}">Entries</a> and <a href="http://${bf.config.disqus_name}.disqus.com/latest.rss">Comments</a>.
 <br>
 </p>
 
@@ -17,7 +17,7 @@ RSS feeds for <a href="${config.util.blog_path_helper('feed')}">Entries</a> and 
 				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
 			}
 		}
-		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/${config.disqus_name}/get_num_replies.js' + query + '"></' + 'script>');
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/${bf.config.disqus_name}/get_num_replies.js' + query + '"></' + 'script>');
 	})();
 //]]>
 </script>

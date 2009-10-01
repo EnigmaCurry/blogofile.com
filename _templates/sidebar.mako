@@ -1,9 +1,9 @@
 <div id="right_sidebar">
   <div id="download">
     <h3>Download</h3>
-    <p>Latest stable Blogofile release is <b>${config.release_version}</b></p>
+    <p>Latest stable Blogofile release is <b>${bf.config.release_version}</b></p>
     <pre>easy_install -U blogofile</pre> 
-    <p>or <a href="${config.release_download_link}">download a tarball</a></p>
+    <p>or <a href="${bf.config.release_download_link}">download a tarball</a></p>
   </div>
   <div id="contact">
   <h3>Contact</h3>
@@ -14,7 +14,7 @@
   <div id="blog_post_list">
   <h3>Latest blog posts</h3>
   <ul>
-% for post in posts[:5]:
+% for post in bf.posts[:5]:
     <li><a href="${post.path}">${post.title}</a></li>
 % endfor
   </ul>
@@ -34,7 +34,7 @@
   <div id="categories">
     <h3>Categories</h3>
     <ul>
-% for category, num_posts in all_categories:
+% for category, num_posts in bf.all_categories:
      <li><a href="${category.path}">${category}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})</li>
 % endfor
     </ul>
@@ -42,7 +42,7 @@
   <div id="archives">			
     <h3>Archives</h3>
     <ul>
-% for link, name, num_posts in archive_links:
+% for link, name, num_posts in bf.archive_links:
       <li><a href="${link}" title="${name}">${name}</a>&nbsp;(${num_posts})</li>
 % endfor
     </ul>

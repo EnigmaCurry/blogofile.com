@@ -1,4 +1,4 @@
-<title>${config.blog_name}</title>
+<title>${bf.config.blog_name}</title>
 <link rel='stylesheet' href='/css/site.css' type='text/css' />
 <link rel='stylesheet' href='/css/pygments.css' type='text/css' />
 <link rel='stylesheet' href='/css/documentation.css' type='text/css' />

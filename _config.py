@@ -19,6 +19,8 @@ import subprocess
 import logging
 logger = logging.getLogger("blogofile.config")
 
+from blogofile.cache import bf
+
 ######################################################################
 # Basic Settings
 #  (almost all sites will want to configure these settings)
@@ -168,11 +170,11 @@ def build_docs():
     config = sys.modules[globals()['__name__']]
     from mako.template import Template
     head_t = Template(open(os.path.join("_templates","head.mako")).read())
-    head = head_t.render(**{'config':config})
+    head = head_t.render(**{'bf':bf})
     header_t = Template(open(os.path.join("_templates","header.mako")).read())
-    header = header_t.render(**{'config':config})
+    header = header_t.render(**{'bf':bf})
     footer_t = Template(open(os.path.join("_templates","footer.mako")).read())
-    footer = footer_t.render(**{'config':config})
+    footer = footer_t.render(**{'bf':bf})
 
     #Create the new layout.html from preparse_layout.html
     #Insert the rendered templates appropriately
