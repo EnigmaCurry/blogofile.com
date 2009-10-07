@@ -11,6 +11,5 @@ def write_monthly_archives(posts):
             m[link].append(post)
         except KeyError:
             m[link] = [post]
-    print m
     for link, posts in m.items():
         bf.templates.chronological.write_blog_chron(posts,root=link)
