@@ -1,4 +1,7 @@
 <%inherit file="base.mako" />
+<%def name="filter(chain)">
+  ${bf.filter.run_chain(chain, capture(caller.body))}
+</%def>
 <%def name="head()">
   <%include file="head.mako" />
 </%def>
