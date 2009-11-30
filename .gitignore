@@ -3,3 +3,4 @@ _site/*
 _documentation/themes/blogofile/layout.html
 \#*
 .#*
+*.pyc
