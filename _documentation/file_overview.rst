@@ -19,26 +19,40 @@ The rest of this document will reference the blogofile.com source code extensive
 Directory Structure
 -------------------
 
-Inside the blogofile.com directory is the following files (abbreviated)::
+Inside the source directory is the following files (abbreviated)::
 
- blogofile.com/
- |-- _config.cfg
+ |-- _config.py
+ |-- _filters
+ |   `-- playnice.py
  |-- _posts
- |   `-- 001. Blogofile 0.1.textile
+ |   |-- 001. Blogofile 0.1.textile
+ |   |-- 002. The History of Blogofile.textile
+ |   `-- 003. Blogofile 0.3.textile
  |-- _templates
+ |   |-- 0.initial.py
+ |   |-- archives.py
  |   |-- atom.mako
  |   |-- base.mako
+ |   |-- categories.py
  |   |-- chronological.mako
+ |   |-- chronological.py
+ |   |-- feed.py
  |   |-- footer.mako
  |   |-- head.mako
  |   |-- header.mako
  |   |-- permapage.mako
+ |   |-- permapage.py
  |   |-- post.mako
+ |   |-- post_excerpt.mako
  |   |-- rss.mako
  |   |-- sidebar.mako
  |   `-- site.mako
+ |-- css
+ |   `-- site.css
  |-- index.html.mako
-
+ `-- js
+     `-- site.js
+ 
 Build Process
 -------------
 
@@ -59,7 +73,7 @@ Blogofile looks for certain special files at runtime and follows a few simple ru
 Basic Configuration
 ===================
 
-Blogofile looks for a file called _config.py in the root of your source directory before it does anything else. This is your site's main configuration file. All sites have to have a _config.py file, but for the most bare bones site, the file doesn't actually have to have anything in it.
+Blogofile looks for a file called ``_config.py`` in the root of your source directory before it does anything else. This is your site's main configuration file. All sites have to have a _config.py file, but Blogofile has sensible default values and so for a bare bones site, the file can start out completely blank.
 
 The _config.py file is just regular `Python`_ source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to start out with.
 
@@ -132,10 +146,10 @@ The post is divided into two parts, the YAML header and the post content.
 
 YAML Header
 -----------
-The `YAML`_ portion is between the two ``---`` lines, and it describes all of the metadata for the post. You can define whatever fields you wish for your posts, but there are some names that are reserved for general purpose use:
+The `YAML`_ portion is between the two ``---`` lines, and it describes all of the metadata for the post. You can define as many fields as you like, but there are some names that are reserved for general purpose use:
 
 * **title**
-    A one-line free form title for the post.
+    A one-line free-form title for the post.
 * **date**
     The date that the post was originally created. (year/month/day hour:minute:second).
 * **updated**
@@ -174,7 +188,7 @@ The post content is written using a markup language, currently Blogofile support
 * `Markdown`_ (files end in .markdown)
 * `Textile`_ (files end in .textile)
 * `Org Mode`_ (files end in .org)
-* or plain old HTML (files end in .html)
+* or plain old HTML (files end in .html by convention, but if it's not one of the above, posts default to HTML anyway)
 
 The content of the post goes directly after the YAML portion and uses whatever markup language is indicated by the file extension of the post file.
 
@@ -183,59 +197,53 @@ Templates
 
 Templates are at the very heart of Blogofile; they control every aspect of how the site is structured. Blogofile uses the `Mako`_ templating engine which has a very active community and `great documentation`_. Blogofile doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it.
 
-Blogofile does makesa distinction between two basic kinds of templates, **Page** templates and **Reusable** templates.
+Blogofile makes a distinction between three basic kinds of templates:
+
+* **Page** templates
+* **Reusable** templates
+* **Python** "templates"
 
 Page templates represent a single page (or URL) on your site. These are rendered to HTML and copied to the _site directory in the same location where they reside in the source directory.
 
-Reusable templates are contained (by convention) in the _templates directory. These are features that you want to include on many pages, eg. headers, footers, sidebars etc. They do not represent any particular page (or URL) but are rather `inherrited`_ or `included`_ inside other templates.
+Reusable templates are contained in the _templates directory. These are features that you want to include on many pages, eg. headers, footers, sidebars etc. They do not represent any particular page (or URL) but are rather `inherrited`_ or `included`_ inside other templates.
+
+The third variety, Python "templates", aren't really templates at all, but are Python source files in the _templates directory that are used when you're doing something rather advanced and templates aren't sufficient, like when you want to create several sequential or dynamically-linked pages. This type of template can still (and probably should) reference other Mako based templates.
 
 
 .. _required-templates:
 
-Blog Required Templates
+Blog Templates
 -----------------------
-The most bare bones site does not require any templates. However, to use the blog feature (see :ref:`config-blog-enabled`) you need the following reusable templates:
+The most bare bones site does not require any templates. However, if you're using the blog feature (see :ref:`config-blog-enabled`) you will want some templates to generate the basic blog features such as creating the permalinked pages, generating chronological listings, archives, category listings etc.
 
-* **site.mako**
-   A base template that establishes the general look of the entire site.
-* **head.mako**
-   The <head> tag area of the site.
-* **header.mako**
-   The top portion of the site, that's on every page.
-* **footer.mako**
-   The bottom portion of the site, that's on every page.
-* **post.mako**
-   Defines what a single blog post looks like
-* **permapage.mako**
-   Defines the permalink page for a post, including comments section
-* **chronological.mako**
-   The template that renders a chronological rendering of blog entries
-* **sidebar.mako**
-   Defines the sidebar on the site
-* **atom.mako**
-   Atom feed
-* **rss.mako**
-   RSS feed
+As an example, the blogofile.com sources include the following reusable templates in the _templates directory, which you're free to adapt for use in your own sites:
 
-Even if you're not using the blog, it is reccommended that you create a similar site.mako file and include it in all your page templates so that you can create a standard look and feel for your site.
+* **0.initial.py** - Python templates are run in lexicographical order, so this file is always run first. It just sets up some things before other templates are run.
+* **site.mako** - Establishes the general look of every page, organizing the header, content pane, sidebar and footer.
+* **base.mako** - The template from which all other templates ultimately inherit. Although most things are inherited in a child of this template: site.mako
+* **archives.py** - Builds the blog archives on a year/month basis under the URL structure /archive/year/month/
+* **chronological.py** - Used for creating a chronological list of posts (reused numerous times eg. in archives and categories templates)
+* **chronological.mako** - Helper template used in chronological.py
+* **categories.py** - Builds the chronological listing of posts per category in the URL structure /category/
+* **permapage.py** - Used for creating a permalinked page for a post.
+* **permapage.mako** - Helper template used in permapage.py
+* **feed.py** - Generic feed writing methods used to write both the global RSS/Atom feeds as well as the per-category RSS/Atom feeds.
+* **atom.mako** - Used for creating Atom feeds of posts.
+* **rss.mako** - Used for creating RSS feeds of posts 
+* **post.mako** - Used for generating a single post
+* **post_excerpt.mako** - An alternative to post.mako that just shows an excerpt of the post.
+* **footer.mako** - A footer used on every page.
+* **header.mako** - A header used on every page.
+* **head.mako** - The <head> tag of every page
+* **sidebar.mako** - A sidebar used on every page.
+
+Even if you're creating your site from scratch, it is recommended that you create a similar site.mako file and include it in all your page templates so that you can create a standard look and feel for your site.
 
 Template Environment
 --------------------
 
-When Blogofile renders a template, it has an environment created for it that contains many useful objects:
+TODO: Document blogofile.cache and general usage inside of a template.
 
-* **posts**
-   A list of all the blog post objects.
-* **config**
-   The blogofile config file (loaded from _config.py)
-* **archive_links**
-   Metadata for the archive links listed by month.
-* **all_categories**
-    All the categories for the blog posts.
-* **category_link_names**
-    A mapping of Category names to their URL friendly equivalents
-
-These can all be accessed within your templates using `Mako syntax`_.
 
 .. only:: latex
 
