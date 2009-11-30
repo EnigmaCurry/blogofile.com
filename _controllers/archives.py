@@ -12,4 +12,4 @@ def write_monthly_archives(posts):
         except KeyError:
             m[link] = [post]
     for link, posts in m.items():
-        bf.templates.chronological.write_blog_chron(posts,root=link)
+        bf.controllers.chronological.write_blog_chron(posts,root=link)

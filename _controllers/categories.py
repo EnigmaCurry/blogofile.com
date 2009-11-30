@@ -18,10 +18,10 @@ def write_categories():
         category_posts = [post for post in bf.posts \
                               if category in post.categories]
         #Write category RSS feed
-        bf.templates.feed.write_feed(category_posts,bf.util.path_join(
+        bf.controllers.feed.write_feed(category_posts,bf.util.path_join(
                 bf.config.blog_path, bf.config.blog_category_dir,
                 category.url_name,"feed"),"rss.mako")
-        bf.templates.feed.write_feed(category_posts,bf.util.path_join(
+        bf.controllers.feed.write_feed(category_posts,bf.util.path_join(
                 bf.config.blog_path, bf.config.blog_category_dir,
                 category.url_name,"feed","atom"),"atom.mako")
         page_num = 1
