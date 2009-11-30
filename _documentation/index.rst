@@ -15,7 +15,10 @@ This is a work in progress and currently only documents the latest development s
    quick_setup
    file_overview
    config_file
+   templates
+   controllers
+   posts
+   filters
    vcs_integration
    migrating_blogs
-   
 

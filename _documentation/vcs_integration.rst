@@ -3,15 +3,15 @@
 Integration with Version Control
 ********************************
 
-You want Version Control
-------------------------
+You Want Version Control
+-------------------------------
 
 You might not know it yet, but you want your blog under a `Version Control System <http://en.wikipedia.org/wiki/Version_Control>`_ (VCS). Consider the benefits:
 
- * Regular and complete backups occur whenever you push your changes to another server.
- * The ability to bring back any version of your site (or any single page) from history.
- * The ability to work from any computer, without getting worried if you're working on the latest version or not.
- * Automatic Deployment.
+* Regular and complete backups occur whenever you push your changes to another server.
+* The ability to bring back any version of your site (or any single page) from history.
+* The ability to work from any computer, without getting worried if you're working on the latest version or not.
+* Automatic Deployment.
 
 Automatic what? Even if you're a veteran to VCS, you may not realize that a VCS can do a lot more for you than just provide a place for you to dump your files. You can have your favorite VCS build and deploy your Blogofile based site for you everytime you commit new changes.
 

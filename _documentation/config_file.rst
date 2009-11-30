@@ -3,6 +3,62 @@
 Configuration File
 ==================
 
+.. _basic-configuration:
+
+Basic Configuration
+|||||||||||||||||||
+
+Before your site can be compiled, Blogofile looks for a file called ``_config.py`` in the root of your source directory; this is your site's main configuration file. Blogofile uses sensible default values for anything you don't configure explicitly in this file. Although every site must have a _config.py file, a bare bones site can start out with a completely blank ``_config.py``.
+
+The _config.py file is just regular `Python`_ source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to start out with.
+
+At the top of the file you'll see the Basic Settings section. This section contains the settings you'll most likely want to change when creating your own site:
+
+* **site_url** - String
+
+  This is the root URL for your website. This is the URL that your blogofile site will be hosted at.
+
+  example: ``http://www.xkcd.com``
+
+* **blog_enabled** - Boolean
+  
+  This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. If this is set to True, Blogofile requires several blog specific templates to exist in the **_templates** directory as described in :ref:`required-templates`
+
+  Defaults to True
+
+* **blog_path** - String
+
+  This is the path of the blog off of the site_url. For example, if site_url is ``http://www.xkcd.com`` and blog_path is ``/blag`` your full URL to your blog will be ``http://www.xkcd.com/blag``
+
+* **blog_name** - String
+  
+  This is the name of your blog.
+
+  example: ``xkcd - The blag of the webcomic``
+
+* **blog_description** - String
+
+  This is a (short) description of your blog. Many RSS readers support/expect a description for feeds.
+
+  example: ``A Webcomic of Romance, Sarcasm, Math, and Language``
+
+* **blog_timezone** - String
+
+  This is the `timezone`_ that you normally post to your blog from. 
+
+  Defaults to ``US/Eastern``
+
+* **blog_posts_per_page** - Integer
+
+  This is the number of blog posts you want to display per page.
+
+That's all you need to configure for a basic site with a blog. See the next section for the rest of the available settings.
+
+.. _comprehensive-config-values:
+
+Comprehensive Config Values
+|||||||||||||||||||||||||||
+
 This is a list of all the predefined values inside of _config.py (See :ref:`basic-configuration`).
 
 The config file is just regular Python code, so you can define any additional values you want. All attributes are accessible inside your templates via ``${config.your_attribute}``. 
@@ -268,3 +324,5 @@ This is a function that gets run after the _site directory is built
 .. _Pygments Styles: http://pygments.org/docs/styles
 
 .. _Emacs: http://www.gnu.org/software/emacs
+
+.. _Python: http://www.python.org
