@@ -132,16 +132,38 @@ The post is divided into two parts, the YAML header and the post content.
 
 YAML Header
 -----------
-The `YAML`_ portion is between the two ``---`` lines, and it describes all of the metadata for the post. The options include:
+The `YAML`_ portion is between the two ``---`` lines, and it describes all of the metadata for the post. You can define whatever fields you wish for your posts, but there are some names that are reserved for general purpose use:
 
-* **categories**
-    A list of categories that this post should appear in, seperated by commas. You don't have to configure the categories beforehand, you are defining them right here.
-* **date**
-    The date of the post (year/month/day hour:minute:second)
-* **permalink**
-    The full permananent URL for this post. This is optional, one will be generated automatically if left blank. (see :ref:`config-blog-auto-permalink`)
 * **title**
-    The title for the post
+    A one-line free form title for the post.
+* **date**
+    The date that the post was originally created. (year/month/day hour:minute:second).
+* **updated**
+    The date that the post was last updated. (year/month/day hour:minute:second).
+* **categories**
+    A list of categories that the post pertains to, each seperated by commas. You don't have to configure the categories beforehand, you are defining them right here.
+* **tags**
+    A list of tags that the post pertains to, each seperated by commas.
+* **permalink**
+    The full permanent URL for this post. This is optional, one will be generated automatically if left blank. (see :ref:`config-blog-auto-permalink`)
+* **format**
+    The format of the post (eg: html, textile, markdown, org).
+* **guid**
+    A unique hash for the post, if not provided it is assumed that the permalink is the guid.
+* **author**
+    The name of the author of the post.
+* **draft**
+    If 'true' or 'True', the post is considered to be only a draft and not to be published.
+* **source**
+    Reserved internally.
+* **yaml**
+    Reserved internally.
+* **content**
+    Reserved internally.
+* **filename**
+    Reserved internally.
+
+This list is also defined in the blogofile source code under ``blogofile.post.reserved_field_names`` and can be accessed as a dictionary at runtime.
 
 .. _post-content:
 

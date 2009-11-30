@@ -27,7 +27,7 @@
       ${"""<h4>Welcome to my homepage</h4>
       Here's my latest 5 blog posts:
       <ul>
-        % for p in posts[0:5]:
+        % for p in bf.posts[0:5]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>"""}
@@ -37,7 +37,7 @@
       <h4>Welcome to my homepage</h4>
       Here's my latest 5 blog posts:
       <ul>
-        % for p in posts[0:5]:
+        % for p in bf.posts[0:5]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>
@@ -46,10 +46,10 @@
     <pre lang="html+mako">
       ${"""<h4>Welcome to my homepage</h4>
       Here's the last 5 posts in each category:
-      % for category in all_categories:
+      % for category in bf.all_categories:
        Posts in category : ${category[0]}
        <ul>
-         % for p in [p for p in posts if category[0] in p.categories][0:5]:
+         % for p in [p for p in bf.posts if category[0] in p.categories][0:5]:
          <li><a href="${p.permalink}">${p.title}</a></li>
          % endfor
        </ul>
@@ -60,10 +60,10 @@
     <div style="background-color:#ffffff; border:1px solid;">
       <h4>Welcome to my homepage</h4>
       Here's the last 5 posts in each category:<br/><br/>
-      % for category in all_categories:
+      % for category in bf.all_categories:
       Posts in category : ${category[0]}
       <ul>
-        % for p in [p for p in posts if category[0] in p.categories][0:5]:
+        % for p in [p for p in bf.posts if category[0] in p.categories][0:5]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>
@@ -75,7 +75,7 @@
       <%page args="posts, category"/>
       <h2>Posts in category : ${category}</h2>
       <ul>
-        % for p in [p for p in posts if category in p.categories]:
+        % for p in [p for p in bf.posts if category in p.categories]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>
@@ -84,7 +84,7 @@
     <p>The above template declares two input arguments: posts and category. You can include this template in other templates, making sure to include those arguments:</p>
     <pre lang="html+mako">
       ${"""
-      % for category in all_categories:
+      % for category in bf.all_categories:
       <%include file="_templates/category_list.mako" args="category=category[0]" />
       % endfor"""}
     </pre>
