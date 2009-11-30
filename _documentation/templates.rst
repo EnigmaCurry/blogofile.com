@@ -66,12 +66,14 @@ One special reference is also made to ``${next.body()}``. This deposits the cont
     </body>
   </html>
 
+.. _adding-blogofile-features-to-our-templates:
+
 Adding Blogofile Features To Our Templates
 ------------------------------------------
 
 In the last section we introduced a simple template called ``index.html.mako``. This template is the home page of our site, and so far only includes regular mako functionality. Now let's introduce some Blogofile action! 
 
-Let's say we want to include on our home page a list of the 5 most recent posts from our blog. As long as :ref:`config-blog-enabled` is turned on, each template can get access to our blog posts. We can modify our ``index.html.mako`` to get the list of recent posts::
+Let's say we want to include on our home page a list of the 5 most recent posts from our blog. As long as :ref:`config-blog-enabled` is turned on, each template can get access to our blog posts through a cache object called ``bf``. We can modify our ``index.html.mako`` to get the list of recent posts::
 
   <%inherit file="_templates/site.mako" />
   Here's the five most recent posts from the blog:
@@ -84,7 +86,7 @@ Let's say we want to include on our home page a list of the 5 most recent posts 
 
 If you're familiar with for-loops in Python, this should look somewhat similar. We create an unordered list tag and inside that list we iterate over a special Blogofile object containing all of our posts. We limit ourselves to the first 5 posts by slicing the list of posts from 0 to 5. 
 
-Each :ref:`post` contains various metadata about the post and in this example we are interested in two things: the relative URL to the permalinked post as well as the title of the post. We create the anchor containing the relative URL ``${post.path}`` and we name the anchor the same as the post ``${post.title}``. The rendered HTML file will now look something like this::
+Each post contains various metadata (see :ref:`posts`) about the post and in this example we are interested in two things: the relative URL to the permalinked post as well as the title of the post. We create the anchor containing the relative URL ``${post.path}`` and we name the anchor the same as the post ``${post.title}``. The rendered HTML file will now look something like this::
 
   <html>
     <body>
