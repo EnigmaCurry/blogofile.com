@@ -23,24 +23,27 @@ Inside the source directory are the following files (abbreviated)::
 
  |-- _config.py
  |-- _templates
- |   |-- 0.initial.py
- |   |-- archives.py
  |   |-- atom.mako
  |   |-- base.mako
- |   |-- categories.py
  |   |-- chronological.mako
- |   |-- chronological.py
  |   |-- feed.py
  |   |-- footer.mako
  |   |-- head.mako
  |   |-- header.mako
  |   |-- permapage.mako
- |   |-- permapage.py
  |   |-- post.mako
  |   |-- post_excerpt.mako
  |   |-- rss.mako
  |   |-- sidebar.mako
  |   `-- site.mako
+ |-- _controllers
+ |   |-- 0.initial.py
+ |   |-- archives.py
+ |   |-- categories.py
+ |   |-- chronological.py
+ |   |-- feed.py
+ |   |-- permapage.py
+ |   `-- photo_gallery.py
  |-- _posts
  |   |-- 001. Blogofile 0.1.textile
  |   |-- 002. The History of Blogofile.textile
@@ -55,10 +58,11 @@ Inside the source directory are the following files (abbreviated)::
 
 The basic building blocks of a Blogofile site are:
 
- * **_config.py** - Your main Blogofile configuration file. Described in depth in :ref:`config-file`
- * **Templates** - Templates dynamically create pages on your site. index.html.mako along with the entire _templates directory are examples. Templates are described in depth in :ref:`templates`
- * **Posts** - Your blog posts, contained in the _posts directory. Described in depth in :ref:`posts`
- * **Filters** - contained in the _filters directory, filters can process textual data like syntax highlighters, translators, swear word censors etc. Described in depth in :ref:`filters`
+ * **_config.py** - Your main Blogofile configuration file. See :ref:`config-file`
+ * **Templates** - Templates dynamically create pages on your site. ``index.html.mako`` along with the entire ``_templates`` directory are examples. See :ref:`templates`
+ * **Posts** - Your blog posts, contained in the ``_posts`` directory. See :ref:`posts`
+ * **Filters** - contained in the ``_filters`` directory, filters can process textual data like syntax highlighters, translators, swear word censors etc. See :ref:`filters`
+ * **Controllers** - contained in the ``_controllers`` directory, controllers create dynamic sections of your site, like blogs. See :ref:`controllers`
 
 Any file not starting with an underscore (or contained in a directory starting with one) and not ending in ".mako" are considered regular files are are copied directly to your compiled site directly (eg. css/site.css js/site.js)
 
