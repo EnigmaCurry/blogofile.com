@@ -7,9 +7,7 @@ def run():
 
 def write_categories():
     """Write all the blog posts in categories"""
-    root = bf.util.path_join(bf.blog_dir,bf.config.blog_category_dir)
-    chron_template = bf.writer.template_lookup.get_template("chronological.mako")
-    chron_template.output_encoding = "utf-8"
+    root = bf.util.path_join(bf.config.blog_path,bf.config.blog_category_dir)
     #Find all the categories:
     categories = set()
     for post in bf.posts:
@@ -32,7 +30,6 @@ def write_categories():
                 bf.util.mkdir(os.path.split(path)[0])
             except OSError:
                 pass
-            f = open(path, "w")
             page_posts = category_posts[:bf.config.blog_posts_per_page]
             category_posts = category_posts[bf.config.blog_posts_per_page:]
             #Forward and back links
@@ -48,17 +45,14 @@ def write_categories():
                                            str(page_num + 1))
             else:
                 next_link = None
-            html = bf.writer.template_render(
-                chron_template,
-                { "posts": page_posts,
-                  "prev_link": prev_link,
-                  "next_link": next_link })
-            f.write(html)
-            f.close()
+            bf.writer.materialize_template("chronological.mako", path, {
+                    "posts": page_posts,
+                    "prev_link": prev_link,
+                    "next_link": next_link })
             #Copy category/1 to category/index.html
             if page_num == 1:
-                shutil.copyfile(path,bf.util.path_join(
-                        root,category.url_name,
+                shutil.copyfile(bf.util.path_join(bf.writer.output_dir,path),bf.util.path_join(
+                        bf.writer.output_dir,root,category.url_name,
                         "index.html"))
             #Prepare next iteration
             page_num += 1
