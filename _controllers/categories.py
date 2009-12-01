@@ -15,6 +15,8 @@ def write_categories():
     for category in categories:
         category_posts = [post for post in bf.posts \
                               if category in post.categories]
+        #Update the categories sidebar models
+        bf.all_categories.append((category,len(category_posts)))
         #Write category RSS feed
         bf.controllers.feed.write_feed(category_posts,bf.util.path_join(
                 bf.config.blog_path, bf.config.blog_category_dir,

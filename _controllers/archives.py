@@ -12,4 +12,6 @@ def write_monthly_archives(posts):
         except KeyError:
             m[link] = [post]
     for link, posts in m.items():
+        name = posts[0].date.strftime("%B %Y")
         bf.controllers.chronological.write_blog_chron(posts,root=link)
+        bf.archive_links.append((bf.config.blog_path+link,name,len(posts)))
