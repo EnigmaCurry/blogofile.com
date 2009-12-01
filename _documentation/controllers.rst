@@ -20,4 +20,83 @@ The blogofile.com sources (which you can obtain by running ``blogofile init blog
 A Simple Controller
 -------------------
 
-Suppose you wanted to create a simple photo gallery with a comments page for each photo. You don't want to have to create a new mako template for every picture you upload, so let's write a controller instead:
+Suppose you wanted to create a simple photo gallery with a comments page for each photo. You don't want to have to create a new mako template for every picture you upload, so let's write a controller instead. The controller will be really simple: read all the photos in the photo directory and create a single page for each photo and allow comments on the photo using `Disqus`_. Also create an index page listing all the photos with a thumbnail and the name of the image.
+
+First create the controller called ``_controllers/photo_gallery.py``::
+
+ # A retarded little photo gallery for Blogofile.
+
+ # Read all the photos in the /photos directory and create a page for each along
+ # with Disqus comments.
+ 
+ import os
+ from blogofile.cache import bf
+ 
+ photos_dir = os.path.join("demo","photo_gallery")
+ 
+ def run():
+     photos = read_photos()
+     write_pages(photos)
+     write_photo_index(photos)
+     
+ def read_photos():
+     #This could be a lot more advanced, like supporting subfolders, creating
+     #thumbnails, and even reading the Jpeg EXIF data for better titles and such.
+     #This is kept simple for demonstration purposes.
+     return [p for p in os.listdir(photos_dir) if p.lower().endswith(".jpg")]
+ 
+ def write_pages(photos):
+     for photo in photos:
+         bf.writer.materialize_template("photo.mako", (photos_dir,photo+".html"), {"photo":photo})
+ 
+ def write_photo_index(photos):
+     bf.writer.materialize_template("photo_index.mako", (photos_dir,"index.html"), {"photos":photos})
+ 
+When a controller is loaded, the first thing Blogofile looks for is a ``run()`` method to invoke. It never takes any arguments, each controller is expected to know what it's going to do of it's own accord. 
+
+In this example the ``run()`` method does all the work:
+
+* It reads all the photos: ``read_photos()``
+* It creates a page for each photo: ``write_pages()``
+* It creates a single index page for all the photos: ``write_photo_index()``
+
+The ``bf.writer.materialize_template`` method is provided to make it easy to pass data to a template and have it written to disk inside the ``_site`` directory.
+
+The ``write_pages()`` method references a reusable template residing in ``_templates/photo.mako``::
+
+ <%inherit file="site.mako" />
+ <center><img src="/demo/photo_gallery/${photo}"/></center>
+ <div id="disqus_thread"></div>
+ <script type="text/javascript">
+   var disqus_url = "${bf.config.site_url}/demo/photo_gallery/${photo}.html";
+ </script>
+ <script type="text/javascript" 
+    src="http://disqus.com/forums/${bf.config.disqus_name}/embed.js"></script>
+ <noscript><a href="http://${bf.config.disqus_name}.disqus.com/?url=ref">
+     View the discussion thread.</a>
+ </noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by 
+ <span class="logo-disqus">Disqus</span></a>
+ 
+The controller passes in a single variable: ``photo``, which is the filename of the photo. In a more complete photo gallery, one might pass an object that held the EXIF data.
+
+The ``write_photo_index()`` method references a reusable template residing in ``_templates/photo_index.mako``::
+
+ <%inherit file="_templates/site.mako" /> 
+ My Photos:
+ <table>
+ % for photo in photos:
+   <tr><td><a href="${photo}.html"><img src="${photo}" height="175"></a></td><td>${photo}</td></tr>
+ % endfor
+ </table>
+
+The controller passes a single variable: ``photos``, which is a sequence of all the photos filenames. In a more complete photo gallery, one might pass a sequence of objects that had references to the full jpg as well as a thumbnail and EXIF data.
+
+This example is included in the blogofile.com sources and can also `be viewed live <http://www.blogofile.com/demo/photo_gallery>`_.
+
+.. only:: latex
+
+   .. target-notes::
+      :class: hidden
+
+.. _Disqus: http://www.disqus.com
+
