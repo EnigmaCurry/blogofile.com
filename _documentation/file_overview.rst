@@ -96,7 +96,7 @@ When the Blogofile build process is invoked, it follows this conceptual order of
 
   * If the filename ends in ``.mako``, it is considered a page template. It is rendered via Mako, then copied to the ``_site`` directory stripped of the ``.mako`` extension. See :ref:`templates`.
 
-  * If the filename or directory starts with an underscore ``_`` it is ignored and not copied to the ``_site`` directory (other ignore patterns may be setup using :ref:`config-ignore-patterns` in ``_config.py``.)
+  * If the filename or directory starts with an underscore ``_`` it is ignored and not copied to the ``_site`` directory (other ignore patterns may be setup using :ref:`config-file-ignore-patterns` in ``_config.py``.)
 
 * Controllers from the ``_controllers`` directory are run to build dynamic sections of your site, eg. the blog chronological listing, blog archives, blog categories etc. See :ref:`controllers`.
 

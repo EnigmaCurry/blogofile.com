@@ -1,7 +1,6 @@
 ---
 categories: Blogofile.com
 date: 2009/07/23 15:22:00
-format: markdown
 permalink: http://www.blogofile.com/blog/2009/07/23/blogofile-documentation
 title: Blogofile Documentation
 ---

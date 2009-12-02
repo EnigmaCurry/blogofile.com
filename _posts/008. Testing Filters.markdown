@@ -1,0 +1,14 @@
+---
+categories: Releases
+date: 2009/12/01 11:54:00
+permalink: http://www.blogofile.com/blog/2009/12/01/testing-filters
+title: Testing Filters
+filter: markdown, playnice
+---
+Just playing with the fucking filters:
+
+ * This should be a list
+ * two
+ * three
+ * four
+ * [EnigmaCurry](http://www.enigmacurry.com).

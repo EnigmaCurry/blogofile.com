@@ -1,15 +1,15 @@
 .. _controllers:
 
 Controllers
-******************************
+***********
 
 Controllers are used when you want to create a whole chunk of your site dynamically everytime you compile your site. The best example of this is a blog. The whole purpose of a blog engine is to make it so you don't have to update 10 different things when you just want to make a post. Examples of controllers include:
 
- * A sequence of blog posts listed in reverse chronological order paginated 5 posts per page.
- * A blog post archiver to list blog posts in reverse chronological order listed by year and month.
- * A blog post categorizer to list blog posts in reverse chronological order listed by category.
- * An RSS/Atom feed generator for all posts, or for a single category.
- * A permalink page for all blog posts
+* A sequence of blog posts listed in reverse chronological order paginated 5 posts per page.
+* A blog post archiver to list blog posts in reverse chronological order listed by year and month.
+* A blog post categorizer to list blog posts in reverse chronological order listed by category.
+* An RSS/Atom feed generator for all posts, or for a single category.
+* A permalink page for all blog posts
 
 All of these are pretty much a necessity for a blog engine, but none of these are included within the core of Blogofile itself. One of Blogofile's core principles is to remain light, configurable, and to make little assumption about how a user's site should behave. All of these blog specific tasks are relegated to a type of plugin system called controllers so that they can be tailored to each individuals tastes as well as leave room for entirely new types of controllers written by the user.
 
@@ -47,10 +47,12 @@ First create the controller called ``_controllers/photo_gallery.py``::
  
  def write_pages(photos):
      for photo in photos:
-         bf.writer.materialize_template("photo.mako", (photos_dir,photo+".html"), {"photo":photo})
+         bf.writer.materialize_template("photo.mako", 
+                 (photos_dir,photo+".html"), {"photo":photo})
  
  def write_photo_index(photos):
-     bf.writer.materialize_template("photo_index.mako", (photos_dir,"index.html"), {"photos":photos})
+     bf.writer.materialize_template("photo_index.mako", 
+                 (photos_dir,"index.html"), {"photos":photos})
  
 When a controller is loaded, the first thing Blogofile looks for is a ``run()`` method to invoke. It never takes any arguments, each controller is expected to know what it's going to do of it's own accord. 
 
@@ -85,13 +87,14 @@ The ``write_photo_index()`` method references a reusable template residing in ``
  My Photos:
  <table>
  % for photo in photos:
-   <tr><td><a href="${photo}.html"><img src="${photo}" height="175"></a></td><td>${photo}</td></tr>
+   <tr><td><a href="${photo}.html">
+     <img src="${photo}" height="175"></a></td><td>${photo}</td></tr>
  % endfor
  </table>
 
 The controller passes a single variable: ``photos``, which is a sequence of all the photos filenames. In a more complete photo gallery, one might pass a sequence of objects that had references to the full jpg as well as a thumbnail and EXIF data.
 
-This example is included in the blogofile.com sources and can also `be viewed live <http://www.blogofile.com/demo/photo_gallery>`_.
+This example is included in the `blogofile.com sources <http://www.github.com/EnigmaCurry/blogofile.com>`_ and can also `be viewed live <http://www.blogofile.com/demo/photo_gallery>`_.
 
 .. only:: latex
 

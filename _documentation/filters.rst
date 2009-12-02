@@ -29,10 +29,26 @@ The simplest example is probably a swear word filter, called ``_filters/playnice
 
 This filter (once it's in your ``_filters`` directory) is available to all templates and blog posts.
 
+Filter Chains
+-------------
+
+* Describe chains
+* chain aliases
+
+Using Filters in a Template
+---------------------------
+
 How to use it in a template::
 
  <%self:filter chain="playnice">Belgium: Less offensive words have been created 
    in the many languages of the galaxy, such as joojooflop, swut and 
    Holy Zarquon's Singing Fish. </%self:filter>
 
+Using Filters in a Blog Post
+----------------------------
+
 **Blogofile currently does not have a common interface for applying filters in blog posts, this is forthcoming.**
+
+* Block level filters
+* Post level filters
+* Default filters based on post file extension

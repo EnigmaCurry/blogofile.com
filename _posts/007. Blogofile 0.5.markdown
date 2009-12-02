@@ -1,7 +1,6 @@
 ---
 categories: Releases
 date: 2009/08/30 11:54:00
-format: markdown
 permalink: http://www.blogofile.com/blog/2009/08/30/blogofile-0.5-released
 title: Blogofile 0.5 released
 ---

@@ -288,13 +288,22 @@ example: ``#+OPTIONS: H:3 num:nil toc:nil \n:nil``
 Advanced Settings
 ------------------
 
-.. _config-ignore-patterns:
+.. _config-file-ignore-patterns:
 
-ignore_patterns
-+++++++++++++++
+file_ignore_patterns
+++++++++++++++++++++
 List
 
 This is a list of regular expressions that describe paths to ignore when processing blogofile blogs. The most important one (and one you should not remove) is ``.*[\/]_.*`` which ignore all files and directories that start with an underscore (like _config.py and _posts)
+
+
+.. _config-blog-post-default-filters:
+
+blog_post_default_filters
++++++++++++++++++++++++++
+Dictionary
+
+This is a dictionary of file extensions to default filter chains to be applied to blog posts. A default filter chain is applied to a blog post only if no filter attribute is specified in the blog post YAML header.
 
 .. _config-pre-build:
 

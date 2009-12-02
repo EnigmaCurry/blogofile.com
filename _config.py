@@ -128,17 +128,26 @@ site_css_dir = "/css"
 # from the _site directory
 # These can be strings or compiled patterns.
 # Strings are assumed to be case insensitive.
-ignore_patterns = [
+file_ignore_patterns = [
     r".*([\/]|[\\])_.*",   #All files that start with an underscore
     r".*([\/]|[\\])#.*",   #Emacs temporary files
     r".*([\/]|[\\])\.#.*", #Emacs temporary files
-    r".*~$]",       #Emacs temporary files
+    r".*~$]",              #Emacs temporary files
     r".*([\/]|[\\])\.git", #Git VCS dir
     r".*([\/]|[\\])\.hg",  #Mercurial VCS dir
     r".*([\/]|[\\])\.bzr", #Bazaar VCS dir
     r".*([\/]|[\\])\.svn", #Subversion VCS dir
     r".*([\/]|[\\])CVS"    #CVS dir
     ]
+
+#### Default post filters ####
+# If a post does not specify a filter chain, use the 
+# following defaults based on the post file extension:
+blog_post_default_filters = {
+    "markdown": "markdown, syntax_highlight",
+    "textile": "textile, syntax_highlight",
+    "org": "org, syntax_highlight"
+}
 
 ### Pre/Post build hooks:
 def pre_build():
