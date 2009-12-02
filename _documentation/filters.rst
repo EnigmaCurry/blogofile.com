@@ -4,9 +4,10 @@ Filters
 ******************************
 Filters are Blogofile's text processor plugin system. They create callable functions in templates and blog posts that can perform manipulation on a block of text. Ideas for filters:
 
-* A swear-word filter.
+* Markup languages.
+* A code syntax highlighter.
 * A flash video plugin helper.
-* A new markup language.
+* A swear word filter.
 * A foreign language translator.
 
 .. _filter-simple-example:
@@ -14,7 +15,7 @@ Filters are Blogofile's text processor plugin system. They create callable funct
 A Simple Filter
 ---------------
 
-The simplest example is probably a swear word filter, called ``_filters/playnice.py``::
+Here's a swear word filter that replaces nasty words with the word ``kitten``. The file is called ``_filters/playnice.py``::
 
  #Replace objectionable language with kittens.
  #This is just an example, it's far from exhaustive.
@@ -32,23 +33,61 @@ This filter (once it's in your ``_filters`` directory) is available to all templ
 Filter Chains
 -------------
 
-* Describe chains
-* chain aliases
+Filters can be chained together, one after the other, so that you can perform multiple text transformations on a peice of text.
+
+Suppose you have the following filters in your ``_filters`` directory:
+ 
+* **markdown.py** - Transforms `Markdown`_ formatted text into HTML.
+* **playnice.py** - The swear word filter above.
+* **syntax_highlight.py** - A code syntax highligher
+
+A filter chain of ``markdown, playnice, syntax_highlight`` will apply those three filters (seperated by commas) in the order given.
 
 Using Filters in a Template
 ---------------------------
 
+The filter module provides the method called ``run_chain``. You can use this directly in your mako templates::
+
+ The following text is filtered:
+
+ ${bf.filter.run_chain('playnice, syntax_highlight', 'some shazbot text')}
+
+However, it's kind of a pain to always wrap the text you want to filter in that function call. Writing a mako ``<%def>`` block can create some nice syntactic sugar for us. Define the following in your base template so that all templates that inherit from it can benefit from it::
+
+ <%def name="filter(chain)">
+  ${bf.filter.run_chain(chain, capture(caller.body))}
+ </%def>
+
 How to use it in a template::
 
- <%self:filter chain="playnice">Belgium: Less offensive words have been created 
-   in the many languages of the galaxy, such as joojooflop, swut and 
-   Holy Zarquon's Singing Fish. </%self:filter>
+ <%self:filter chain="playnice, syntax_highlight">Belgium: Less offensive 
+   words have been created in the many languages of the galaxy, such as
+   joojooflop, swut and Holy Zarquon's Singing Fish. </%self:filter>
+
+All the text between the ``<%self:filter>`` start and end tags is filtered by the specified filter chain.
 
 Using Filters in a Blog Post
 ----------------------------
 
-**Blogofile currently does not have a common interface for applying filters in blog posts, this is forthcoming.**
+Filter chains can be applied to blog posts in the post YAML::
 
-* Block level filters
-* Post level filters
-* Default filters based on post file extension
+ ---
+ date: 2009/12/01 11:17:00
+ permalink: http://www.blogofile.com/whatever
+ title: A markdown formatted test post
+ filter: markdown, playnice
+ ---
+ This is a **markdown** formatted post with all the frak words filtered.
+
+Filters on blog posts are applied to the entire blog post; you cannot apply a filter to only a portion of the text like you can with templates. However, there is nothing preventing you from writing a filter that looks for special syntax in your posts and filters selectively. This allows for more end user customizability. 
+
+If no filter is specified for your post, Blogofile looks at a config option called :ref:`config-blog-post-default-filters` which maps the file extension of the post file to a filter chain. Defaults include ``markdown``, ``textile``, and ``org``.
+
+You can turn off all filters for the post, including the default ones, by specifing a filter chain of ``none``.
+
+.. only:: latex
+
+   .. target-notes::
+      :class: hidden
+
+.. _Markdown: http://en.wikipedia.org/wiki/Markdown
