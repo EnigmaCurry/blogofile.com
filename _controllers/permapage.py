@@ -16,10 +16,6 @@ def write_permapages():
             #Permalinks MUST be specified. No permalink, no page.
             bf.logger.info("Post has no permalink: "+post.title)
             continue
-        try:
-            bf.util.mkdir(path)
-        except OSError:
-            pass
         bf.writer.materialize_template(
             "permapage.mako", bf.util.path_join(path,"index.html"), 
             { "post": post, "posts": bf.posts })

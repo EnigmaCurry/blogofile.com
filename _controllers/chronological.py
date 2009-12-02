@@ -24,7 +24,6 @@ def write_blog_chron(posts,root):
         else:
             next_link = None
         page_dir = bf.util.path_join(bf.config.blog_path,root,str(page_num))
-        bf.util.mkdir(page_dir)
         fn = bf.util.path_join(page_dir,"index.html")
         bf.writer.materialize_template("chronological.mako", fn,
             { "posts":page_posts,

@@ -28,10 +28,6 @@ def write_categories():
         while True:
             path = bf.util.path_join(root,category.url_name,
                                 str(page_num),"index.html")
-            try:
-                bf.util.mkdir(os.path.split(path)[0])
-            except OSError:
-                pass
             page_posts = category_posts[:bf.config.blog_posts_per_page]
             category_posts = category_posts[bf.config.blog_posts_per_page:]
             #Forward and back links
