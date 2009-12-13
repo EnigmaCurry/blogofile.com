@@ -1,10 +1,24 @@
 import os
 import shutil
+import operator
+
 from blogofile.cache import bf
 
 def run():
     write_categories()
 
+def sort_into_categories():
+    categories = set()
+    for post in bf.posts:
+        categories.update(post.categories)
+    for category in categories:
+        category_posts = [post for post in bf.posts \
+                              if category in post.categories]
+        bf.categorized_posts[category] = category_posts
+    for category, posts in sorted(
+        bf.categorized_posts.items(), key=operator.itemgetter(0)):
+        bf.all_categories.append((category, len(posts)))
+    
 def write_categories():
     """Write all the blog posts in categories"""
     root = bf.util.path_join(bf.config.blog_path,bf.config.blog_category_dir)
@@ -12,11 +26,7 @@ def write_categories():
     categories = set()
     for post in bf.posts:
         categories.update(post.categories)
-    for category in categories:
-        category_posts = [post for post in bf.posts \
-                              if category in post.categories]
-        #Update the categories sidebar models
-        bf.all_categories.append((category,len(category_posts)))
+    for category, category_posts in bf.categorized_posts.items():
         #Write category RSS feed
         bf.controllers.feed.write_feed(category_posts,bf.util.path_join(
                 bf.config.blog_path, bf.config.blog_category_dir,
@@ -32,13 +42,13 @@ def write_categories():
             category_posts = category_posts[bf.config.blog_posts_per_page:]
             #Forward and back links
             if page_num > 1:
-                prev_link = bf.util.path_join(
+                prev_link = "/" + bf.util.blog_path_helper(
                     bf.config.blog_path, bf.config.blog_category_dir, category.url_name,
                                            str(page_num - 1))
             else:
                 prev_link = None
             if len(category_posts) > 0:
-                next_link = bf.util.path_join(
+                next_link = "/" + bf.util.blog_path_helper(
                     bf.config.blog_path, bf.config.blog_category_dir, category.url_name,
                                            str(page_num + 1))
             else:

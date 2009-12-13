@@ -43,7 +43,7 @@
     <h3>Archives</h3>
     <ul>
 % for link, name, num_posts in bf.archive_links:
-      <li><a href="${link}" title="${name}">${name}</a>&nbsp;(${num_posts})</li>
+      <li><a href="/${bf.util.blog_path_helper(bf.config.blog_path,link)}/1" title="${name}">${name}</a>&nbsp;(${num_posts})</li>
 % endfor
     </ul>
   </div>
