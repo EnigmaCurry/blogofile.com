@@ -1,17 +1,24 @@
+import operator
+
 from blogofile.cache import bf
 
 def run():
-    write_monthly_archives(bf.posts)
+    write_monthly_archives()
 
-def write_monthly_archives(posts):
-    m = {} # "/archive/%Y/%m" -> [post, post, ... ]
-    for post in posts:
-        link = post.date.strftime("/archive/%Y/%m")
+def sort_into_archives():
+    #This is run in 0.initial.py
+    for post in bf.posts:
+        link = post.date.strftime("archive/%Y/%m")
         try:
-            m[link].append(post)
+            bf.archived_posts[link].append(post)
         except KeyError:
-            m[link] = [post]
-    for link, posts in m.items():
+            bf.archived_posts[link] = [post]
+    for archive, posts in sorted(
+        bf.archived_posts.items(), key=operator.itemgetter(0), reverse=True):
+        name = posts[0].date.strftime("%B %Y")
+        bf.archive_links.append((archive, name, len(posts)))
+    
+def write_monthly_archives():
+    for link, posts in bf.archived_posts.items():
         name = posts[0].date.strftime("%B %Y")
         bf.controllers.chronological.write_blog_chron(posts,root=link)
-        bf.archive_links.append((bf.config.blog_path+link,name,len(posts)))
