@@ -24,12 +24,11 @@
       <li>Blogofile is <b><i>inexpensive</i></b> to host. Any web server can host a blogofile blog.</li>
       <li>Blogofile is <b><i>modern</i></b>, supporting all the common blogging features:
         <ul>
-          <li>Categories.</li>
-          <li>Tags.</li>
-          <li>Comments and Trackbacks with effective spam filtering using <a href="http://www.disqus.com">Disqus</a>.</li>
-          <li>Facebook and Twitter integration using Disqus.</li>
+          <li>Categories and Tags</li>
+          <li>Comments, Trackbacks, and Social Networking mentions (Twitter, Reddit, FriendFeed etc), all with effective spam filtering using <a href="http://www.disqus.com">Disqus</a>.</li>
           <li>RSS and Atom feeds, one for all your posts, as well as one per category.</li>
           <li><a href="/demo/sample_posts.html#Test%20syntax%20highlighting">Syntax highlighting</a> for source code listings.</li>
+          <li>Ability to create or share your own plugins in your own userspace (see <a href="/documentation/filters.html">filters</a> and <a href="/documentation/controllers.html">controllers</a>).</li>
         </ul>
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
       <li>Blogofile works <b><i>offline</i></b>, with a built-in webserver you can work on your site from anywhere.
