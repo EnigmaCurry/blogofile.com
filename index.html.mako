@@ -26,7 +26,8 @@
         <ul>
           <li>Categories.</li>
           <li>Tags.</li>
-          <li>Comments and Trackbacks with effective spam filtering using <a href="http://www.disqus.com">Disqus</a>. (Sorry no pingback support.. yet.)</li>
+          <li>Comments and Trackbacks with effective spam filtering using <a href="http://www.disqus.com">Disqus</a>.</li>
+          <li>Facebook and Twitter integration using Disqus.</li>
           <li>RSS and Atom feeds, one for all your posts, as well as one per category.</li>
           <li><a href="/demo/sample_posts.html#Test%20syntax%20highlighting">Syntax highlighting</a> for source code listings.</li>
         </ul>
