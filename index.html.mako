@@ -17,7 +17,7 @@
     <h3>Why you should use Blogofile</h3>
 
     <ul>
-      <li>Blogofile is <b><i>free software</i></b>, released under a non-enforced <a href="/LICENSE.html">MIT license</a>.
+      <li>Blogofile is <b><i>free open-source software</i></b>, released under a non-enforced <a href="/LICENSE.html">MIT license</a>.
       <li>
         Blogofile is <b><i>fast</i></b>, the server doesn't need to do any database lookups nor any template rendering.
       </li>
