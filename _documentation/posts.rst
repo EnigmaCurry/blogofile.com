@@ -39,8 +39,10 @@ The `YAML`_ portion is between the two ``---`` lines, and it describes all of th
     A list of tags that the post pertains to, each seperated by commas.
 * **permalink**
     The full permanent URL for this post. This is optional, one will be generated automatically if left blank. (see :ref:`config-blog-auto-permalink`)
-* **format**
-    The format of the post (eg: html, textile, markdown, org).
+* **filters**
+    The filter chain to run on the post content. (see :ref:`filters`)
+* **filter**
+    A synonym for filters. (see :ref:`filters`)
 * **guid**
     A unique hash for the post, if not provided it is assumed that the permalink is the guid.
 * **author**
