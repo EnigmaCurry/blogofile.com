@@ -6,7 +6,7 @@ from blogofile.cache import bf
 
 def run():
     write_categories()
-
+    
 def sort_into_categories():
     categories = set()
     for post in bf.posts:
