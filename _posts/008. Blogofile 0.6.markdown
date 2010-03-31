@@ -1,0 +1,22 @@
+---
+categories: Releases
+date: 2010/03/30 20:57:00
+permalink: http://www.blogofile.com/blog/2010/03/30/blogofile-0.6-released
+title: Blogofile 0.6 released
+---
+Blogofile 0.6 is released today. If you've been following along [on github](http://www.github.com/EnigmaCurry/blogofile), you'll have noticed that there are more commits that have not made it into a release than otherwise. This is my own fault for not adhering to the [Release Early, Release Often](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html) axiom. I apologize! I hope to be better about this in the future, in fact, 0.7 (and maybe even 1.0) should be right around the corner.
+
+That said, 0.6 is a major milestone in Blogofile development and I'm happy to see the product mature as many people have helped out on the [mailing list](http://groups.google.com/group/blogofile-discuss) by giving great suggestions as well as patches.
+
+Changelog (in rough chronological order):
+
+* Posts can now have arbitrary user-defined fields.
+* Added [Controllers](http://localhost:8080/documentation/controllers.html), which enables users to write their own extensions to Blogofile in userspace. Blogofile no longer has any intrinsic knowledge of what a 'blog' is, this is all controlled in userspace inside a new _controllers directory.
+* Added [Filters](http://blogofile.com/documentation/filters), which enables people to write their own text processors, for example: syntax highlighters.
+* Easily debuggable in [Winpdb](http://winpdb.org) by setting the BLOGOFILE_DEBUG=t environment variable. (this is equally usable by actual Blogofile core developers, or in your own user extensions).
+* Non-broken unicode support throughout templates and blog posts.
+* Lots of unit tests.
+* reStructuredText support for blog posts.
+
+Thanks again to the many supporters of Blogofile!
+

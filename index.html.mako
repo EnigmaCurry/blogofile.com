@@ -50,7 +50,7 @@
     
     Alternatively, here's the latest "stable" zipped release:
     <ul>
-      <li><a href="${bf.config.release_download_link}">Blogofile 0.5.zip</a></li>
+      <li><a href="${bf.config.release_download_link}">Blogofile ${bf.config.release_version}.zip</a></li>
     </ul>
     You can also get the latest development source from github:
     <pre>git clone git://github.com/EnigmaCurry/blogofile.git</pre>
