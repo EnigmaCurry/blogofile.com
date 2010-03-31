@@ -1,5 +1,5 @@
 <% import urlparse %>
-<div id="header" onclick="location.href='/';" style="cursor: pointer;">
+<div id="header" onclick="location.href='${bf.util.site_path_helper()}';" style="cursor: pointer;">
   <div id="plugbanner"></div>
   <div id="blog_logo"></div>
   <h1><a href="/">
@@ -14,9 +14,9 @@
   <div class="ButtonBar">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/documentation">Documentation</a></li>
-      <li><a href="/community">Community</a></li>
-      <li><a href="${bf.config.util.blog_path_helper('')}">Blog</a></li>
+      <li><a href="${bf.util.site_path_helper('/documentation')}">Documentation</a></li>
+      <li><a href="${bf.util.site_path_helper('/community')}">Community</a></li>
+      <li><a href="${bf.config.util.site_path_helper(bf.config.blog_path)}">Blog</a></li>
     </ul>
   </div>
   <div id="search">    

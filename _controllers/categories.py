@@ -6,7 +6,7 @@ from blogofile.cache import bf
 
 def run():
     write_categories()
-
+    
 def sort_into_categories():
     categories = set()
     for post in bf.posts:
@@ -28,12 +28,14 @@ def write_categories():
         categories.update(post.categories)
     for category, category_posts in bf.categorized_posts.items():
         #Write category RSS feed
-        bf.controllers.feed.write_feed(category_posts,bf.util.path_join(
-                bf.config.blog_path, bf.config.blog_category_dir,
-                category.url_name,"feed"),"rss.mako")
-        bf.controllers.feed.write_feed(category_posts,bf.util.path_join(
-                bf.config.blog_path, bf.config.blog_category_dir,
-                category.url_name,"feed","atom"),"atom.mako")
+        rss_path = bf.util.fs_site_path_helper(
+            bf.config.blog_path, bf.config.blog_category_dir,
+            category.url_name,"feed")
+        bf.controllers.feed.write_feed(category_posts,rss_path,"rss.mako")
+        atom_path = bf.util.fs_site_path_helper(
+            bf.config.blog_path, bf.config.blog_category_dir,
+            category.url_name,"feed","atom")
+        bf.controllers.feed.write_feed(category_posts,atom_path,"atom.mako")
         page_num = 1
         while True:
             path = bf.util.path_join(root,category.url_name,
@@ -42,13 +44,13 @@ def write_categories():
             category_posts = category_posts[bf.config.blog_posts_per_page:]
             #Forward and back links
             if page_num > 1:
-                prev_link = "/" + bf.util.blog_path_helper(
+                prev_link = bf.util.site_path_helper(
                     bf.config.blog_path, bf.config.blog_category_dir, category.url_name,
                                            str(page_num - 1))
             else:
                 prev_link = None
             if len(category_posts) > 0:
-                next_link = "/" + bf.util.blog_path_helper(
+                next_link = bf.util.site_path_helper(
                     bf.config.blog_path, bf.config.blog_category_dir, category.url_name,
                                            str(page_num + 1))
             else:

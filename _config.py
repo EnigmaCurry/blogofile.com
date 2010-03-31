@@ -161,9 +161,8 @@ def post_build():
 ### Blogofile release variables
 ### (These are custom vars for blogofile.com)
 ##############################################
-release_version = "0.5"
-release_download_link = "http://pypi.python.org/packages/source/B/Blogofile/"\
-    "Blogofile-0.5.tar.gz#md5=841b0015719502881b550ece588fc718"
+release_version = "0.6"
+release_download_link = "http://pypi.python.org/packages/source/B/Blogofile/blogofile-0.6.tar.gz"
 
     
 def build_docs():

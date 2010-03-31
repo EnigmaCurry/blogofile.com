@@ -37,7 +37,7 @@ def write_blog_first_page():
         path = bf.util.path_join(bf.config.blog_path,"index.html")
         bf.logger.info("Writing blog index page: "+path)
         if len(bf.posts) > bf.config.blog_posts_per_page:
-            next_link = bf.util.blog_path_helper(bf.config.blog_pagination_dir+"/2")
+            next_link = bf.util.site_path_helper(bf.config.blog_pagination_dir+"/2")
         else:
             next_link = None
         bf.writer.materialize_template("chronological.mako", path,
