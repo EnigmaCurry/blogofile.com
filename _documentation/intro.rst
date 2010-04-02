@@ -39,7 +39,7 @@ Why you should be using Blogofile
 
 Installing Blogofile
 ====================
-Blogofile is still under development, and should be considered beta software at the moment, but should be usable even before the 1.0 release. 
+Blogofile is under active development, but strives to be usable and bug-free even before the 1.0 release.
 
 Prerequisites
 -------------
