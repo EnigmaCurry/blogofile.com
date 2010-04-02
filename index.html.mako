@@ -8,7 +8,7 @@
       <li><b>Definition: <em>Blogophile</em> --</b><br/>
         A person who is fond of or obsessed with blogs or blogging.</li>
       <li><b>Definition: <em>Blogofile</em>  --</b><br/>
-        A static website compiler and blog engine, written and extended in <a href="http://www.python.org">Python.</li>
+        A static website compiler and blog engine, written and extended in <a href="http://www.python.org">Python</a>.</li>
     </ul>
 
 
