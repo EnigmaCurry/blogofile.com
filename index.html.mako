@@ -8,11 +8,11 @@
       <li><b>Definition: <em>Blogophile</em> --</b><br/>
         A person who is fond of or obsessed with blogs or blogging.</li>
       <li><b>Definition: <em>Blogofile</em>  --</b><br/>
-        A static file blog engine/compiler, inspired by <a href="http://github.com/mojombo/jekyll/tree/master">Jekyll</a>.</li>
+        A static website compiler and blog engine, written and extended in <a href="http://www.python.org">Python.</li>
     </ul>
 
 
-    <p>Blogofile is a simple blog engine that requires no database and no special hosting environment. You customize a set of templates with <a href="http://www.makotemplates.org">Mako</a>, create posts in a markup language of your choice (see <a href="/documentation/file_overview.html#post-content">Post Content</a>) and Blogofile renders your entire blog as static HTML and Atom/RSS feeds which you can then upload to any old web server you like.</p>
+    <p>Blogofile is a static website compiler, primarily designed to be a simple blogging engine, that requires no database and no special hosting environment. You customize a set of templates with <a href="http://www.makotemplates.org">Mako</a>, create posts in a markup language of your choice (see <a href="/documentation/file_overview.html#post-content">Post Content</a>) and Blogofile renders your entire website as static HTML and Atom/RSS feeds which you can then upload to any old web server you like.</p>
     
     <h3>Why you should use Blogofile</h3>
 
@@ -26,9 +26,9 @@
         <ul>
           <li>Categories and Tags</li>
           <li>Comments, Trackbacks, and Social Networking mentions (Twitter, Reddit, FriendFeed etc), all with effective spam filtering using <a href="http://www.disqus.com">Disqus</a>.</li>
-          <li>RSS and Atom feeds, one for all your posts, as well as one per category.</li>
+          <li>RSS and Atom feeds, one for all your posts, as well as one per category. Easily create additional feeds for custom content.</li>
           <li><a href="/demo/sample_posts.html#Test%20syntax%20highlighting">Syntax highlighting</a> for source code listings.</li>
-          <li>Ability to create or share your own plugins in your own userspace (see <a href="/documentation/filters.html">filters</a> and <a href="/documentation/controllers.html">controllers</a>).</li>
+          <li>Ability to create or share your own plugins in your own userspace (see <a href="/documentation/filters.html">filters</a> and <a href="/documentation/controllers.html">controllers</a>)</li>
         </ul>
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
       <li>Blogofile works <b><i>offline</i></b>, with a built-in webserver you can work on your site from anywhere.

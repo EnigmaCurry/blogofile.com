@@ -5,28 +5,30 @@ Introduction
    A person who is fond of or obsessed with blogs or blogging.
 
 * Definition: Blogofile --
-   A static file blog engine/compiler, inspired by `Jekyll <http://jekyllrb.com/>`_.
+   A static website compiler and blog engine, written and extended in  `Python <http://python.org/>`_.
 
 
 Welcome to Blogofile
 ====================
 
-Blogofile is a simple blog engine that requires no database and no special hosting environment. You customize a set of templates with `Mako <http://www.maktotemplates.org>`_, create posts in a markup language of your choice (see :ref:`post-content`) and Blogofile renders your entire blog as static HTML and Atom/RSS feeds which you can then upload to any old web server you like. 
-
-**No CGI or scripting environment is needed on the server.**
+Blogofile is a static website compiler, primarily designed to be a simple blogging engine, that requires no database and no special hosting environment. You customize a set of templates with `Mako <http://www.maktotemplates.org>`_, create posts in a markup language of your choice (see :ref:`post-content`) and Blogofile renders your entire website as static HTML and Atom/RSS feeds which you can then upload to any old web server you like. 
 
 Why you should be using Blogofile
 =================================
-* Blogofile is **free software**, released under a non-enforced `MIT License`_.
+* Blogofile is **free open-source** software, released under a non-enforced `MIT License`_.
 * Blogofile is **fast**, the server doesn't need to do any database lookups nor any template rendering.
 * Blogofile is **inexpensive** to host. Any web server can host a blogofile blog.
 * Blogofile is **modern**, supporting all the common blogging features:
 
- * Categories.
- * Tags.
- * Comments and Trackbacks with effective spam filtering using `Disqus <http://www.disqus.com>`_. (Sorry no pingback support.. yet.)
- * RSS and Atom feeds, one for all your posts, as well as one per category.
+ * Categories and Tags.
+ * Comments, Trackbacks, and Social Networking mentions (Twitter,
+   Reddit, FriendFeed etc), all with effective spam filtering using
+   `Disqus <http://www.disqus.com>`_.
+ * RSS and Atom feeds, one for all your posts, as well as one per
+   category. Easily create additional feeds for custom content.
  * Syntax highlighting for source code listings.
+ * Ability to create or share your own plugins in your own
+   userspace(see :ref:`Filters <filters>` and :ref:`Controllers <controllers>`)
 
 * Blogofile is **secure**, there's nothing executable on the server.
 * Blogofile works **offline**, with a built-in webserver you can work on your site from anywhere.
