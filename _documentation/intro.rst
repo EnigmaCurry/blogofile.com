@@ -5,7 +5,7 @@ Introduction
    A person who is fond of or obsessed with blogs or blogging.
 
 * Definition: Blogofile --
-   A static website compiler and blog engine, written and extended in  `Python <http://python.org/>`_.
+   A static website compiler and blog engine, written and extended in `Python`_.
 
 
 Welcome to Blogofile
