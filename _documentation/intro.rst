@@ -28,7 +28,7 @@ Why you should be using Blogofile
    category. Easily create additional feeds for custom content.
  * Syntax highlighting for source code listings.
  * Ability to create or share your own plugins in your own
-   userspace(see :ref:`Filters <filters>` and :ref:`Controllers <controllers>`)
+   userspace (see :ref:`Filters <filters>` and :ref:`Controllers <controllers>`)
 
 * Blogofile is **secure**, there's nothing executable on the server.
 * Blogofile works **offline**, with a built-in webserver you can work on your site from anywhere.
