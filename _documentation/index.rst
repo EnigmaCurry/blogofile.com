@@ -6,7 +6,10 @@
 Blogofile Documentation
 #######################
 
-This is a work in progress and currently only documents the latest development snapshot, not the released version of Blogofile.
+NOTE: This documents the latest development (master) branch of
+Blogofile. It is often out of sync with the latest stable release
+version. Once Blogofile reaches a 1.0 release, this page will link to
+documentation for each release.
 
 .. toctree::
    :maxdepth: 2
