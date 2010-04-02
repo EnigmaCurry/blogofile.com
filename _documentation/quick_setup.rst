@@ -23,7 +23,7 @@ Ok, if you're impatient this is the short *short* [#f1]_ version of getting setu
 
 * Serve the site:
 
- ``blogofile serve``
+ ``blogofile serve 8080``
 
 * Open your web browser to `http://localhost:8080 <http://localhost:8080>`_ to see the rendered site.
 
