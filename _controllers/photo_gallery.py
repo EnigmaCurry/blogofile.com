@@ -6,6 +6,10 @@
 import os
 from blogofile.cache import bf
 
+config = {"name"        : "Photo Gallery",
+          "description" : "A very simple photo gallery meant only as an example controller"
+          }
+
 photos_dir = os.path.join("demo","photo_gallery")
 
 def run():
