@@ -27,7 +27,7 @@
       ${"""<h4>Welcome to my homepage</h4>
       Here's my latest 5 blog posts:
       <ul>
-        % for p in bf.posts[0:5]:
+        % for p in bf.config.blog.posts[0:5]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>"""}
@@ -37,7 +37,7 @@
       <h4>Welcome to my homepage</h4>
       Here's my latest 5 blog posts:
       <ul>
-        % for p in bf.posts[0:5]:
+        % for p in bf.config.blog.posts[0:5]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>
@@ -49,7 +49,7 @@
       % for category in bf.all_categories:
        Posts in category : ${category[0]}
        <ul>
-         % for p in [p for p in bf.posts if category[0] in p.categories][0:5]:
+         % for p in [p for p in bf.config.blog.posts if category[0] in p.categories][0:5]:
          <li><a href="${p.permalink}">${p.title}</a></li>
          % endfor
        </ul>
@@ -63,7 +63,7 @@
       % for category in bf.all_categories:
       Posts in category : ${category[0]}
       <ul>
-        % for p in [p for p in bf.posts if category[0] in p.categories][0:5]:
+        % for p in [p for p in bf.config.blog.posts if category[0] in p.categories][0:5]:
         <li><a href="${p.permalink}">${p.title}</a></li>
         % endfor
       </ul>

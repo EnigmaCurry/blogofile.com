@@ -1,12 +1,14 @@
-
-
 <p id="credits">
 Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
 <br/>
-RSS feeds for <a href="${bf.config.util.site_path_helper(bf.config.blog_path,'feed')}">Entries</a> and <a href="http://${bf.config.disqus_name}.disqus.com/latest.rss">Comments</a>.
+RSS feeds for <a href="${bf.util.site_path_helper(bf.config.blog.path,'feed')}">Entries</a>
+% if bf.config.blog.disqus.enabled:
+ and <a
+href="http://${bf.config.blog.disqus.name}.disqus.com/latest.rss">Comments</a>.
+% endif
 <br>
 </p>
-
+% if bf.config.blog.disqus.enabled:
 <script type="text/javascript">
 //<![CDATA[
 (function() {
@@ -17,18 +19,8 @@ RSS feeds for <a href="${bf.config.util.site_path_helper(bf.config.blog_path,'fe
 				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
 			}
 		}
-		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/${bf.config.disqus_name}/get_num_replies.js' + query + '"></' + 'script>');
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/${bf.config.blog.disqus.name}/get_num_replies.js' + query + '"></' + 'script>');
 	})();
 //]]>
 </script>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-7729432-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-
+% endif

@@ -3,7 +3,7 @@
   <span class="post_prose">
     <h1>Post excerpts</h1>
     <p>The blog on this site shows the full content of posts in chronological order, but many prefer to only show an excerpt of the post in the chronological listing and show the full post only on the permalink page. Here's a demonstration of showing the last 3 posts with only an excerpt showing:</p>
-    % for post in bf.posts[:3]:
+    % for post in bf.config.blog.posts[:3]:
         <%include file="post_excerpt.mako" args="post=post" />
     % endfor
 
@@ -41,7 +41,7 @@ ${"""<pre lang="mako">
       <li>Modify <a href="http://github.com/EnigmaCurry/blogofile.com/blob/master/_templates/chronological.mako">chronological.mako</a> to include post_excerpt.mako instead of post.mako, or you can add something like this to any template:</li>
 ${"""
 <pre lang="mako">
-    % for post in bf.posts[:3]:
+    % for post in bf.config.blog.posts[:3]:
         <%include file="post_excerpt.mako" args="post=post" />
     % endfor
 </pre>
