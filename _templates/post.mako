@@ -1,6 +1,6 @@
 <%page args="post"/>
 <div class="blog_post">
-  <a name="${post.title}" />
+  <a class="blog_post_title" name="${post.title}" />
   <h2 class="blog_post_title"><a href="${post.permapath()}" rel="bookmark" title="Permanent Link to ${post.title}">${post.title}</a></h2>
   <small>${post.date.strftime("%B %d, %Y at %I:%M %p")} | categories: 
 <% 

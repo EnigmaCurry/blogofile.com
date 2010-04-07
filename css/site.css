@@ -167,10 +167,14 @@ div.blog_post small a:hover {
     text-decoration:none;
 }
 .post_prose p a.paragraph_permalink {
+    color: red;
     visibility : hidden;
 }
 .post_prose p:hover a.paragraph_permalink {
     visibility : visible;
+}
+.post_prose p a.paragraph_permalink:hover {
+    background: #ffffff none repeat scroll 0 0;
 }
 div.after_post {
     margin-top: 50px;

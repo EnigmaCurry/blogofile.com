@@ -5,9 +5,11 @@
 from pyquery import PyQuery as pq
 
 def run(content):
-    d = pq(content)
+    #pyquery needs this wrapped in some tag, otherwise it loses the top-most tag
+    #when .html() is run, so just wrap in <xml>.
+    d = pq("<xml>%s</xml>"%content)
     p_num = 1
-    for p in d("span.post_prose p"):
+    for p in d("p"):
         if not p.attrib.has_key("id"):
             p.set('id',"p"+str(p_num))
         p_num += 1

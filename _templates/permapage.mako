@@ -1,7 +1,5 @@
 <%inherit file="site.mako" />
-<%self:filter chain="paragraph_permalinks">
- <%include file="post.mako" args="post=post" />
-</%self:filter>
+<%include file="post.mako" args="post=post" />
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_url = "${post.permalink}";
