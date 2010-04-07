@@ -100,11 +100,6 @@ When the Blogofile build process is invoked, it follows this conceptual order of
 
 * Controllers from the ``_controllers`` directory are run to build dynamic sections of your site, eg. the blog chronological listing, blog archives, blog categories etc. See :ref:`controllers`.
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _Mako: http://www.makotemplates.org
 
 .. _zip file: http://github.com/EnigmaCurry/blogofile.com/zipball/master

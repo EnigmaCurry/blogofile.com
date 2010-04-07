@@ -58,11 +58,6 @@ Moveable Type
 
 to be written.
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _Disqus wordpress plugin: http://wordpress.org/extend/plugins/disqus-comment-system
 .. _wordpress2blogofile.py: http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress2blogofile.py
 .. _wordpress_schema.py: http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress_schema.py

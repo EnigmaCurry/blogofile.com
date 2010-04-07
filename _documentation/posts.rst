@@ -78,11 +78,6 @@ Referencing posts in templates
 
 All the posts are stored in a cache object called ``bf``. This object is exposed to all templates and you can reference it directly with ``${bf.posts}``. They are ordered sequentially by date. See :ref:`adding-blogofile-features-to-our-templates` for an example.
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _YAML: http://en.wikipedia.org/wiki/YAML
 
 .. _Markdown: http://en.wikipedia.org/wiki/Markdown

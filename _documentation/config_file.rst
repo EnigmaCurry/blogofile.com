@@ -321,11 +321,6 @@ Function
 
 This is a function that gets run after the _site directory is built
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _timezone: http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones
 
 .. _Disqus: http://www.disqus.com

@@ -85,9 +85,4 @@ If no filter is specified for your post, Blogofile looks at a config option call
 
 You can turn off all filters for the post, including the default ones, by specifing a filter chain of ``none``.
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _Markdown: http://en.wikipedia.org/wiki/Markdown

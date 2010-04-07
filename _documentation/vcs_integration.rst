@@ -49,9 +49,4 @@ Most VCS should have support for a post recieve hook. If you create something co
 
 .. [#f1] If you deploy to a different server than the one hosting your git repository, you could just craft your own rsync or FTP command and put it at the bottom of the post-receive hook to deploy somewhere else. But that's beyond the scope of this document.
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _git: http://www.git-scm.com

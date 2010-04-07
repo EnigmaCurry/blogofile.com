@@ -41,9 +41,4 @@ The next chapters explain this process in more detail.
 
  * **Priest**: Good! Fine! You're married! Kiss Her!
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _git: http://www.git-scm.org

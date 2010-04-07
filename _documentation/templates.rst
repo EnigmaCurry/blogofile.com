@@ -114,11 +114,6 @@ Template Environment
 
 TODO: Document blogofile.cache and general usage inside of a template.
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _Mako: http://www.makotemplates.org
 
 .. _great documentation: http://www.makotemplates.org/docs/

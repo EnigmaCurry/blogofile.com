@@ -96,10 +96,5 @@ The controller passes a single variable: ``photos``, which is a sequence of all 
 
 This example is included in the `blogofile.com sources <http://www.github.com/EnigmaCurry/blogofile.com>`_ and can also `be viewed live <http://www.blogofile.com/demo/photo_gallery>`_.
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _Disqus: http://www.disqus.com
 

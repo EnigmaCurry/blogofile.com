@@ -58,11 +58,6 @@ You can also get the latest development source code from github::
 
  git clone git://github.com/EnigmaCurry/blogofile.git
 
-.. only:: latex
-
-   .. target-notes::
-      :class: hidden
-
 .. _MIT License: http://www.blogofile.com/LICENSE.html
 
 .. _Python: http://www.python.org
