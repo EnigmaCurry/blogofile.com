@@ -6,7 +6,7 @@ href="${bf.util.site_path_helper(bf.config.blog.path,'/feed/atom')}" />
 <link rel='stylesheet' href='/css/site.css' type='text/css' />
 <link rel='stylesheet' href='/css/jquery.tweet.css' type='text/css' />
 
-<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="/js/jquery.tweet.js"></script>
 <script type="text/javascript" src="/js/googleRSSWidget.js"></script>
 <script type="text/javascript" src="/js/site.js"></script>
