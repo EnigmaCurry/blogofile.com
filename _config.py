@@ -200,14 +200,14 @@ def build_docs():
     sphinx.main(shlex.split("sphinx-build -q -b html _documentation "+
                             os.path.join("_site","documentation")))
     #Do PDF generation if TeX is installed
-    if os.path.isfile("/usr/bin/tex"):
-        latex_dir = tempfile.mkdtemp()
-        logger.info("Compiling PDF Documentation..")
-        sphinx.main(shlex.split("sphinx-build -q -b latex _documentation "+
-                                latex_dir))
-        subprocess.Popen(shlex.split(
-                "make -C %s all-pdf" % latex_dir),
-                         stdout=subprocess.PIPE,
-                         stderr=subprocess.PIPE).communicate()
-        shutil.copyfile(os.path.join(latex_dir,"Blogofile.pdf"),
-                        os.path.join("_site","documentation","Blogofile.pdf"))
+    # if os.path.isfile("/usr/bin/tex"):
+    #     latex_dir = tempfile.mkdtemp()
+    #     logger.info("Compiling PDF Documentation..")
+    #     sphinx.main(shlex.split("sphinx-build -q -b latex _documentation "+
+    #                             latex_dir))
+    #     subprocess.Popen(shlex.split(
+    #             "make -C %s all-pdf" % latex_dir),
+    #                      stdout=subprocess.PIPE,
+    #                      stderr=subprocess.PIPE).communicate()
+    #     shutil.copyfile(os.path.join(latex_dir,"Blogofile.pdf"),
+    #                     os.path.join("_site","documentation","Blogofile.pdf"))
