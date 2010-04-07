@@ -16,7 +16,7 @@ ${", ".join(category_links)}
 % if bf.config.blog.disqus.enabled:
  | <a href="${post.permalink}#disqus_thread">View Comments</a>
 % endif
-</small><p/>
+  </small>
   <span class="post_prose">
     ${self.post_prose(post)}
   </span>

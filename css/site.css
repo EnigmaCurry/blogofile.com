@@ -166,6 +166,12 @@ div.blog_post small a:hover {
     color:#0B76AE;
     text-decoration:none;
 }
+.post_prose p a.paragraph_permalink {
+    visibility : hidden;
+}
+.post_prose p:hover a.paragraph_permalink {
+    visibility : visible;
+}
 div.after_post {
     margin-top: 50px;
     text-align: center;
