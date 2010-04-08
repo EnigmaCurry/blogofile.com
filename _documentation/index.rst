@@ -6,7 +6,7 @@
 Blogofile Documentation
 #######################
 
-This documents the latest development (master) branch of
+NOTE: This documents the latest development (master) branch of
 Blogofile. It is often out of sync with the latest stable release
 version. 
 
