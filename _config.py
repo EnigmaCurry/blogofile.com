@@ -158,6 +158,10 @@ def post_build():
     #Do whatever you want after the _site is built
     build_docs()
 
+#Build the example photo_gallery controller
+controllers.photo_gallery.enabled = True
+
+    
 ##############################################
 ### Blogofile release variables
 ### (These are custom vars for blogofile.com)
