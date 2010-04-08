@@ -32,8 +32,11 @@ $$/code
 Some javascript:
 $$code(lang=javascript)
 document.write("<h1>This is a header</h1>");
-document.write("<p>This is a paragraph</p>");
-document.write("<p>This is another paragraph</p>");
+$(document).ready(function(){
+   $("a").click(function(event){
+       alert("jQuery is cool!");
+   });
+});
 $$/code
 </p>
 <p>
