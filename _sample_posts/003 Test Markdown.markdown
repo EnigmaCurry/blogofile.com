@@ -1,7 +1,6 @@
 ---
 categories: Test
 date: 2009/03/09 13:09:03
-format: markdown
 permalink: http://www.blogofile.com/demo/sample_posts.html
 title: Testing Markdown
 ---
