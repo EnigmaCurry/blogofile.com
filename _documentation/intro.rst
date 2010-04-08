@@ -1,10 +1,10 @@
 Introduction
 ************
 
-* Definition: Blogophile (n)
+* Definition: **Blogophile** (n):
    A person who is fond of or obsessed with blogs or blogging.
 
-* Definition: Blogofile (n)
+* Definition: **Blogofile** (n):
    A static website compiler and blog engine, written and extended in `Python`_.
 
 

@@ -5,9 +5,9 @@
     <h1>Welcome to Blogofile.</h1>
     
     <ul>
-      <li><b>Definition: <em>Blogophile</em></b> (n)<br/>
+      <li><b>Definition: <em>Blogophile</em></b> (n):<br/>
         A person who is fond of or obsessed with blogs or blogging.</li>
-      <li><b>Definition: <em>Blogofile</em></b> (n)<br/>
+      <li><b>Definition: <em>Blogofile</em></b> (n):<br/>
         A static website compiler and blog engine, written and extended in <a href="http://www.python.org">Python</a>.</li>
     </ul>
 
