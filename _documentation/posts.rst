@@ -21,6 +21,8 @@ Here's an example post::
 
 The post is divided into two parts, the YAML header and the post content.
 
+You can see more `examples of Blogofile posts <http://www.blogofile.com/demo/sample_posts.html>`_ on the project site. 
+
 .. _post-yaml:
 
 YAML Header
