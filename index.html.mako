@@ -31,7 +31,7 @@
           <li>Ability to create or share your own plugins in your own userspace (see <a href="/documentation/filters.html">filters</a> and <a href="/documentation/controllers.html">controllers</a>.)</li>
         </ul>
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
-      <li>Blogofile works <b><i>offline</i></b>, with a built-in webserver you can work on your site from anywhere.
+      <li>Blogofile works <b><i>offline</i></b>, with a built-in web server you can work on your site from anywhere.
       <li>Blogofile is <b><i>file based</i></b>, so you can edit it with your favorite text editor, not some crappy web interface.</li>
       <li>Seamless <a href="/documentation/vcs_integration.html">Git Integration.</a> Publish to your blog with a simple "git push". This also makes <b><i>backups</i></b> dirt simple.</li> </li>
     </ul>
