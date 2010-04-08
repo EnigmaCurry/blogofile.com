@@ -103,7 +103,7 @@ def parse_args(args):
         opts[arg[0]] = arg[1]
     return opts
 
-def write_pygments_css(style, formatter, location=bf.filters.syntax_highlight.css_dir):
+def write_pygments_css(style, formatter, location=bf.config.filters.syntax_highlight.css_dir):
     path = bf.util.path_join("_site",bf.util.fs_site_path_helper(location))
     bf.util.mkdir(path)
     css_path = os.path.join(path,"pygments_"+style+".css")
