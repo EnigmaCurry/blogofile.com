@@ -136,7 +136,7 @@ def run(src):
         try:
             style = args['style']
         except KeyError:
-            style = bf.config.site.syntax_highlight.style
+            style = bf.config.filters.syntax_highlight.style
         try:
             css_class = args['cssclass']
         except KeyError:
