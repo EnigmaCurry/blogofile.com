@@ -2,7 +2,7 @@
 categories: Test
 date: 2009/03/09 13:09:05
 format: html
-permalink: http://www.blogofile.com/sample_posts.html
+permalink: http://www.blogofile.com/sample/sample_posts.html
 tags: ''
 title: Test syntax highlighting
 ---
@@ -40,6 +40,11 @@ $$/code
   Some plain HTML:
 $$code(lang=html)
     <h1>This is a test</h1>
-    This is <a href="http://www.blogofile.com">Blogofile</a>.
+    <p>
+      This is <a href="http://www.blogofile.com">Blogofile</a>.
+    </p>
+    <p>
+      Notice how in the source, <tags> don't have to be re-written with HTML entities like some syntax highlighters out there.
+    </p>
 $$/code
 </p>
