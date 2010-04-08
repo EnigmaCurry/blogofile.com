@@ -83,7 +83,7 @@ blog.disqus.name    = "blogofile"
 # or, make your own: http://pygments.org/docs/styles
 filters.syntax_highlight.style   = "murphy"
 filters.syntax_highlight.css_dir = "/css"
-
+filters.syntax_highlight.preload_styles = ["murphy","monokai"]
 #### Custom blog index ####
 # If you want to create your own index page at your blog root
 # turn this on. Otherwise blogofile assumes you want the
