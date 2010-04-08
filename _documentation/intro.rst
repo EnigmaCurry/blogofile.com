@@ -16,7 +16,7 @@ Blogofile is a static website compiler, primarily designed to be a simple bloggi
 Why you should be using Blogofile
 =================================
 * Blogofile is **free open-source** software, released under a non-enforced `MIT License`_.
-* Blogofile is **fast**, the server doesn't need to do any database lookups nor any template rendering.
+* Blogofile is **fast**, the webserver doesn't need to do any database lookups nor any template rendering.
 * Blogofile is **inexpensive** to host. Any web server can host a blogofile blog.
 * Blogofile is **modern**, supporting all the common blogging features:
 
