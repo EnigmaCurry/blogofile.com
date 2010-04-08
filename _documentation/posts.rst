@@ -69,6 +69,7 @@ The post content is written using a markup language, currently Blogofile support
 * `Markdown`_ (files end in .markdown)
 * `Textile`_ (files end in .textile)
 * `Org Mode`_ (files end in .org)
+* `reStructuredText`_ (files end in .rst)
 * or plain old HTML (files end in .html by convention, but if it's not one of the above, posts default to HTML anyway)
 
 The content of the post goes directly after the YAML portion and uses whatever markup language is indicated by the file extension of the post file.
@@ -76,7 +77,7 @@ The content of the post goes directly after the YAML portion and uses whatever m
 Referencing posts in templates
 ------------------------------
 
-All the posts are stored in a cache object called ``bf``. This object is exposed to all templates and you can reference it directly with ``${bf.posts}``. They are ordered sequentially by date. See :ref:`adding-blogofile-features-to-our-templates` for an example.
+All the posts are stored in a cache object called ``bf``. This object is exposed to all templates and you can reference it directly with ``${bf.blog.posts}``. They are ordered sequentially by date. See :ref:`adding-blogofile-features-to-our-templates` for an example.
 
 .. _YAML: http://en.wikipedia.org/wiki/YAML
 
@@ -85,3 +86,5 @@ All the posts are stored in a cache object called ``bf``. This object is exposed
 .. _Textile: http://en.wikipedia.org/wiki/Textile_(markup_language)
 
 .. _Org Mode: http://orgmode.org/
+
+.. _reStructuredText: http://docutils.sourceforge.net/rst.html

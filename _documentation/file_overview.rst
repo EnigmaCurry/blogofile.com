@@ -14,48 +14,52 @@ If you want to create a new site layout from scratch, you probably want to start
 
  blogofile init simple_blog
 
-The rest of this document will reference the blogofile.com source code extensively and explain it's different parts.
+The rest of this document will reference the blogofile.com source code and explain it's different parts.
 
 Directory Structure
 ===================
 
 Inside the source directory are the following files (abbreviated)::
 
- |-- _config.py
- |-- _templates
- |   |-- atom.mako
- |   |-- base.mako
- |   |-- chronological.mako
- |   |-- feed.py
- |   |-- footer.mako
- |   |-- head.mako
- |   |-- header.mako
- |   |-- permapage.mako
- |   |-- post.mako
- |   |-- post_excerpt.mako
- |   |-- rss.mako
- |   |-- sidebar.mako
- |   `-- site.mako
- |-- _controllers
- |   |-- 0.initial.py
- |   |-- archives.py
- |   |-- categories.py
- |   |-- chronological.py
- |   |-- feed.py
- |   |-- permapage.py
- |   `-- photo_gallery.py
- |-- _posts
- |   |-- 001. Blogofile 0.1.textile
- |   |-- 002. The History of Blogofile.textile
- |   `-- 003. Blogofile 0.3.textile
- |-- _filters
- |   `-- playnice.py
- |-- css
- |   `-- site.css
- |-- index.html.mako
- `-- js
-     `-- site.js
-
+    |-- _config.py
+    |-- _controllers
+    |   |-- blog
+    |   |   |-- __init__.py
+    |   |   |-- archives.py
+    |   |   |-- categories.py
+    |   |   |-- chronological.py
+    |   |   |-- feed.py
+    |   |   |-- permapage.py
+    |   |-- photo_gallery.py
+    |-- _filters
+    |   |-- markdown.py
+    |   |-- paragraph_permalinks.py
+    |   |-- playnice.py
+    |   |-- syntax_highlight.py
+    |   |-- textile.py
+    |-- _posts
+    |   |-- 001. Blogofile 0.1.html
+    |   |-- 002. The History of Blogofile.html
+    |   |-- 003. Blogofile 0.3.html
+    |-- _templates
+    |   |-- atom.mako
+    |   |-- base.mako
+    |   |-- chronological.mako
+    |   |-- footer.mako
+    |   |-- head.mako
+    |   |-- header.mako
+    |   |-- permapage.mako
+    |   |-- post.mako
+    |   |-- post_excerpt.mako
+    |   |-- rss.mako
+    |   |-- sidebar.mako
+    |   `-- site.mako
+    |-- css
+    |   `-- site.css
+    |-- index.html.mako
+    |-- js
+        `-- site.js
+    
 The basic building blocks of a Blogofile site are:
 
  * **_config.py** - Your main Blogofile configuration file. See :ref:`config-file`
@@ -64,22 +68,22 @@ The basic building blocks of a Blogofile site are:
  * **Filters** - contained in the ``_filters`` directory, filters can process textual data like syntax highlighters, translators, swear word censors etc. See :ref:`filters`
  * **Controllers** - contained in the ``_controllers`` directory, controllers create dynamic sections of your site, like blogs. See :ref:`controllers`
 
-Any file not starting with an underscore (or contained in a directory starting with one) and not ending in ".mako" are considered regular files are are copied directly to your compiled site directly (eg. css/site.css js/site.js)
+Any file or directory not starting with an underscore, and not ending in ".mako", are considered regular files (eg. ``css/site.css`` and ``js/site.js``). These files are copied directly to your compiled site directly.
 
 Building the Site
 =================
 
 Now that you have an example site initialized, we can compile the source to create a functioning website. 
 
-Run the following to compile the source in the current directory:
+Run the following to compile the source in the current directory::
 
     blogofile build
 
-Blogofile should run without printing anything to the screen. If this is the case, you know that it ran successfully. Inside the _site directory you have now built a complete website based on the source code in the current directory. You can now upload the contents of the _site directory to your webserver or you can test it out in the embedded webserver included with Blogofile:
+Blogofile should run without printing anything to the screen. If this is the case, you know that it ran successfully. Inside the _site directory you have now built a complete website based on the source code in the current directory. You can now upload the contents of the _site directory to your webserver or you can test it out in the embedded webserver included with Blogofile::
 
     blogofile serve 8080
 
-Go to `http://localhost:8080 <http://localhost:8080>`_ to see the site served from the embedded webserver.
+Go to `http://localhost:8080 <http://localhost:8080>`_ to see the site served from the embedded webserver. You can quit the server by pressing ``Control-C``
 
 Understanding the Build Process
 ===============================
@@ -96,9 +100,9 @@ When the Blogofile build process is invoked, it follows this conceptual order of
 
   * If the filename ends in ``.mako``, it is considered a page template. It is rendered via Mako, then copied to the ``_site`` directory stripped of the ``.mako`` extension. See :ref:`templates`.
 
-  * If the filename or directory starts with an underscore ``_`` it is ignored and not copied to the ``_site`` directory (other ignore patterns may be setup using :ref:`config-file-ignore-patterns` in ``_config.py``.)
+  * If the filename or directory starts with an underscore, it is ignored and not copied to the ``_site`` directory (other ignore patterns may be setup using :ref:`config-file-ignore-patterns` in ``_config.py``.)
 
-* Controllers from the ``_controllers`` directory are run to build dynamic sections of your site, eg. the blog chronological listing, blog archives, blog categories etc. See :ref:`controllers`.
+* Controllers from the ``_controllers`` directory are run to build dynamic sections of your site, for example, all of the blog features: permalinks, archives, categories etc. See :ref:`controllers`.
 
 .. _Mako: http://www.makotemplates.org
 

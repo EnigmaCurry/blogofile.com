@@ -1,7 +1,7 @@
 A Quick Tutorial
 ****************
 
-Ok, if you're impatient this is the short *short* [#f1]_ version of getting setup with blogofile.
+Ok, if you're impatient, this is the short *short* [#f1]_ version of getting setup with blogofile.
 
 * Install Blogofile, (see :ref:`install-blogofile`):
 

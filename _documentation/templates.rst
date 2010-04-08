@@ -3,14 +3,14 @@
 Templates
 *********
 
-Templates are at the very heart of Blogofile; they control every aspect of how the site is structured. Blogofile uses the `Mako`_ templating engine which has a very active community and `great documentation`_. Blogofile doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it.
+Templates are at the very heart of Blogofile; they control every aspect of how the site is structured. Blogofile uses the `Mako`_ templating engine which has an active community and `great documentation`_. Blogofile doesn't try to limit what you can do with your templates, you've got the full power of Mako so go ahead and use it.
 
 Blogofile makes a distinction between two basic kinds of templates:
 
 * **Page** templates
 * **Reusable** templates
 
-Page templates represent a single unique page (or URL) on your site. These are files somwhere in your source directory that end in ``.mako`` and never reside in a directory starting with an underscore. Page templates are rendered to HTML and copied to the _site directory in the same location where they reside in the source directory. Examples: an index page, a contact page, or an "about us" page.
+Page templates represent a single unique page (or URL) on your site. These are files somwhere in your source directory that end in ``.mako`` and never reside in a directory starting with an underscore. Page templates are rendered to HTML and copied to the ``_site`` directory in the same location where they reside in the source directory. Examples: an index page, a contact page, or an "about us" page.
 
 Reusable templates are contained in the _templates directory. These are features that you want to include on many pages. Examples: headers, footers, sidebars, blog post layouts etc. Reusable templates do not represent any particular page (or URL) but are rather `inherrited`_ or `included`_ inside other templates or :ref:`controllers` and usually reused on many diverse pages.
 
@@ -52,7 +52,7 @@ At the bottom of ``site.mako`` there are two ``<%def>`` blocks: header and foote
 
 You could simply write the header and footer inline in the HTML and you'd still get the same effect of having them appear on every page that inherits from ``site.mako``, however if you create them as ``<%def>`` blocks, you can redefine these blocks on child templates so that a different header or footer can appear on some pages while retaining the rest of the look and feel of the ``site.mako`` template. 
 
-One special reference is also made to ``${next.body()}``. This deposits the contents of any child templates that inherit from this template. In our example, ``index.html.mako`` inherits from ``site.mako``, so the text ``this is the index page contents`` is deposited inside the ``<div id="prose_block">`` in the resulting HTML file which looks something like this::
+One special reference is also made to ``${next.body()}``. This deposits the contents of any child templates that inherit from this template. In our example, ``index.html.mako`` inherits from ``site.mako``, so the text ``this is the index page contents`` is deposited inside the ``<div id="main_block">`` in the resulting HTML file which looks something like this::
 
   <html>
     <body>
@@ -79,7 +79,7 @@ Let's say we want to include on our home page a list of the 5 most recent posts 
   Here's the five most recent posts from the blog:
 
   <ul>
-  % for post in bf.posts[:5]:
+  % for post in bf.blog.posts[:5]:
     <li><a href="${post.path}">${post.title}</a></li>
   % endfor
   </ul>
@@ -112,7 +112,42 @@ Each post contains various metadata (see :ref:`posts`) about the post and in thi
 Template Environment
 --------------------
 
-TODO: Document blogofile.cache and general usage inside of a template.
+In the last section we introduced a special Blogofile object called ``bf``. This object is a gateway to all things related to Blogofile and is provided to all your templates.
+
+You can also import it into your :ref:`Controllers` and :ref:`Filters`::
+
+    import blogofile_bf as bf
+
+Blogofile modules
++++++++++++++++++
+
+``bf`` holds all of the core Blogofile modules, for example:
+ * ``bf.util``
+ * ``bf.config``
+ * ``bf.writer``
+
+Controller configuration
+++++++++++++++++++++++++
+
+``bf`` holds all the controller configuration, for example:
+
+  * ``bf.controllers.blog.enabled``
+  * ``bf.controllers.blog.path``
+
+Filter configuration
+++++++++++++++++++++
+
+``bf`` holds all the filter configuration, for example:
+
+  * ``bf.filters.syntax_highlight.enabled``
+  * ``bf.filters.syntax_highlight.style``
+
+Template context
+++++++++++++++++
+
+When a template is being rendered, it's sometimes useful to be able to maintain a context available throughout the time that a given template is being rendered. If, for example, you are rendering a template called ``my_cool_template.mako`` which inherits from ``site.mako`` and includes ``sidebar.mako``, a single context will be maintained that can be accessed from all three of those templates.
+
+``bf.template_context`` is a `HierarchicalCache`_ object and is available inside any template and you can put whatever data you want on it. The one peice of information that is included by default is ``bf.template_context.template_name`` which records the original template requested to be rendered. In the above example, this would be ``my_cool_template.mako``.
 
 .. _Mako: http://www.makotemplates.org
 
@@ -123,3 +158,5 @@ TODO: Document blogofile.cache and general usage inside of a template.
 .. _included: http://www.makotemplates.org/docs/syntax.html#syntax_tags_include
 
 .. _Mako syntax: http://www.makotemplates.org/docs/syntax.html#syntax_expression
+
+.. _HierarchicalCache: http://github.com/EnigmaCurry/blogofile/blob/master/blogofile/cache.py#L22

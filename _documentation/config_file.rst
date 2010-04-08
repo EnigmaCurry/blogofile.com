@@ -3,307 +3,245 @@
 Configuration File
 ==================
 
-.. _basic-configuration:
+Blogofile looks for a file called ``_config.py`` in the root of your source directory; this is your site's main configuration file. Blogofile tries to use sensible default values for anything you don't configure explicitly in this file. Although every site must have a ``_config.py``, it can start out completely blank.
 
-Basic Configuration
-|||||||||||||||||||
+``_config.py`` is just regular `Python`_ source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to get started.
 
-Before your site can be compiled, Blogofile looks for a file called ``_config.py`` in the root of your source directory; this is your site's main configuration file. Blogofile uses sensible default values for anything you don't configure explicitly in this file. Although every site must have a _config.py file, a bare bones site can start out with a completely blank ``_config.py``.
+.. _config-context:
 
-The _config.py file is just regular `Python`_ source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to start out with.
+Context of _config.py
+|||||||||||||||||||||
 
-At the top of the file you'll see the Basic Settings section. This section contains the settings you'll most likely want to change when creating your own site:
+``_config.py`` is run within a context that is prepared by Blogofile before executing. This context includes the following objects:
 
-* **site_url** - String
+* **controllers** - Settings for each controller (See :ref:`controllers`).
+* **filters** - Settings for each filter (See :ref:`filters`).
+* **site** - General Settings pertaining to your site, eg: site.url.
 
-  This is the root URL for your website. This is the URL that your blogofile site will be hosted at.
+All of these are instances of the `HierarchicalCache`_ class. `HierarchicalCache`_ objects behave a bit differently than typical Python objects: accessed attributes that do not exist, do not raise an `AttributeError`_. Instead, they instantiate the non-existing attribute as a nested `HierarchicalCache`_ object.
 
-  example: ``http://www.xkcd.com``
+This style of configuration provides a seperate namespace for each feature of your blogofile site, and also allows for Blogofile to contain configuration settings for controllers or filters that may or may not be currently installed. For example, your ``_config.py`` might have the following setting for a photo gallery controller::
 
-* **blog_enabled** - Boolean
-  
-  This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. If this is set to True, Blogofile requires several blog specific templates to exist in the **_templates** directory as described in :ref:`required-templates`
+  controllers.photo_gallery.albums.photos_per_page = 5
 
-  Defaults to True
+In the above example, ``controllers``, ``photo_gallery``, and ``albums``, are all instances of `HierarchicalCache`_. ``photos_per_page`` is an integer that is an attribute on the ``albums`` `HierarchicalCache`_.
 
-* **blog_path** - String
+Because this setting is contained in a `HierarchicalCache`_ object, if the photo gallery controller is not installed, the setting will simply be ignored.
 
-  This is the path of the blog off of the site_url. For example, if site_url is ``http://www.xkcd.com`` and blog_path is ``/blag`` your full URL to your blog will be ``http://www.xkcd.com/blag``
 
-* **blog_name** - String
-  
-  This is the name of your blog.
+.. _site-configuration:
 
-  example: ``xkcd - The blag of the webcomic``
+Site Configuration
+||||||||||||||||||
 
-* **blog_description** - String
-
-  This is a (short) description of your blog. Many RSS readers support/expect a description for feeds.
-
-  example: ``A Webcomic of Romance, Sarcasm, Math, and Language``
-
-* **blog_timezone** - String
-
-  This is the `timezone`_ that you normally post to your blog from. 
-
-  Defaults to ``US/Eastern``
-
-* **blog_posts_per_page** - Integer
-
-  This is the number of blog posts you want to display per page.
-
-That's all you need to configure for a basic site with a blog. See the next section for the rest of the available settings.
-
-.. _comprehensive-config-values:
-
-Comprehensive Config Values
-|||||||||||||||||||||||||||
-
-This is a list of all the predefined values inside of _config.py (See :ref:`basic-configuration`).
-
-The config file is just regular Python code, so you can define any additional values you want. All attributes are accessible inside your templates via ``${config.your_attribute}``. 
-
-Basic Settings
---------------
+In Blogofile, the "site" corresponds with the ``_site`` directory that blogofile builds. Even if your site is primarily used as a blog, think of the "site" as the parent of the blog. The site has it's own namespace within ``_config.py`` called ``site``.
 
 .. _config-site-url:
 
-site_url
+site.url
 ++++++++
 String
 
-This is the full URL to your blogofile powered site. 
+This is the root URL for your website. This is the URL that your blogofile site will be hosted at::
 
-example: ``http://www.xkcd.com``
+    site.url = "http://www.xkcd.com"
 
-Include the path if your site is not at the root of the domain.
+.. _config-file-ignore-patterns:
 
-example: ``http://www.xkcd.com/~username``
+site.file_ignore_patterns
++++++++++++++++++++++++++
+List
 
-The site_url corresponds with the contents of the ``_site`` directory, which does not necessarily have to be the root of your blog, which is controlled via the :ref:`config-blog-path` setting.
+This is a list of regular expressions that describe paths to ignore when processing your source directory. The most important one (and one you should not remove) is ``.*([\/]|[\\])_.*`` which ignores all files and directories that start with an underscore (like ``_config.py`` and ``_posts``)::
+
+    site.file_ignore_patterns = [
+        r".*([\/]|[\\])_.*",    #All files that start with an underscore
+        r".*([\/]|[\\])#.*",    #Emacs temporary files
+        r".*~$",                #Emacs temporary files
+        r".*([\/]|[\\])\.git$", #Git VCS dir
+        r".*([\/]|[\\])\.hg$",  #Mercurial VCS dir
+        r".*([\/]|[\\])\.bzr$", #Bazaar VCS dir
+        r".*([\/]|[\\])\.svn$", #Subversion VCS dir
+        r".*([\/]|[\\])CVS$"    #CVS dir
+        ]
+
+Blog Configuration
+||||||||||||||||||
+
+The core of Blogofile actually does not know what a blog is. Blogofile itself just provides a runtime environment for templates, controllers and filters. A Blogofile blog is actually built by creating a blog controller (see :ref:`Controllers`.) A default implementation of a blog controller is provided with the Blogofile ``simple_blog`` template and should be sufficient for most users.
+
+All controllers in Blogofile have their own seperate namespace in ``_config.py`` under ``controllers``. For convenience, you would usually reference the blog controller like so in ``_config.py``::
+
+    blog = controllers.blog
 
 .. _config-blog-enabled:
 
-blog_enabled
+blog.enabled
 ++++++++++++
-      
-Boolean  
+Boolean
+  
+This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. If this is set to True, Blogofile requires several blog specific templates to exist in the ``_templates`` directory as described in :ref:`required-templates`::
 
-This turns on/off the blog feature. Blogofile is obviously geared toward sites that have blogs, but you don't *need* to have one. Note that if set to True blogofile requires several blog specific templates to exist in the **_templates** directory as described in :ref:`required-templates`
-
-Defaults to True
+    blog.enabled = True
 
 .. _config-blog-path:
 
-blog_path
+blog.path
 +++++++++
-
 String
 
-This is the path relative to the ``_site`` directory (as well as :ref:`config-site-url`) that your blog should reside. If you set this as ``/`` or blank, it will place the blog directly in the ``_site`` directory.
+This is the path of the blog off of the :ref:`config-site-url`. For example, if :ref:`config-site-url` is ``http://www.xkcd.com/stuff`` and blog.path is ``/blag`` your full URL to your blog will be ``http://www.xkcd.com/sfuff/blag``::
 
-example: ``/blog``
+    blog.path = "/blog"
 
-.. _config-blog-name:
-
-blog_name
+blog.name
 +++++++++
-String  
+String
+  
+This is the name of your blog::
 
-This is the name of your blog.
+    blog.name = "xkcd - The blag of the webcomic"
 
-example: ``xkcd - The blag of the webcomic``
-
-.. _config-blog-description:
-
-blog_description
+blog.description
 ++++++++++++++++
 String
 
-This is a (short) description of your blog. Many RSS readers support/expect a description for feeds.
+This is a (short) description of your blog. Many RSS readers support/expect a description for feeds::
 
-example: ``A Webcomic of Romance, Sarcasm, Math, and Language``
+    blog.description = "A Webcomic of Romance, Sarcasm, Math, and Language"
 
-
-.. _config-blog-timezone:
-
-blog_timezone
+blog.timezone
 +++++++++++++
 String
 
-This is the `timezone`_ that you normally post to your blog from. 
+This is the `timezone`_ that you normally post to your blog from::
 
-Defaults to ``US/Eastern``
+    blog.timezone = "US/Eastern"
 
-.. _config-blog-posts-per-page:
+You can see all of the appropriate values by running::
 
-blog_posts_per_page
+    python -c "from pytz import all_timezones; import pprint; pprint.pprint(all_timezones)" | less
+
+blog.posts_per_page
 +++++++++++++++++++
 Integer
 
-This is the number of blog posts you want to display per page.
+This is the number of blog posts you want to display per page::
 
-.. _config-blog-auto-permalink-enabled:
+    blog.posts_per_page = 5
 
-blog_auto_permalink_enabled
+.. _comprehensive-config-values:
+
+
+blog.auto_permalink.enabled
 +++++++++++++++++++++++++++
 Boolean
 
-This turns on automatic permalink generation. If your post does not include a permalink field, then this allows for the automatic generation of the permalink.
+This turns on automatic permalink generation. If your post does not include a permalink field, then this allows for the automatic generation of the permalink::
+
+    blog.auto_permalink.enabled = True
 
 .. _config-blog-auto-permalink:
 
-blog_auto_permalink
-+++++++++++++++++++
+blog.auto_permalink.path
+++++++++++++++++++++++++
 String
 
-This is the format that automatic permalinks should take on, starting with the path after the blog domain name. eg: ``/blag/:year/:month/:day/:title`` creates a permalink like ``http://www.xkcd.com/blag/2009/08/18/post-one``.
+This is the format that automatic permalinks should take on, starting with the path after the blog domain name. eg: ``/blag/:year/:month/:day/:title`` creates a permalink like ``http://www.xkcd.com/blag/2009/08/18/post-one``::
+
+    blog.auto_permalink.path = "/blog/:year/:month/:day/:title"
 
 Available replaceable items in the string:
 
  * :year - The post year
+ * :month - The post month
+ * :day - The post day
  * :title - The post title
  * :uuid - sha hash based on title
  * :filename - the filename of the post (minux extension)
 
-Defaults to ``/blog/:year/:month/:day/:title``
-
-Intermediate Settings
----------------------
-
 .. _config-disqus-enabled:
 
-disqus_enabled
-++++++++++++++
+blog.disqus.enabled
++++++++++++++++++++
 Boolean
 
-Turns on/off `Disqus`_ comment system integration.
+Turns on/off `Disqus`_ comment system integration::
 
-Defaults to False
+    blog.disqus_enabled = False
 
 .. _config-disqus-name:
 
-disqus_name
-+++++++++++
+blog.disqus_name
+++++++++++++++++
 String 
 
-The Disqus website 'short name'
+The Disqus website 'short name'::
+
+    blog.disqus.name = "your_disqus_name"
 
 .. _config-syntax-highlight-enabled:
 
-syntax_highlight_enabled
-++++++++++++++++++++++++
-Boolean
-
-Turns on/off syntax highlighting of pre tags in blog posts.
-
-Defaults to True
-
-.. _config-syntax-highlight-style:
-
-syntax_highlight_style
-++++++++++++++++++++++
-String
-
-The default style to use for highlighting. See `Pygments Styles`_.
-
-.. _config-custom-index:
-
-blog_custom_index
+blog.custom_index
 +++++++++++++++++
 Boolean
 
-When you configure :ref:`config-blog-path`, Blogofile by default writes a chronological listing of the latest blog entries at that location. With this option you can turn that behaviour off and your index.html.mako file in that same location will be your own custom template. 
+When you configure :ref:`config-blog-path`, Blogofile by default writes a chronological listing of the latest blog entries at that location. With this option you can turn that behaviour off and your index.html.mako file in that same location will be your own custom template::
 
-Defaults to False
+    blog.custom_index = False
 
 .. _config-post-excerpt-enabled:
 
-post_excerpt_enabled
-++++++++++++++++++++
+blog.post_excerpts.enabled
+++++++++++++++++++++++++++
 Boolean
 
-Post objects have a .content attribute that contains the full content of the blog post. Some blogs choose to only show an excerpt of the post except for on the permalink page. If you turn this feature on, post objects will also have a .excerpt attribute that contains the first ``post_excerpt_word_length`` words.
+Post objects have a ``.content`` attribute that contains the full content of the blog post. Some blog authors choose to only show an excerpt of the post except for on the permalink page. If you turn this feature on, post objects will also have a ``.excerpt`` attribute that contains the first :ref:`config-post-excerpt-word-length` words::
+
+    blog.post_excerpts.enabled = True
 
 If you don't use post excerpts, you can turn this off to decrease render times.
 
-Defaults to True
-
 .. _config-post-excerpt-word-length:
 
-config-post-excerpt-word-length
-+++++++++++++++++++++++++++++++
+blog.post_excerpts.word-length
+++++++++++++++++++++++++++++++
 Integer
 
-The number of words to have in post excerpts.
+The number of words to have in post excerpts::
+
+    blog.post_excerpts.word_length = 25
 
 .. _config-blog-pagination-dir:
 
-blog_pagination_dir
+blog.pagination_dir
 +++++++++++++++++++
 String 
 
 The name of the directory that contains more pages of posts than can be shown on the first page.
 
-Defaults to ``page``, as in ``http://www.test.com/blog/page/4``
+Defaults to ``page``, as in ``http://www.test.com/blog/page/4``::
 
-.. _config-emacs-orgmode-enabled:
-
-emacs_orgmode_enabled
-+++++++++++++++++++++
-Boolean
-
-Turns on/off org-mode templates for posts. You must have `Emacs`_ installed.
-
-.. _config-emacs-binary:
-
-emacs_binary
-++++++++++++
-String
-
-The system path to your Emacs binary.
-
-example: ``/usr/bin/emacs``
-
-.. _config-emacs-preload-elisp:
-
-emacs_preload_elisp
-+++++++++++++++++++
-String
-
-Path to a file including environment settings for emacs to load on startup.
-
-example: ``_emacs/setup.el``
-
-.. _config-emacs-orgmode-preamble:
-
-emacs_orgmode_preamble
-++++++++++++++++++++++
-String
-
-Contents to add to an org mode preamble.
-
-example: ``#+OPTIONS: H:3 num:nil toc:nil \n:nil``
-
-Advanced Settings
-------------------
-
-.. _config-file-ignore-patterns:
-
-file_ignore_patterns
-++++++++++++++++++++
-List
-
-This is a list of regular expressions that describe paths to ignore when processing blogofile blogs. The most important one (and one you should not remove) is ``.*[\/]_.*`` which ignore all files and directories that start with an underscore (like _config.py and _posts)
-
+    blog.pagination_dir = "page"
 
 .. _config-blog-post-default-filters:
 
-blog_post_default_filters
+blog.post_default_filters
 +++++++++++++++++++++++++
 Dictionary
 
-This is a dictionary of file extensions to default filter chains to be applied to blog posts. A default filter chain is applied to a blog post only if no filter attribute is specified in the blog post YAML header.
+This is a dictionary of file extensions to default filter chains to be applied to blog posts. A default filter chain is applied to a blog post only if no filter attribute is specified in the blog post YAML header::
+
+    blog.post_default_filters = {
+        "markdown": "syntax_highlight, markdown",
+        "textile": "syntax_highlight, textile",
+        "org": "syntax_highlight, org",
+        "rst": "syntax_highlight, rst",
+        "html": "syntax_highlight"
+    }
+
+Build Hooks
+|||||||||||
 
 .. _config-pre-build:
 
@@ -330,3 +268,7 @@ This is a function that gets run after the _site directory is built
 .. _Emacs: http://www.gnu.org/software/emacs
 
 .. _Python: http://www.python.org
+
+.. _HierarchicalCache: http://github.com/EnigmaCurry/blogofile/blob/master/blogofile/cache.py#L22
+
+.. _AttributeError: http://docs.python.org/library/exceptions.html#exceptions.AttributeError

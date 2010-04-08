@@ -270,3 +270,7 @@ div#footer {
     background:transparent none repeat scroll 0 0;
     color:#00CCFF;
 }
+/********** Sphinx **********/
+div.sphinxsidebarwrapper {
+    overflow: hidden;
+}
