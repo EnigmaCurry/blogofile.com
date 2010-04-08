@@ -21,7 +21,7 @@
       <li>
         Blogofile sites are <b><i>fast</i></b>, the webserver doesn't need to do any database lookups nor any template rendering.
       </li>
-      <li>Blogofile is <b><i>inexpensive</i></b> to host. Any web server can host a Blogofile blog.</li>
+      <li>Blogofile sites are <b><i>inexpensive</i></b> to host. Any web server can host a Blogofile blog.</li>
       <li>Blogofile is <b><i>modern</i></b>, supporting all the common blogging features:
         <ul>
           <li>Categories and Tags</li>

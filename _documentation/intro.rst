@@ -17,7 +17,7 @@ Why you should be using Blogofile
 =================================
 * Blogofile is **free open-source** software, released under a non-enforced `MIT License`_.
 * Blogofile sites are **fast**, the webserver doesn't need to do any database lookups nor any template rendering.
-* Blogofile is **inexpensive** to host. Any web server can host a blogofile blog.
+* Blogofile sites are **inexpensive** to host. Any web server can host a blogofile blog.
 * Blogofile is **modern**, supporting all the common blogging features:
 
  * Categories and Tags.
