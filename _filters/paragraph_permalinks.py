@@ -2,15 +2,14 @@
 #This allows you to reference individual paragraphs by permalink:
 # http://yourblog.com/blog/this-is-a-post#p5
 
-from pyquery import PyQuery as pq
+import xml.etree.ElementTree as et
 
 def run(content):
-    #pyquery needs this wrapped in some tag, otherwise it loses the top-most tag
-    #when .html() is run, so just wrap in <xml>.
-    d = pq("<xml>%s</xml>"%content)
+    #ElementTree requires a containing element, so just use <xml>
+    d = et.fromstring("<xml>%s</xml>"%content)
     p_num = 1
-    for p in d("p"):
-        if not p.attrib.has_key("id"):
+    for p in d.getiterator("p"):
+        if p.get("id") is None:
             p.set('id',"p"+str(p_num))
         p_num += 1
-    return d.html()
+    return et.tostring(d)
