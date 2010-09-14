@@ -7,10 +7,15 @@ import categories
 import chronological
 import feed
 import permapage
+import post
+
+bf.post = post
 
 config = {"name"        : "Blog",
           "description" : "Creates a Blog",
-          "priority"    : 90.0}
+          "priority"    : 90.0,
+          "post.date_format": "%Y/%m/%d %H:%M:%S"
+         }
 
 def run():
     blog = bf.config.controllers.blog
