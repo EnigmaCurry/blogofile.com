@@ -92,10 +92,10 @@ Filters can be single .py files inside the _filters directory, as in the ``playn
 
 Filters have a standardized configuration protocol. All filters define a dictionary called ``config``. By default it contains the following values::
 
-    config = {"name"        : "None",
-              "description" : "None",
-              "author"      : "None",
-              "url"         : "None"}
+    config = {"name"        : None,
+              "description" : None,
+              "author"      : None,
+              "url"         : None}
 
 These settings are as follows:
 

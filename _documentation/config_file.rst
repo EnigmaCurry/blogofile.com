@@ -120,7 +120,7 @@ This is the `timezone`_ that you normally post to your blog from::
 
 You can see all of the appropriate values by running::
 
-    python -c "from pytz import all_timezones; import pprint; pprint.pprint(all_timezones)" | less
+    python -c "import pytz, pprint; pprint.pprint(pytz.all_timezones)" | less
 
 blog.posts_per_page
 +++++++++++++++++++

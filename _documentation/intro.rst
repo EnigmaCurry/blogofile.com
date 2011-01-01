@@ -31,7 +31,7 @@ Why you should be using Blogofile
    userspace (see :ref:`Filters <filters>` and :ref:`Controllers <controllers>`)
 
 * Blogofile is **secure**, there's nothing executable on the server.
-* Blogofile works **offline**, with a built-in webserver you can work on your site from anywhere.
+* Blogofile works **offline**, with a built-in web server you can work on your site from anywhere.
 * Blogofile is **file based**, so you can edit it with your favorite text editor, not some crappy web interface.
 * Seamless :ref:`Git Integration <vcs-integration>`. Publish to your blog with a simple ``git push``. This also makes **backups** dirt simple.
 

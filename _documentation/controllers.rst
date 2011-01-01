@@ -111,10 +111,10 @@ Controllers are always disabled by default, and must be explicitly turned on in 
 
 Controllers have a standardized configuration protocol. All controllers define a dictionary called ``config``. By default it contains the following values::
 
-    config = {"name"        : "None",
-              "description" : "None",
-              "author"      : "None",
-              "url"         : "None",
+    config = {"name"        : None,
+              "description" : None,
+              "author"      : None,
+              "url"         : None,
               "priority"    : 50.0,
               "enabled"     : False}
 
