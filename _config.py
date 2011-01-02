@@ -160,8 +160,8 @@ controllers.photo_gallery.enabled = True
 ### Blogofile release variables
 ### (These are custom vars for blogofile.com)
 ##############################################
-release_version = "0.6"
-release_download_link = "http://pypi.python.org/packages/source/B/Blogofile/blogofile-0.6.tar.gz"
+release_version = "0.7"
+release_download_link = "http://pypi.python.org/packages/source/B/Blogofile/blogofile-0.7.tar.gz"
 
     
 def build_docs():
