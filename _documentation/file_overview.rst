@@ -68,7 +68,7 @@ The basic building blocks of a Blogofile site are:
  * **Filters** - contained in the ``_filters`` directory, filters can process textual data like syntax highlighters, translators, swear word censors etc. See :ref:`filters`
  * **Controllers** - contained in the ``_controllers`` directory, controllers create dynamic sections of your site, like blogs. See :ref:`controllers`
 
-Any file or directory not starting with an underscore, and not ending in ".mako", are considered regular files (eg. ``css/site.css`` and ``js/site.js``). These files are copied directly to your compiled site directly.
+Any file or directory not starting with an underscore, and not ending in ".mako", are considered regular files (eg. ``css/site.css`` and ``js/site.js``). These files are copied directly to your compiled site.
 
 Building the Site
 =================
@@ -83,7 +83,7 @@ Blogofile should run without printing anything to the screen. If this is the cas
 
     blogofile serve 8080
 
-Go to `http://localhost:8080 <http://localhost:8080>`_ to see the site served from the embedded webserver. You can quit the server by pressing ``Control-C``
+Go to `http://localhost:8080 <http://localhost:8080>`_ to see the site served from the embedded webserver. You can quit the server by pressing ``Control-C``.
 
 Understanding the Build Process
 ===============================

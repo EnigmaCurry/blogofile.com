@@ -6,7 +6,7 @@
 Blogofile Documentation
 #######################
 
-NOTE: This documents the latest development (master) branch of
+NOTE: This documents the latest `development version`_ of
 Blogofile. It is often out of sync with the latest stable release
 version. 
 
@@ -24,3 +24,4 @@ version.
    vcs_integration
    migrating_blogs
 
+.. _development version: http://github.com/EnigmaCurry/blogofile

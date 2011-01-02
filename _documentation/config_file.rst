@@ -52,18 +52,24 @@ site.file_ignore_patterns
 +++++++++++++++++++++++++
 List
 
-This is a list of regular expressions that describe paths to ignore when processing your source directory. The most important one (and one you should not remove) is ``.*([\/]|[\\])_.*`` which ignores all files and directories that start with an underscore (like ``_config.py`` and ``_posts``)::
+This is a list of regular expressions that describe paths to ignore when processing your source directory. The most important one (and one you should not remove) is ``".*/_.*"`` which ignores all files and directories that start with an underscore (like ``_config.py`` and ``_posts``)::
 
     site.file_ignore_patterns = [
-        r".*([\/]|[\\])_.*",    #All files that start with an underscore
-        r".*([\/]|[\\])#.*",    #Emacs temporary files
-        r".*~$",                #Emacs temporary files
-        r".*([\/]|[\\])\.git$", #Git VCS dir
-        r".*([\/]|[\\])\.hg$",  #Mercurial VCS dir
-        r".*([\/]|[\\])\.bzr$", #Bazaar VCS dir
-        r".*([\/]|[\\])\.svn$", #Subversion VCS dir
-        r".*([\/]|[\\])CVS$"    #CVS dir
-        ]
+    # All files that start with an underscore
+    ".*/_.*",
+    # Emacs temporary files
+    ".*/#.*",
+    # Emacs/Vim temporary files
+    ".*~$",
+    # Vim swap files
+    ".*/\..*\.swp$",
+    # VCS directories
+    ".*/\.(git|hg|svn|bzr)$",
+    # Git and Mercurial ignored files definitions
+    ".*/.(git|hg)ignore$",
+    # CVS dir
+    ".*/CVS$",
+    ]
 
 Blog Configuration
 ||||||||||||||||||
