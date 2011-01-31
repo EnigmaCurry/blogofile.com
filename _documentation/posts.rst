@@ -3,9 +3,11 @@
 Posts
 *****
 
-Blog posts go inside the **_posts** directory. 
+Posts are interpreted by the blog controller that you get when you instantiate the simple_blog; they have no particular meaning to the core runtime of Blogofile. If you wanted, you could reimplement the blog controller yourself and use whatever post formatting you wished. It's expected that most users will just use the default blog controller, so this Post documentation is here for convenience.
 
-Each post is a seperate file and you can name the files whatever you want, but it's suggested to prefix your posts with a number like ``0001``, ``0002`` etc. so that when you look at the files in a directory they will be naturally ordered sequentially.
+Blog posts go inside the **_posts** directory. Without the blog controller enabled, the **_posts** directory is ignored because it starts with an underscore.
+
+Each post is a seperate file and you can name the files whatever you want, but it's suggested to prefix your posts with a number like ``0001``, ``0002`` etc. so that when you look at the files in a directory they will be naturally ordered sequentially. It's important to realize that this order is not the same order that the blog controller uses in chronlogical listings. Instead it sorts the posts based on the date field described below.
 
 An Example Post
 ---------------
@@ -50,7 +52,7 @@ The `YAML`_ portion is between the two ``---`` lines, and it describes all of th
 * **author**
     The name of the author of the post.
 * **draft**
-    If 'true' or 'True', the post is considered to be only a draft and not to be published.
+    If 'true' or 'True', the post is considered to be only a draft and not to be published. A permalink will be generated for the post, but the post will not show up in indexes or RSS feeds. You would have to know the full permalink to ever see the page.
 * **source**
     Reserved internally.
 * **yaml**
@@ -70,9 +72,10 @@ The post content is written using a markup language, currently Blogofile support
 
 * `Markdown`_ (files end in .markdown)
 * `Textile`_ (files end in .textile)
-* `Org Mode`_ (files end in .org)
 * `reStructuredText`_ (files end in .rst)
 * or plain old HTML (files end in .html by convention, but if it's not one of the above, posts default to HTML anyway)
+
+Adding your own markup formats is easy, you just implement it as a filter (see :ref:`Filters`)
 
 The content of the post goes directly after the YAML portion and uses whatever markup language is indicated by the file extension of the post file.
 

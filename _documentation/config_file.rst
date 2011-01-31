@@ -5,7 +5,7 @@ Configuration File
 
 Blogofile looks for a file called ``_config.py`` in the root of your source directory; this is your site's main configuration file. Blogofile tries to use sensible default values for anything you don't configure explicitly in this file. Although every site must have a ``_config.py``, it can start out completely blank.
 
-``_config.py`` is just regular `Python`_ source code, but don't let that worry you if you don't know Python, there's actually very little you need to change in this file to get started.
+``_config.py`` is just regular `Python`_ source code. If you don't know any Python, don't worry, there's actually very little you need to change in this file to get started.
 
 .. _config-context:
 
@@ -155,16 +155,17 @@ String
 
 This is the format that automatic permalinks should take on, starting with the path after the blog domain name. eg: ``/blag/:year/:month/:day/:title`` creates a permalink like ``http://www.xkcd.com/blag/2009/08/18/post-one``::
 
-    blog.auto_permalink.path = "/blog/:year/:month/:day/:title"
+    blog.auto_permalink.path = ":blog_path/:year/:month/:day/:title"
 
 Available replaceable items in the string:
 
+ * :blog_path - The root of the blog
  * :year - The post year
  * :month - The post month
  * :day - The post day
  * :title - The post title
  * :uuid - sha hash based on title
- * :filename - the filename of the post (minux extension)
+ * :filename - the filename of the post (minus extension)
 
 .. _config-disqus-enabled:
 
@@ -210,7 +211,7 @@ If you don't use post excerpts, you can turn this off to decrease render times.
 
 .. _config-post-excerpt-word-length:
 
-blog.post_excerpts.word-length
+blog.post_excerpts.word_length
 ++++++++++++++++++++++++++++++
 Integer
 
@@ -236,7 +237,7 @@ blog.post_default_filters
 +++++++++++++++++++++++++
 Dictionary
 
-This is a dictionary of file extensions to default filter chains to be applied to blog posts. A default filter chain is applied to a blog post only if no filter attribute is specified in the blog post YAML header::
+This is a dictionary of file extensions to default filter chains (see :ref:`filters`) to be applied to blog posts. A default filter chain is applied to a blog post only if no filter attribute is specified in the blog post YAML header::
 
     blog.post_default_filters = {
         "markdown": "syntax_highlight, markdown",
@@ -264,6 +265,14 @@ post_build
 Function
 
 This is a function that gets run after the _site directory is built
+.. _config-post-build:
+
+
+build_finally
++++++++++++++
+Function
+
+This is a function that gets run after the _site directory is built OR whenever a fatal error occurs. You could use this function to perform a cleanup function after building, or to notify you when a build fails. 
 
 .. _timezone: http://en.wikipedia.org/wiki/List_of_zoneinfo_time_zones
 

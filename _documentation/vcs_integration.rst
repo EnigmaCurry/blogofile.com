@@ -43,7 +43,9 @@ Now whenever you ``git push`` to your webhost, your webserver should get automat
 Other VCS solutions
 -------------------
 
-Most VCS should have support for a post recieve hook. If you create something cool in your own VCS of choice, let the `blogofile discussion group <http://groups.google.com/group/blogofile-discuss>`_ know and we'll add it to this document
+Most VCS should have support for a post recieve hook. If you create something cool in your own VCS of choice, let the `blogofile discussion group <http://groups.google.com/group/blogofile-discuss>`_ know and we'll add it to this document.
+
+OJ wrote up how to do `something similar with mercurial <http://groups.google.com/group/blogofile-discuss/browse_frm/thread/e03f942b3655218e>`_.
 
 .. rubric:: Footnotes
 

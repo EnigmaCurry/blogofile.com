@@ -13,14 +13,14 @@ Controllers are used when you want to create a whole chunk of your site dynamica
 
 All of these are pretty much a necessity for a blog engine, but none of these are included within the core of Blogofile itself. One of Blogofile's core principles is to remain light, configurable, and to make little assumption about how a user's site should behave. All of these blog specific tasks are relegated to a type of plugin system called controllers so that they can be tailored to each individual's tastes as well as leave room for entirely new types of controllers written by the user.
 
-The blogofile.com sources (which you can obtain by running ``blogofile init blogofile.com``) include all of these controllers in the ``_controllers`` directory. But let's look at a much simpler example for the purposes of this tutorial.
+The simple_blog sources (which you can obtain by running ``blogofile init simple_blog``) include all of these controllers in the ``_controllers`` directory. But let's look at an even simpler example for the purposes of this tutorial.
 
 .. _controller-simple-example:
 
 A Simple Controller
 -------------------
 
-Suppose you wanted to create a simple photo gallery with a comments page for each photo. You don't want to have to create a new mako template for every picture you upload, so let's write a controller instead. The controller will be really simple: read all the photos in the photo directory and create a single page for each photo and allow comments on the photo using `Disqus`_. Also create an index page listing all the photos with a thumbnail and the name of the image.
+Suppose you wanted to create a simple photo gallery with a comments page for each photo. You don't want to have to create a new mako template for every picture you upload, so let's write a controller instead. The controller will be really simple: read all the photos in the photo directory and create a single page for each photo and allow comments on the photo using `Disqus`_. While we're at it, let's also create an index page listing all the photos with a thumbnail and the name of the image.
 
 First create the controller called ``_controllers/photo_gallery.py``::
 
@@ -123,7 +123,7 @@ These settings are as follows:
  * name - The human friendly name for the controller.
  * author - The name or group responsible for writing the controller.
  * description - A brief description of what the controller does.
- * url - The URL where the controller is hosted.
+ * url - The URL where the controller can be downloaded on the author's site.
  * priority - The default priority to determine sequence of execution. This is optional, if not provided, it will default to 50. Controllers with higher priorities get run sooner than ones with lower priorities.
 
 These are just the default settings, a controller author may provide as many configuration settings as he wants. 
@@ -131,6 +131,11 @@ These are just the default settings, a controller author may provide as many con
 A user can override any configuration setting in their ``_config.py``::
 
     controllers.photo_gallery.albums.photos_per_page = 5
+
+Controller Initialization
+-------------------------
+
+Controller's have an additional optional method called ``init()``. Like the ``run()`` method, it doesn't take any arguments, it's expected that the controller knows how to initialize itself. The initialization is useful when you need to perform some preparation work before running the main controller. Typical use cases are where two controllers interact with each other and have cyclical dependencies on one another. With an initialization step, you can avoid chicken-or-the-egg problems between two controllers that require data from each other at runtime.
 
 .. _Disqus: http://www.disqus.com
 

@@ -86,7 +86,7 @@ Let's say we want to include on our home page a list of the 5 most recent posts 
 
 If you're familiar with for-loops in Python, this should look somewhat similar. We create an unordered list tag and inside that list we iterate over a special Blogofile object containing all of our posts. We limit ourselves to the first 5 posts by slicing the list of posts from 0 to 5. 
 
-Each post contains various metadata (see :ref:`posts`) about the post and in this example we are interested in two things: the relative URL to the permalinked post as well as the title of the post. We create the anchor containing the relative URL ``${post.path}`` and we name the anchor the same as the post ``${post.title}``. The rendered HTML file will now look something like this::
+Each post contains various metadata (see :ref:`posts`) about the post. In this example we are interested in two things: the relative URL to the permalinked post as well as the title of the post. We create the anchor containing the relative URL ``${post.path}`` and we name the anchor the same as the post ``${post.title}``. The rendered HTML file will now look something like this::
 
   <html>
     <body>

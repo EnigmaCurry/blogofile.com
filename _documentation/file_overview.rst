@@ -1,64 +1,57 @@
 The Makeup of a Blogofile Site
 ******************************
-Blogofile is a website `compiler`_, but instead of translating something like C++ source code into an executable program, Blogofile takes `Mako`_ templates and other Blogofile features and compiles HTML for viewing in a web browser. This chapter introduces the basic building blocks of a Blogofile directory containing such source code.
+Blogofile is a website `compiler`_, but instead of translating something like C++ source code into an executable program, Blogofile takes `Mako`_ templates, and other Blogofile features, and compiles HTML for viewing in a web browser. This chapter introduces the basic building blocks of a Blogofile directory containing such source code.
 
 An Example
 ==========
-The best way to understand how Blogofile works is to look at an example. You can checkout the source code for the main Blogofile.com website::
-
-  blogofile init blogofile.com
-
-The above command downloads the very latest blogofile.com website source code, which requires that you have `git`_ installed on your system. If you don't have it, you can just download the `zip file`_ instead.
-
-If you want to create a new site layout from scratch, you probably want to start with something a bit more basic. You can initialize a non-themed, bare bones site by running::
+The best way to understand how Blogofile works is to look at an example. Create a new directory and inside it run::
 
  blogofile init simple_blog
 
-The rest of this document will reference the blogofile.com source code and explain it's different parts.
+This command creates a very simple blog that you can use to learn how Blogofile works as well as to provide a clean base from which you can create your own Blogofile based website.
+
+For a more complete example, you can checkout the code for the same website you're reading right now, blogofile.com::
+
+  blogofile init blogofile.com
+
+This command downloads the very latest blogofile.com website source code, which requires that you have `git`_ installed on your system. If you don't have it, you can just download the `zip file`_ instead.
+
+The rest of this document will assume that you're using the simple_blog template. It is the defacto reference platform for Blogofile.
 
 Directory Structure
 ===================
 
 Inside the source directory are the following files (abbreviated)::
 
-    |-- _config.py
-    |-- _controllers
-    |   |-- blog
-    |   |   |-- __init__.py
-    |   |   |-- archives.py
-    |   |   |-- categories.py
-    |   |   |-- chronological.py
-    |   |   |-- feed.py
-    |   |   |-- permapage.py
-    |   |-- photo_gallery.py
-    |-- _filters
-    |   |-- markdown.py
-    |   |-- paragraph_permalinks.py
-    |   |-- playnice.py
-    |   |-- syntax_highlight.py
-    |   |-- textile.py
-    |-- _posts
-    |   |-- 001. Blogofile 0.1.html
-    |   |-- 002. The History of Blogofile.html
-    |   |-- 003. Blogofile 0.3.html
-    |-- _templates
-    |   |-- atom.mako
-    |   |-- base.mako
-    |   |-- chronological.mako
-    |   |-- footer.mako
-    |   |-- head.mako
-    |   |-- header.mako
-    |   |-- permapage.mako
-    |   |-- post.mako
-    |   |-- post_excerpt.mako
-    |   |-- rss.mako
-    |   |-- sidebar.mako
-    |   `-- site.mako
-    |-- css
-    |   `-- site.css
-    |-- index.html.mako
-    |-- js
-        `-- site.js
+  |-- _config.py
+  |-- _controllers
+  |   |-- blog
+  |   |   |-- archives.py
+  |   |   |-- categories.py
+  |   |   |-- chronological.py
+  |   |   |-- feed.py
+  |   |   |-- __init__.py
+  |   |   |-- permapage.py
+  |   |   `-- post.py
+  |-- _filters
+  |   |-- markdown_template.py
+  |   |-- syntax_highlight.py
+  |-- index.html.mako
+  |-- _posts
+  |   |-- 001 - post 1.markdown
+  |   |-- 002 - post 2.markdown
+  `-- _templates
+      |-- atom.mako
+      |-- base.mako
+      |-- chronological.mako
+      |-- footer.mako
+      |-- header.mako
+      |-- head.mako
+      |-- permapage.mako
+      |-- post_excerpt.mako
+      |-- post.mako
+      |-- rss.mako
+      `-- site.mako
     
 The basic building blocks of a Blogofile site are:
 

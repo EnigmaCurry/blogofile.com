@@ -79,9 +79,9 @@ Filter chains can be applied to blog posts in the post YAML::
  ---
  This is a **markdown** formatted post with all the frak words filtered.
 
-Filters on blog posts are applied to the entire blog post; you cannot apply a filter to only a portion of the text like you can with templates. However, there is nothing preventing you from writing a filter that looks for special syntax in your posts and filters selectively. This allows for more end user customizability. 
+Filters on blog posts are applied to the entire blog post; you cannot apply a filter to only a portion of the text like you can with templates. However, there is nothing preventing you from writing a filter that looks for special syntax in your posts and filters selectively (the syntax_highlight filter from simple_blog does exactly this). This allows for more end user customizability. 
 
-If no filter is specified for your post, Blogofile looks at a config option called :ref:`config-blog-post-default-filters` which maps the file extension of the post file to a filter chain. Defaults include ``markdown``, ``textile``, and ``org``.
+If no filter is specified for your post, Blogofile looks at a config option called :ref:`config-blog-post-default-filters` which maps the file extension of the post file to a filter chain. Defaults include ``markdown`` and ``textile``.
 
 You can turn off all filters for the post, including the default ones, by specifing a filter chain of ``none``.
 
@@ -102,7 +102,7 @@ These settings are as follows:
  * name - The human friendly name for the controller.
  * author - The name or group responsible for writing the controller.
  * description - A brief description of what the controller does.
- * url - The URL where the controller is hosted.
+ * url - The URL where the controller can be downloaded on the authors site.
 
 These are just the default settings, a filter author may provide as many configuration settings as he wants. 
 

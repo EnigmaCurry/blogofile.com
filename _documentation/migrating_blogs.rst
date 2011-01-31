@@ -20,10 +20,9 @@ In your blogofile config file, set the :ref:`config-disqus-enabled` and :ref:`co
 Posts
 +++++
 
-Download the converter scripts:
+Download the converter script:
 
 * `wordpress2blogofile.py`_
-* `wordpress_schema.py`_
 
 Install SQL Alchemy::
 
@@ -60,7 +59,6 @@ to be written.
 
 .. _Disqus wordpress plugin: http://wordpress.org/extend/plugins/disqus-comment-system
 .. _wordpress2blogofile.py: http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress2blogofile.py
-.. _wordpress_schema.py: http://github.com/EnigmaCurry/blogofile/raw/master/converters/wordpress_schema.py
 .. _MySQLdb: http://sourceforge.net/projects/mysql-python/
 .. _DBAPI: http://www.sqlalchemy.org/docs/05/dbengine.html#supported-dbapis
 .. _SQL Alchemy docs: http://www.sqlalchemy.org/docs/05/dbengine.html#create-engine-url-arguments
