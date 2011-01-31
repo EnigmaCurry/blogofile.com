@@ -33,3 +33,7 @@ a.hidden {
     font-size: 0px;
     height: 0px;
 }
+
+p.graphviz object {
+    width: 700px;
+}

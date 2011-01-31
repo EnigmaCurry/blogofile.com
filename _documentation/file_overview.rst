@@ -104,6 +104,15 @@ When the Blogofile build process is invoked, it follows this conceptual order of
 
 * Controllers from the ``_controllers`` directory are run to build dynamic sections of your site, for example, all of the blog features: permalinks, archives, categories etc. See :ref:`controllers`.
 
+Build Process Flowchart
+-----------------------
+
+Click for larger SVG view
+
+.. raw:: html
+   
+   <a href="/documentation/graphs/build_process.dot.svg"><img src="/documentation/graphs/build_process.dot.png"></a>
+
 .. _Mako: http://www.makotemplates.org
 
 .. _zip file: http://github.com/EnigmaCurry/blogofile.com/zipball/master
