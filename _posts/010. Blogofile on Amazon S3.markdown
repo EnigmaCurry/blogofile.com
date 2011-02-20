@@ -1,0 +1,67 @@
+---
+categories: Deployment
+date: 2011/02/19 23:20:00
+permalink: http://www.blogofile.com/blog/2011/02/19/blogofile-on-amazon-s3
+title: Announcing Vaporfile - Blogofile sites on Amazon S3
+---
+Amazon recently announced that they have [upgraded their S3 service](http://aws.typepad.com/aws/2011/02/host-your-static-website-on-amazon-s3.html) to
+allow hosting of entire websites. The first thing to pop into my head
+when seeing this announcement was: "Ooo, I wonder if Blogofile can work
+with that?"
+
+Indeed it can! This is quite cool, because this means that Blogofile
+sites can be run without the need for a full webserver, and will only
+cost mere pennies per month for the more meager and less-trafficked
+sites. This is even more of a boon for security reasons: no more
+maintenance of server patches if all you're doing is running a blog.
+
+I uploaded a [test Blogofile site](http://s3.blogofile.com) using
+S3Fox, and although it was a little cumbersome, it worked! For use
+with Blogofile on a more permanent basis, I want something I can run
+from the command line and also be scriptable, so I wrote a python app
+to do the job: [Vaporfile](https://github.com/enigmacurry/vaporfile).
+
+*Vaporfile uploads static websites to the cloud.* 
+
+You can see the [installation and usage
+instructions](https://github.com/enigmacurry/vaporfile) over on the
+github page, but here's a rough gist:
+
+    $ vaporfile create
+
+This starts a wizard to configure a website. You configure the S3 bucket
+name, the local path that contains the website, and other config
+parameters. The main reason for using a wizard rather than command
+line arguments is because of the nasty possibility of deleting your
+entire website because of the wrong command line parameters. All the
+configuration is stored and loaded from a JSON file in your home
+directory, `~/.vaporfile`, which can also be edited by hand if needed.
+    
+    $ vaporfile upload <name-of-website>
+
+This synchronizes all of the files in the configured website folder on
+your local machine to the S3 bucket. Any files that are new or have
+changed (based on md5 sum) are uploaded. Any files that have been
+deleted locally are deleted from the server (unless you specify
+`--no-delete`).
+
+    $ vaporfile list
+
+This lists all the websites you've configured along with their local
+locations.
+
+    $ vaporfile credentials store
+
+This lets you reconfigure your AWS credentials.
+
+    $ vaporfile credentials delete
+
+This removes your AWS credentials completely.
+
+That's it in a nutshell. And in case it's not obvious, Vaporfile is
+not specific to Blogofile; it will upload any old website to S3,
+because that's all Blogofile sites are, just plain static HTML content.
+
+Later on, this will probably also be wrapped into a Blogofile plugin
+for ease of use, but I wanted to get this out there sooner rather than
+later, because it's just that cool :)
