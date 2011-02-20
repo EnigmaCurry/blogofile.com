@@ -11,5 +11,5 @@ list](http://groups.google.com/group/blogofile-discuss).
 So, for anyone that has this blog in their feeds and was expecting
 timely updates.. sorry.
 
-The Blogofile 0.7 is fresh and feature-full, and the
+The Blogofile 0.7 series is fresh and feature-full. The
 [documentation](/documentation) is up to date.
