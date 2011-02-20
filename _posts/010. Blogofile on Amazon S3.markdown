@@ -2,7 +2,7 @@
 categories: Deployment
 date: 2011/02/19 23:20:00
 permalink: http://www.blogofile.com/blog/2011/02/19/blogofile-on-amazon-s3
-title: Announcing Vaporfile - Blogofile sites on Amazon S3
+title: Announcing Vaporfile - deploy Blogofile to Amazon S3
 ---
 Amazon recently announced that they have [upgraded their S3 service](http://aws.typepad.com/aws/2011/02/host-your-static-website-on-amazon-s3.html) to
 allow hosting of entire websites. The first thing to pop into my head
