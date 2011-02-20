@@ -33,6 +33,8 @@
       <li>Blogofile is <b><i>secure</i></b>, there's nothing executable on the server.</li>
       <li>Blogofile works <b><i>offline</i></b>, with a built-in web server you can work on your site from anywhere.
       <li>Blogofile is <b><i>file based</i></b>, so you can edit it with your favorite text editor, not some crappy web interface.</li>
+      <li>Blogofile can <b><i>deploy</i></b>
+      to Amazon S3 with <a href="http://blogofile.com/blog/2011/02/19/blogofile-on-amazon-s3">Vaporfile</a> for ultra cheap and secure hosting.
       <li>Seamless <a href="/documentation/vcs_integration.html">Git Integration.</a> Publish to your blog with a simple "git push". This also makes <b><i>backups</i></b> dirt simple.</li> </li>
     </ul>
     <h3>Get Blogofile</h3>
