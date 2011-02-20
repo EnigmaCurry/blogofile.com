@@ -9,7 +9,7 @@ is happening [on the mailing
 list](http://groups.google.com/group/blogofile-discuss).
 
 So, for anyone that has this blog in their feeds and was expecting
-timely updates, I'm sorry about the lack of updates.
+timely updates.. sorry.
 
 The Blogofile 0.7 is fresh and feature-full, and the
 [documentation](/documentation) is up to date.
