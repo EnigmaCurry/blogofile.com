@@ -31,7 +31,7 @@ logger = logging.getLogger("blogofile.config")
 site.url         = "http://www.blogofile.com"
 
 #### Blog Settings ####
-blog = controllers.blog
+blog = plugins.blog
 
 ## blog_enabled -- Should the blog be enabled?
 #  (You don't _have_ to use blogofile to build blogs)
