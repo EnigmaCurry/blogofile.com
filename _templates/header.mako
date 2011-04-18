@@ -1,4 +1,9 @@
-<% import urllib %>
+<% 
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
+%>
 <div id="header" onclick="location.href='${bf.util.site_path_helper()}';" style="cursor: pointer;">
   <div id="plugbanner"></div>
   <div id="blog_logo"></div>
@@ -23,8 +28,8 @@
     <form id="searchform" method="get" action="http://www.google.com/search">
       <input type="hidden" name="ie" value="UTF-8">
       <input type="hidden" name="oe" value="UTF-8">
-      <input type="hidden" name="domains" value="${urllib.parse.urlparse(bf.config.site.url)[1]}">
-      <input type="hidden" name="sitesearch" value="${urllib.parse.urlparse(bf.config.site.url)[1]}">
+      <input type="hidden" name="domains" value="${urlparse(bf.config.site.url)[1]}">
+      <input type="hidden" name="sitesearch" value="${urlparse(bf.config.site.url)[1]}">
       <input name="q" id="q" size="20" value="search in blog..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
     </form>
   </div>
