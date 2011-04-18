@@ -175,11 +175,11 @@ Boolean
 
 Turns on/off `Disqus`_ comment system integration::
 
-    blog.disqus_enabled = False
+    blog.disqus.enabled = False
 
 .. _config-disqus-name:
 
-blog.disqus_name
+blog.disqus.name
 ++++++++++++++++
 String 
 

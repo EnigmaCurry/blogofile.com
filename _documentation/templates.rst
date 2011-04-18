@@ -79,7 +79,7 @@ Let's say we want to include on our home page a list of the 5 most recent posts 
   Here's the five most recent posts from the blog:
 
   <ul>
-  % for post in bf.blog.posts[:5]:
+  % for post in bf.config.blog.posts[:5]:
     <li><a href="${post.path}">${post.title}</a></li>
   % endfor
   </ul>

@@ -77,8 +77,8 @@ The ``write_pages()`` method references a reusable template residing in ``_templ
    var disqus_url = "${bf.config.site.url}/demo/photo_gallery/${photo}.html";
  </script>
  <script type="text/javascript" 
-    src="http://disqus.com/forums/${bf.config.blog.disqus_name}/embed.js"></script>
- <noscript><a href="http://${bf.config.blog.disqus_name}.disqus.com/?url=ref">
+    src="http://disqus.com/forums/${bf.config.blog.disqus.name}/embed.js"></script>
+ <noscript><a href="http://${bf.config.blog.disqus.name}.disqus.com/?url=ref">
      View the discussion thread.</a>
  </noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by 
  <span class="logo-disqus">Disqus</span></a>
