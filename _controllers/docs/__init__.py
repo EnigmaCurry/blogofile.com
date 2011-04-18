@@ -74,13 +74,13 @@ def build_graphviz_files():
             png, stderr = subprocess.Popen(shlex.split(
                     "dot -Gsize=\"7,100\" -Tpng {in_path}".format(**locals())),
                                    stdout=subprocess.PIPE).communicate()
-            f = open(out_path+".png","w")
+            f = open(out_path+".png","wb")
             f.write(png)
             f.close()            
             svg, stderr = subprocess.Popen(shlex.split(
                     "dot -Tsvg {in_path}".format(**locals())),
                                    stdout=subprocess.PIPE).communicate()
-            f = open(out_path+".svg","w")
+            f = open(out_path+".svg","wb")
             f.write(svg)
             f.close()
 
