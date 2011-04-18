@@ -1,16 +1,16 @@
 import logging
-import urlparse
+import urllib.parse
 from mako.lookup import TemplateLookup
 
 from blogofile.cache import bf
 from blogofile.cache import HierarchicalCache as HC
 
-import archives
-import categories
-import chronological
-import feed
-import permapage
-import post
+from . import archives
+from . import categories
+from . import chronological
+from . import feed
+from . import permapage
+from . import post
 
 meta = {
     "name": "Blog",
@@ -100,10 +100,10 @@ def materialize_template(template_name, location, attrs={}, lookup=None):
     #However, this uses the blog template lookup by default.
     if lookup==None:
         lookup = template_lookup
-    bf.writer.materialize_template(template_name, location, attrs, lookup)
+    bf.template.materialize_template(template_name, location, attrs, lookup)
     
 def init():
-    config["url"] = urlparse.urljoin(bf.config.site.url, config["path"])
+    config["url"] = urllib.parse.urljoin(bf.config.site.url, config["path"])
     global template_lookup
     template_lookup = TemplateLookup(
         directories=[config["template_path"],"_templates"],

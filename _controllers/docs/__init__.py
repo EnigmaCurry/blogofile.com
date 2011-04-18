@@ -87,7 +87,7 @@ def build_graphviz_files():
 def build_no_documentation():
     #In case sphinx isn't installed, we want a nice default page showing why docs
     #weren't built. 
-    bf.writer.materialize_template("no_documentation.mako", bf.util.path_join("documentation","index.html"))
+    bf.template.materialize_template("no_documentation.mako", bf.util.path_join("documentation","index.html"))
     
 def run():
     """Build the Blogofile sphinx based documentation"""

@@ -13,14 +13,13 @@ import sys
 import datetime
 import re
 import operator
-import urlparse
+import urllib.parse
 import hashlib
 import codecs
 
 import pytz
 import yaml
 import logging
-import BeautifulSoup
 
 import blogofile_bf as bf
 
@@ -86,8 +85,8 @@ class Post(object):
         self.categories = set()
         self.tags = set()
         self.permalink = None
-        self.content = u""
-        self.excerpt = u""
+        self.content = ""
+        self.excerpt = ""
         self.filename = filename
         self.author = ""
         self.guid = None
@@ -98,7 +97,7 @@ class Post(object):
         self.__post_process()
         
     def __repr__(self): #pragma: no cover
-        return u"<Post title='{0}' date='{1}'>".format(
+        return "<Post title='{0}' date='{1}'>".format(
             self.title, self.date.strftime("%Y/%m/%d %H:%M:%S"))
      
     def __parse(self):
@@ -106,7 +105,7 @@ class Post(object):
         yaml_sep = re.compile("^---$", re.MULTILINE)
         content_parts = yaml_sep.split(self.source, maxsplit=2)
         if len(content_parts) < 2:
-            raise PostParseException(u"{0}: Post has no YAML section".format(
+            raise PostParseException("{0}: Post has no YAML section".format(
                     self.filename))
         else:
             #Extract the yaml at the top
@@ -144,26 +143,12 @@ class Post(object):
         #Default post excerpting function
         #Can be overridden in _config.py by
         #defining post_excerpt(content,num_words)
-        if len(self.excerpt) == 0:
-             """Retrieve excerpt from article"""
-             s = BeautifulSoup.BeautifulSoup(self.content)
-             # get rid of javascript, noscript and css
-             [[tree.extract() for tree in s(elem)] for elem in (
-                     'script', 'noscript', 'style')]
-             # get rid of doctype
-             subtree = s.findAll(text=re.compile("DOCTYPE|xml"))
-             [tree.extract() for tree in subtree]
-             # remove headers
-             [[tree.extract() for tree in s(elem)] for elem in (
-                     'h1', 'h2', 'h3', 'h4', 'h5', 'h6')]
-             text = ''.join(s.findAll(text=True))\
-                                 .replace("\n", "").split(" ")
-             return " ".join(text[:num_words]) + '...'
-        
+        return self.content
+    
     def __post_process(self):
         # fill in empty default value
         if not self.title:
-            self.title = u"Untitled - {0}".format(
+            self.title = "Untitled - {0}".format(
                     datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         
         if not self.slug:
@@ -200,7 +185,7 @@ class Post(object):
             self.permalink = re.sub(":uuid", hashlib.sha1(
                     self.title.encode('utf-8')).hexdigest(), self.permalink)
 
-        logger.debug(u"Permalink: {0}".format(self.permalink))
+        logger.debug("Permalink: {0}".format(self.permalink))
      
     def __parse_yaml(self, yaml_src):
         y = yaml.load(yaml_src)
@@ -210,13 +195,13 @@ class Post(object):
         try:
             self.permalink = y['permalink']
             if self.permalink.startswith("/"):
-                self.permalink = urlparse.urljoin(bf.config.site.url,
+                self.permalink = urllib.parse.urljoin(bf.config.site.url,
                         self.permalink)
             #Ensure that the permalink is for the same site as bf.config.site.url
             if not self.permalink.startswith(bf.config.site.url):
-                raise PostParseException(u"{0}: permalink for a different site"
+                raise PostParseException("{0}: permalink for a different site"
                         " than configured".format(self.filename))
-            logger.debug(u"path from permalink: {0}".format(self.path))
+            logger.debug("path from permalink: {0}".format(self.path))
         except KeyError:
             pass
         try:
@@ -249,20 +234,20 @@ class Post(object):
         try:
             if y['draft']:
                 self.draft = True
-                logger.info(u"Post {0} is set to draft, "
+                logger.info("Post {0} is set to draft, "
                         "ignoring this post".format(self.filename))
             else:
                 self.draft = False
         except KeyError:
             self.draft = False
         # Load the rest of the fields that don't need processing:
-        for field, value in y.items():
+        for field, value in list(y.items()):
             if field not in fields_need_processing:
                 setattr(self,field,value)
         
     def permapath(self):
         """Get just the path portion of a permalink"""
-        return urlparse.urlparse(self.permalink)[2]
+        return urllib.parse.urlparse(self.permalink)[2]
 
     def __cmp__(self, other_post):
         "Posts should be comparable by date"
@@ -276,13 +261,13 @@ class Post(object):
             #Always generate the path from the permalink
             return self.permapath()
         else:
-            raise AttributeError, name
+            raise AttributeError(name)
 
 
 class Category(object):
 
     def __init__(self, name):
-        self.name = unicode(name)
+        self.name = str(name)
         # TODO: slugification should be abstracted out somewhere reusable
         # TODO: consider making url_name and path read-only properties?
         self.url_name = self.name.lower().replace(" ", "-")
@@ -291,19 +276,24 @@ class Category(object):
                 bf.config.controllers.blog.category_dir,
                 self.url_name)
 
-    def __eq__(self, other):
-        if self.name == other.name:
-            return True
-        return False
-
     def __hash__(self):
         return hash(self.name)
 
     def __repr__(self):
         return self.name
     
-    def __cmp__(self, other):
-        return cmp(self.name, other.name)
+    def __lt__(self, other):
+        return self.name < other.name
+    def __eq__(self, other):
+        return not self<other and not other<self
+    def __ne__(self, other):
+      return self<other or other<self
+    def __gt__(self, other):
+        return other<self
+    def __ge__(self, other):
+        return not self<other
+    def __le__(self, other):
+        return not other<self
 
 
 def parse_posts(directory):
@@ -316,24 +306,24 @@ def parse_posts(directory):
     if not os.path.isdir("_posts"):
         logger.warn("This site has no _posts directory.")
         return []
-    post_paths = [f.decode("utf-8") for f in bf.util.recursive_file_list(
+    post_paths = [f for f in bf.util.recursive_file_list(
             directory, post_filename_re) if post_filename_re.match(f)]
 
     for post_path in post_paths:
         post_fn = os.path.split(post_path)[1]
-        logger.debug(u"Parsing post: {0}".format(post_path))
+        logger.debug("Parsing post: {0}".format(post_path))
         #IMO codecs.open is broken on Win32.
         #It refuses to open files without replacing newlines with CR+LF
         #reverting to regular open and decode:
         try:
-            src = open(post_path, "r").read().decode("utf-8")
+            src = open(post_path, "r").read()
         except:
-            logger.exception(u"Error reading post: {0}".format(post_path))
+            logger.exception("Error reading post: {0}".format(post_path))
             raise
         try:
             p = Post(src, filename=post_fn)
         except PostParseException as e:
-            logger.warning(u"{0} : Skipping this post.".format(e.value))
+            logger.warning("{0} : Skipping this post.".format(e.value))
             continue
         #Exclude some posts
         if not (p.permalink is None or p.draft is True):

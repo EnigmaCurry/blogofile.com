@@ -25,7 +25,7 @@ def read_photos():
 
 def write_pages(photos):
     for photo in photos:
-        bf.writer.materialize_template("photo.mako", (photos_dir,photo+".html"), {"photo":photo})
+        bf.template.materialize_template("photo.mako", (photos_dir,photo+".html"), {"photo":photo})
 
 def write_photo_index(photos):
-    bf.writer.materialize_template("photo_index.mako", (photos_dir,"index.html"), {"photos":photos})
+    bf.template.materialize_template("photo_index.mako", (photos_dir,"index.html"), {"photos":photos})

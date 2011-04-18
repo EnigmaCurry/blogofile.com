@@ -5,16 +5,16 @@
 # PyQuery version. Works great, is forgiving of bad HTML, but requries libxml
 # which is not likely installed on the user's machine:
 
-from pyquery import PyQuery as pq
+# from pyquery import PyQuery as pq
 
-def run(content):
-    d = pq("<xml>%s</xml>"%content)
-    p_num = 1
-    for p in d("p"):
-        if not p.attrib.has_key("id"):
-            p.set('id',"p"+str(p_num))
-        p_num += 1
-    return d.html()
+# def run(content):
+#     d = pq("<xml>%s</xml>"%content)
+#     p_num = 1
+#     for p in d("p"):
+#         if not p.attrib.has_key("id"):
+#             p.set('id',"p"+str(p_num))
+#         p_num += 1
+#     return d.html()
 
 # ElementTree version. Is not very forgiving of bad HTML.
 # Tidy could help but that would be another install, which if we
