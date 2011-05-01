@@ -196,7 +196,23 @@ hr.interblog {
     height:1px;
     width:90%;
 }
-
+.post_prose code {
+    border-bottom-style: dashed;
+    border-color: #cacaca;
+    border-width: 1px;
+    background-color: #F1F1FF;
+    padding-top: 0.1em;
+    padding-left: 5px;
+    margin-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+.post_prose pre code {
+    padding: 0px;
+    margin: 0px;
+    border-bottom-style: none;
+}
 /********** Sidebar **********/
 div#right_sidebar {
     float: right;
