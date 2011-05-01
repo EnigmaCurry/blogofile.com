@@ -67,8 +67,8 @@ the regular python3 source code as well as the python2 source
 code. Depending on the python version used to install it, the correct
 source code gets installed. This is the same type of tarball that will
 be uploaded to [PyPI](http://pypi.python.org/pypi) once Blogofile is
-stable and is released. Users will be able to run *``pip install
-blogofile``* on any version of Python (2.6+, 3.1+) and run blogofile
+stable and is released. Users will be able to run ``pip install
+blogofile`` on any version of Python (2.6+, 3.1+) and run blogofile
 without any hassle, and no need for the end user to install 3to2
 because the conversion has already been applied.
 
@@ -83,8 +83,8 @@ Plugins
 
 Blogofile 0.8 includes new plugin support. Plugins are just packages
 of controllers, filters, templates, and other files. These are
-distributed and installed as regular python packages (eg. easy_install
-blogofile_blog). Since plugins are installed separately from
+distributed and installed as regular python packages (eg. ``easy_install
+blogofile_blog``). Since plugins are installed separately from
 Blogofile, you can upgrade them independently. Installed plugins are
 detected by Blogofile at runtime and if the user configures the plugin
 in their ``_config.py``, the plugin can add functionality to a Blogofile
@@ -106,6 +106,10 @@ advantages:
    templates (post.mako, chronological.mako etc.) can be copied into
    userspace and customized if desired.
 
+Also note, that you don't have to use the blog plugin if you don't
+want to, you can just as easily keep using the old blog controller
+from 0.7.1 if you have a legacy site.
+   
 Command Completion and Plugin Commands
 --------------------------------------
 
@@ -131,12 +135,12 @@ blog plugin:
         templates       Blog template helpers
         post            Blog post helpers
 
-Typing *``blogofile blog post create &lt;title&gt;``* will create a new blog
+Typing ``blogofile blog post create <title>`` will create a new blog
 post inside your ``_posts/`` directory pre-populated with today's date and the
 title you gave it. This allows you to get started writing your blog
 posts more easily without having to write all the post YAML yourself.
 
-Running *``blogofile blog templates copy _templates/blog``* will copy all
+Running ``blogofile blog templates copy _templates/blog`` will copy all
 of the blog templates into your site's source directory. This let's
 you customize them to your own liking. If you do this, you need to
 write the following in your ``_config.py`` to tell the blog controller
@@ -170,7 +174,7 @@ to template type. Here's what you get by default:
       )
 
 If you've been using Blogofile long, you already know about the
-first one, Mako. However, instead of being hard-coded inside the
+first one: Mako. However, instead of being hard-coded inside the
 blogofile [writer
 class](https://github.com/EnigmaCurry/blogofile/blob/plugins/blogofile/writer.py)
 to render files ending in ``.mako`` with Mako, Blogofile 0.8 uses the
@@ -191,17 +195,21 @@ different engines__ can inherit from this file. For instance, if your
 site uses ``site.mako`` as it's base template but you have a jinja2
 template somewhere in your source directory (or a plugin you installed
 uses one), you don't have to recreate your entire site structure in jinja
--- instead, you can have jinja2 inherit from your mako templates directly.
+-- instead, you can have jinja2 inherit from your mako templates
+directly:
+
+    {% extends "bf_base_template" %}
 
 When you render a template, Blogofile detects if
 ``site.base_template`` is of a different template type than the
 currently rendering template. If it is, it renders the base template
-first, then renders the first template inside of the base template at the
-right place. The "right place" is also configurable via
-``templates.content_blocks``, but you shouldn't need to change that
-unless you're introducing your own template engine.
+first, installs the base template as an alias called
+``bf_base_template``, then renders the first template inside of the
+base template at the right place. The "right place" is also
+configurable via ``templates.content_blocks``, but you shouldn't need
+to change that unless you're introducing your own template engine.
 
-FilterTemplates are a new template type altogether that lets you use
+``FilterTemplates`` are a new template type altogether that lets you use
 any Blogofile
 [filter](http://blogofile.com/documentation/filters.html) as it's own
 template engine. This let's you use, for instance, Markdown and
