@@ -138,7 +138,8 @@ blog plugin:
 Typing ``blogofile blog post create <title>`` will create a new blog
 post inside your ``_posts/`` directory pre-populated with today's date and the
 title you gave it. This allows you to get started writing your blog
-posts more easily without having to write all the post YAML yourself.
+posts more easily without having to write all the post YAML
+yourself. This feature was created in collaboration with [Ant Zucaro](http://www.antzucaro.com/).
 
 Running ``blogofile blog templates copy _templates/blog`` will copy all
 of the blog templates into your site's source directory. This let's
