@@ -274,7 +274,7 @@ If you want to run the unit tests, you'll also need:
  * Python 2.7 - This runs the selenium tests which don't support
    python 3 yet.
 
-### Install
+### Install Blogofile
 
 I'll assume you're using Ubuntu Linux. If not, you'll need to translate
 these instructions yourself. Developer docs that I'm currently writing
@@ -304,7 +304,7 @@ Checkout the Blogofile sources to a directory of your choosing which
 we'll call ``$BFSRC``:
 
     cd $BFSRC
-    git clone https://github.com/EnigmaCurry/blogofile.git
+    git clone https://github.com/EnigmaCurry/blogofile.git .
 
 Create a virtual environment to separate the development Blogofile
 from any production version you already have installed:
@@ -363,7 +363,29 @@ You can see the following from my configuration above:
   * I'm using CPython 3.2.0
   * Blogofile is installed inside my virtual environment at ``/home/ryan/src/blogofile``
 
-If ``blogofile info`` shows you a similar configuration, you've installed it correctly.
+If ``blogofile info`` shows you a similar configuration, you've
+installed it correctly.
+
+### Install Blog Plugin
+
+As mentioned earlier, the blog plugin is a separate install from
+Blogofile itself. You can install it in the same virtual environment
+created in the last step. Create a new directory parallel to
+``$BFSRC``, I'll call it ``$BF_BLOG_SRC``:
+
+    mkdir $BF_BLOG_SRC
+    cd $BF_BLOG_SRC
+    git clone https://github.com/EnigmaCurry/blogofile_blog.git .
+    python setup.py develop
+
+Just like Blogofile, if you're wanting to run the blog plugin in
+Python 2.6+, you'll need to convert the source into a 2.x compatible
+tarball and install that:
+
+    python setup.py sdist
+    easy_install dist/blogofile_blog-0.8.tar.gz
+
+### Testing
 
 You can now create a ``simple_blog`` for testing:
 
