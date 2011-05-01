@@ -1,0 +1,97 @@
+{% extends "basic/layout.html" %}
+
+{% set script_files = script_files + [pathto("/js/documentation.js", 1)] %}
+
+{% block metatags %}
+<script> x=5; </script>
+{% endblock %}
+
+{% block extrahead %}
+<title>Blogofile</title>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed" />
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0"
+href="/blog/feed/atom" />
+
+<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
+<link rel='stylesheet' href='/css/pygments_monokai.css' type='text/css' />
+<link rel='stylesheet' href='/css/site.css' type='text/css' />
+<link rel='stylesheet' href='/css/documentation.css' type='text/css' />
+<link rel='stylesheet' href='/css/jquery.tweet.css' type='text/css' />
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tweet.js"></script>
+<script type="text/javascript" src="/js/googleRSSWidget.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+
+<style>
+  body { padding: 0px; }
+</style>
+{% endblock %}
+
+{% block header %}
+  <div id="content">
+  
+<div id="header" onclick="location.href='/';" style="cursor: pointer;">
+  <div id="plugbanner"></div>
+  <div id="blog_logo"></div>
+  <h1><a href="/">
+      <span id="blog_name">
+        Blogofile
+      </span>
+    </a>
+  </h1>
+</div>
+<a href="http://github.com/EnigmaCurry/blogofile"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<div id="top_bar">
+  <div class="ButtonBar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/documentation">Documentation</a></li>
+      <li><a href="/community">Community</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </div>
+  <div id="search">    
+    <form id="searchform" method="get" action="http://www.google.com/search">
+      <input type="hidden" name="ie" value="UTF-8">
+      <input type="hidden" name="oe" value="UTF-8">
+      <input type="hidden" name="domains" value="www.blogofile.com">
+      <input type="hidden" name="sitesearch" value="www.blogofile.com">
+      <input name="q" id="q" size="20" value="search in blog..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+  <p id="credits">
+Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
+<br/>
+RSS feeds for <a href="/blog/feed">Entries</a>
+ and <a
+href="http://blogofile.disqus.com/latest.rss">Comments</a>.
+<br>
+</p>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/blogofile/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+
+  </div>
+{% endblock %}
+
+{% block sidebarsearch %}
+ {{ super() }}
+ {# <a href="/documentation/Blogofile.pdf"><img src="/site_img/pdficon_large.gif"/> PDF Version</a> #}
+{% endblock %}
