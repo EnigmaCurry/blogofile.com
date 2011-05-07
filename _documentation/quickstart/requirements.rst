@@ -29,7 +29,7 @@ Python installed on your computer in order to run Blogofile.
 Blogofile is mainly developed using Python 3.2, but it is also tested
 to work on Python 2.6 and above. To be specific, Python 2.5 or lower
 is *not* supported and unless you have a compelling need to run an old
-version, *it is recommended that you use Python 3.2 or above.
+version, it is recommended that you use Python 3.2 or above.
 
 For Windows and Mac OSX, you can find `Python installers
 <http://python.org/download/releases/>`_ on the Python.org. For other
