@@ -6,8 +6,6 @@
 Blogofile Documentation
 #######################
 
-NOTE: This documents the `1.0.0-DEV version <http://github.com/EnigmaCurry/blogofile>`_ of Blogofile. It can sometimes be out of sync with the latest stable release.
-
 .. toctree::
    :maxdepth: 2
 

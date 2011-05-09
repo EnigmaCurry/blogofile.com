@@ -61,10 +61,10 @@ Creating some blog posts
 
 The simple_blog template comes with 10 or so example blog posts that
 demonstrate various features of Blogofile. These posts are in a
-sub-directory called `_posts`.
+sub-directory called ``_posts``.
 
 You may want to keep these example posts for reference until you get
-the hang of it, but you can safely delete everything in the `_posts`
+the hang of it, but you can safely delete everything in the ``_posts``
 directory to create an empty blog.
 
 To create a new blog post you run::
@@ -72,29 +72,30 @@ To create a new blog post you run::
   blogofile blog post create "Hello, World!"
 
 "Hello, World!" is where you type the title for the blog post. This
-creates a new file inside the `_posts` directory that has the minimum
+creates a new file inside the ``_posts`` directory that has the minimum
 fields pre-filled in. You can also bypass this entire step and just
-create a file in the `_posts` directory yourself following this basic
+create a file in the ``_posts`` directory yourself following this basic
 structure::
 
   ---
   title: Hello, World!
   permalink: http://www.blogofile.com/blog/2011/04/18/hello-world
   date: 2011/04/18 23:16:08
-  categories: 
-  guid: MOc_DCw_CIgmXZ2WtMc81ywdFng=
+  categories: category 1, category 2
   ---
   Hello, This is my first blog post.
 
 All blog posts start with a header format called `YAML
-<http://www.yaml.org/spec/1.2/spec.html>`_. Basically it's just a list
+<http://www.yaml.org/spec/1.2/spec.html>`_. Basically, it's just a list
 of settings for a blog post; setting the title, permalink URL, date,
 categories and whatever else you want to attatch to the post. Other
 than a few reserved words, all of these fields are free-form; you can
-add whatever fields you wish.
+add whatever fields you wish which can be used in templates and
+controllers later on.
 
-The YAML header is demarcated by three dashes. After the second set of
-dashes begins the content of your blog post ("Hello, This is my first blog post.")
+The YAML header is demarcated by three dashes on a line by
+itself. After the second set of dashes, you start writing the content
+of your blog post ("Hello, This is my first blog post.")
 
 Blog posts can be written in HTML, or alternatively in a markup
 language like `markdown

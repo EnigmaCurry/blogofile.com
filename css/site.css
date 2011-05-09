@@ -196,7 +196,7 @@ hr.interblog {
     height:1px;
     width:90%;
 }
-.post_prose code {
+.post_prose code, tt {
     border-bottom-style: dashed;
     border-color: #cacaca;
     border-width: 1px;

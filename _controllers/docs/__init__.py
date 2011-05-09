@@ -44,7 +44,6 @@ def build_sphinx_build(doc_name):
     out_dir = os.path.join("_site","documentation",doc_name)
     sphinx.main(shlex.split("sphinx-build -q -b html "+in_dir+" "+out_dir))
 
-
 def build_sphinx_pdf():
     #Do PDF generation if TeX is installed
     if os.path.isfile("/usr/bin/tex"):
@@ -104,5 +103,7 @@ def run():
     build_graphviz_files("0.7.1")
 
     build_sphinx_build("quickstart")
-    #build_sphinx_pdf("0.7.1")
     build_graphviz_files("quickstart")
+
+    build_sphinx_build("architecture")
+    build_graphviz_files("architecture")

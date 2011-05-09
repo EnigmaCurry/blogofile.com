@@ -38,7 +38,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Blogofile Quickstart'
+project = u'Blogofile Architecture'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -192,7 +192,6 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_use_modindex = True
 
-exclude_patterns = [".#*" #Ignore Emacs interlock files
-                    
+exclude_patterns = [".#*" #Ignore Emacs interlock files                    
                     ]
 

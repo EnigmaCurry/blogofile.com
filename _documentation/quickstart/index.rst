@@ -12,9 +12,9 @@ computer and help you to create a simple blog.
 To start out, you can perform all of these steps on your desktop
 computer. You won't need to run Blogofile on a server (although you
 can if you want.) Blogofile builds static websites, so we'll build a
-website locally on your desktop and then test it in a webbrowser with
-Blogofile's embedded webserver. You can take the static website files
-that Blogofile generates and upload them to a webhost later on.
+website locally on your desktop and then test it in your webbrowser
+using Blogofile's embedded webserver. You can take the static website
+files that Blogofile generates and upload them to a webhost later on.
 
 .. toctree::
    :maxdepth: 2

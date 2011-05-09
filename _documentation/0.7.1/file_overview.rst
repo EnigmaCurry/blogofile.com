@@ -104,7 +104,7 @@ Click for larger SVG view
 
 .. raw:: html
    
-   <a href="/documentation/graphs/build_process.dot.svg"><img src="/documentation/graphs/build_process.dot.png"></a>
+   <a href="/documentation/0.7.1/graphs/build_process.dot.svg"><img src="/documentation/0.7.1/graphs/build_process.dot.png"></a>
 
 .. _Mako: http://www.makotemplates.org
 
