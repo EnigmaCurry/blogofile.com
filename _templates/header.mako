@@ -21,7 +21,7 @@ except ImportError:
       <li><a href="/">Home</a></li>
       <li><a href="http://docs.blogofile.com">Documentation</a></li>
       <li><a href="${bf.util.site_path_helper('/community')}">Community</a></li>
-      <li><a href="${bf.config.util.site_path_helper(bf.config.blog.path)}">Blog</a></li>
+      <li><a href="${bf.util.site_path_helper(bf.config.blog.path)}">Blog</a></li>
     </ul>
   </div>
   <div id="search">    

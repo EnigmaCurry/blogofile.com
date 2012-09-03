@@ -7,7 +7,7 @@
   <% p.draft = True %>
   <%include file="post.mako" args="post=p" />
     <h3>Source:</h3>
-    <pre>${bf.config.util.html_escape(p.source)}</pre>
+    <pre>${bf.util.html_escape(p.source)}</pre>
 % endfor
   </span>
 </div>
