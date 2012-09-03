@@ -2,14 +2,16 @@
   <div id="download">
     <h3>Download</h3>
     <p>Latest stable Blogofile release is <b>${bf.config.release_version}</b></p>
-    <pre>easy_install -U blogofile</pre> 
+    <pre>easy_install -U blogofile</pre>
     <p>or <a href="${bf.config.release_download_link}">download a tarball</a></p>
   </div>
   <div id="contact">
   <h3>Contact</h3>
-  Blogofile is written by <a href="http://www.enigmacurry.com" rel="external" target="_blank">Ryan McGuire</a>
-  <br/><br/> 
-  Please send technical questions to the <br/><a href="http://groups.google.com/group/blogofile-discuss">mailing list</a>. Or, if you need to contact me privately, you can <a href="http://mailhide.recaptcha.net/d?k=01VHGYFI7WE9jB_dHebD-0JQ==&c=3qCKNvkRgZtCa5B5PJcptJVgaDI5-xiMjUjHgQi3vIw=">send email</a>.
+  Blogofile was created by <a href="http://www.enigmacurry.com" rel="external" target="_blank">Ryan McGuire</a>.
+  It is maintained and developed by <a href="http://douglatornell.ca" rel="external" target="_blank">Doug Latornell</a>,
+  and a community of <a href="https://github.com/EnigmaCurry/blogofile/blob/plugins/CONTRIBUTORS.txt" rel="external" target="_blank">contributors</a>.
+  <br/><br/>
+  Please send technical questions to the <br/><a href="http://groups.google.com/group/blogofile-discuss">mailing list</a>. Or, if you need to make contact privately, you can email <a href="http://www.google.com/recaptcha/mailhide/d?k=01B9AePE_8Br9OAjIE33aqPw==&c=MbZIKV2KyeYVT5uU2jirWHMenU6phZHvLPfmnrim34s=">Doug</a> or <a href="http://mailhide.recaptcha.net/d?k=01VHGYFI7WE9jB_dHebD-0JQ==&c=3qCKNvkRgZtCa5B5PJcptJVgaDI5-xiMjUjHgQi3vIw=">Ryan</a>.
   </div>
   <div id="donate">
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -46,8 +48,8 @@
      <li><a href="${category.path}">${category}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})</li>
 % endfor
     </ul>
-  </div> 
-  <div id="archives">			
+  </div>
+  <div id="archives">
     <h3>Archives</h3>
     <ul>
 % for link, name, num_posts in bf.config.blog.archive_links:
