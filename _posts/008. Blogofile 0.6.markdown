@@ -1,6 +1,7 @@
 ---
 categories: Releases
 date: 2010/03/30 20:57:00
+author: Ryan McGuire
 permalink: http://www.blogofile.com/blog/2010/03/30/blogofile-0.6-released
 title: Blogofile 0.6 released
 ---

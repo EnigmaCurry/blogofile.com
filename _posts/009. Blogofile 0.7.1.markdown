@@ -1,6 +1,7 @@
 ---
 categories: Releases
 date: 2011/02/19 23:18:00
+author: Ryan McGuire
 permalink: http://www.blogofile.com/blog/2011/02/19/blogofile-0.7.1-released
 title: Blogofile 0.7.1 released
 ---

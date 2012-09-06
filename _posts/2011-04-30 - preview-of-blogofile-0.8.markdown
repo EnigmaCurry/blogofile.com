@@ -2,6 +2,7 @@
 title: Preview of Blogofile 0.8
 permalink: http://www.blogofile.com/blog/2011/04/30/preview-of-blogofile-0.8
 date: 2011/04/30 13:42:04
+author: Ryan McGuire
 categories: development
 guid: b'1prqgKJ6YXwljJSKr9r5kpE49F4='
 ---
