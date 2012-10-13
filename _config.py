@@ -122,19 +122,20 @@ blog.category_dir = "category"
 # These can be strings or compiled patterns.
 # Strings are assumed to be case insensitive.
 site.file_ignore_patterns = [
-    r".*([\/]|[\\])_.*",   #All files that start with an underscore
-    r".*([\/]|[\\])#.*",   #Emacs temporary files
-    r".*([\/]|[\\])\.#.*", #Emacs temporary files
-    r".*~$]",              #Emacs temporary files
-    r".*([\/]|[\\])\.git", #Git VCS dir
-    r".*([\/]|[\\])\.hg",  #Mercurial VCS dir
-    r".*([\/]|[\\])\.bzr", #Bazaar VCS dir
-    r".*([\/]|[\\])\.svn", #Subversion VCS dir
-    r".*([\/]|[\\])CVS"    #CVS dir
+    r".*([\/]|[\\])_.*",            # All files that start with an underscore
+    r".*([\/]|[\\])#.*",            # Emacs temporary files
+    r".*([\/]|[\\])\.#.*",          # Emacs temporary files
+    r".*~$]",                       # Emacs temporary files
+    r".*([\/]|[\\])\.git",          # Git VCS dir
+    r".*([\/]|[\\])\.hg",           # Mercurial VCS dir
+    r".*([\/]|[\\])\.bzr",          # Bazaar VCS dir
+    r".*([\/]|[\\])\.svn",          # Subversion VCS dir
+    r".*([\/]|[\\])CVS",            # CVS dir
+    r".*([\/]|]\\])docutils.conf",  # docutils config settings file
     ]
 
 #### Default post filters ####
-# If a post does not specify a filter chain, use the 
+# If a post does not specify a filter chain, use the
 # following defaults based on the post file extension:
 blog.post_default_filters = {
     "markdown": "syntax_highlight, markdown",
@@ -159,10 +160,11 @@ def post_build():
 controllers.photo_gallery.enabled = True
 
 docs = controllers.docs
-docs.enabled = True
+docs.enabled = False
 ##############################################
 ### Blogofile release variables
 ### (These are custom vars for blogofile.com)
 ##############################################
-release_version = "0.7.1"
-release_download_link = "http://pypi.python.org/packages/source/B/Blogofile/blogofile-0.7.1.tar.gz"
+release_version = "0.8b1"
+blogofile_release_download_link = "http://pypi.python.org/packages/source/B/Blogofile/Blogofile-{0}.tar.gz".format(release_version)
+blogofile_blog_release_download_link = "http://pypi.python.org/packages/source/b/blogofile_blog/blogofile_blog-{0}.tar.gz".format(release_version)

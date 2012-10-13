@@ -2,8 +2,24 @@
   <div id="download">
     <h3>Download</h3>
     <p>Latest stable Blogofile release is <b>${bf.config.release_version}</b></p>
-    <pre>easy_install -U blogofile</pre>
-    <p>or <a href="${bf.config.release_download_link}">download a tarball</a></p>
+    <pre>
+      easy_install -U Blogofile
+      easy_install -U blogofile_blog
+    </pre>
+    <p>or download the tarballs:
+      <ul>
+        <li>
+          <a href="${bf.config.blogofile_release_download_link}">
+            Blogofile-${bf.config.release_version}.tar.gz
+          </a>
+        </li>
+        <li>
+          <a href="${bf.config.blogofile_blog_release_download_link}">
+            blogofile_blog-${bf.config.release_version}.tar.gz
+          </a>
+        </li>
+      </ul>
+    </p>
   </div>
   <div id="contact">
   <h3>Contact</h3>

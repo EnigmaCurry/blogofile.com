@@ -1,9 +1,9 @@
 <%inherit file="_templates/site.mako" />
 <div class="blog_post">
   <span class="post_prose">
-    
+
     <h1>Welcome to Blogofile.</h1>
-    
+
     <ul>
       <li><b>Definition: <em>Blogophile</em></b> (n):<br/>
         A person who is fond of or obsessed with blogs or blogging.</li>
@@ -13,7 +13,7 @@
 
 
     <p>Blogofile is a static website compiler, primarily (though not exclusively) designed to be a simple blogging engine. It requires no database and no special hosting environment. You customize a set of templates with <a href="http://www.makotemplates.org">Mako</a>, create posts in a markup language of your choice (see <a href="/documentation/posts.html#post-content">Post Content</a>) and Blogofile renders your entire website as static HTML and Atom/RSS feeds which you can then upload to any old web server you like.</p>
-    
+
     <h3>Why you should use Blogofile</h3>
 
     <ul>
@@ -44,19 +44,33 @@
     <p>
       Make sure you have <a href="http://www.python.org">Python</a> and <a href="http://pypi.python.org/pypi/setuptools">Setuptools</a> installed. On Ubuntu you just need to run:
     </p>
-    <pre>sudo apt-get install python-setuptools</pre> 
+    <pre>sudo apt-get install python-setuptools</pre>
 
-    Download and install Blogofile with:
-    
-    <pre>sudo easy_install Blogofile</pre>
-    
-    Alternatively, here's the latest "stable" release:
+    Download and install Blogofile and the blogofile_blog plugin with:
+
+    <pre>
+      sudo easy_install Blogofile
+      sudo easy_install blogofile_blog
+    </pre>
+
+    Alternatively, here are the tarballs of the latest "stable" releases:
     <ul>
-      <li><a href="${bf.config.release_download_link}">Blogofile ${bf.config.release_version}.tar.gz</a></li>
+      <li>
+        <a href="${bf.config.blogofile_release_download_link}">
+          Blogofile-${bf.config.release_version}.tar.gz
+      </a>
+      </li>
+      <li>
+        <a href="${bf.config.blogofile_blog_release_download_link}">
+          blogofile_blog-${bf.config.release_version}.tar.gz
+        </a>
+      </li>
     </ul>
     You can also get the latest development source from github:
-    <pre>git clone git://github.com/EnigmaCurry/blogofile.git</pre>
+    <pre>
+      git clone git://github.com/EnigmaCurry/blogofile.git
+      git clone git://github.com/EnigmaCurry/blogofile_blog.git
+    </pre>
     <br/>
   </span>
 </div>
-
