@@ -39,14 +39,13 @@ At this point I honestly don't know what the best strategy for that
 migration is - a recipe in the docs, a helper script, ...
 If you are using ``Blogofile`` 0.7 or 0.7.1 please try out 0.8b1 and
 tell the community how you migrated your site.
-You can leave a comment_ on this post,
+You can leave a comment on this post,
 the `mailing list`_,
 or you can clone the `GitHub repo`_,
 add to the Migrating Sites from 0.7.x to 0.8 section of the docs,
 or add a migration helper script to the ``converters/`` directory,
 and send a pull request.
 
-.. _comment: http://www.blogofile.com/blog/2012/09/05/blogofile-0-8b1-release#disqus_thread
 .. _mailing list: http://groups.google.com/group/blogofile-discuss
 .. _GitHub repo: https://github.com/EnigmaCurry/blogofile/
 
